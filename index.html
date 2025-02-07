@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congenital Syphilis Management Guidelines</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<h1>SSM Health Cardinal Glennon Congenital Syphilis Management Guidelines</h1>
+
+<strong>Disclaimer: </strong> This website is designed to be a tool to help clinicians understand congenital syphilis diagnosis and management. The algorithm will populate specific recommendations and rationale based on the answers to the below questions. These guidelines are not intended to replace clinical decision making, the AAP Red Book, and/or Infectious Disease consultation. <br><br><br>
+
+
+<form id="guidelinesForm">
+    <label id="question1" for="history">1. Does the birthing mother have a history of syphilis?</label><br><br>
+    <input type="radio" name="history" value="yes"> Yes<br>
+    <input type="radio" name="history" value="no"> No<br>
+    <input type="radio" name="history" value="unknown"> Unknown <br><br><br>
+
+    <label id="question2" for="treatment">2. When was the birthing mother treated for syphilis? If the birthing mother has been treated multiple times, please respond with the <strong>most recent</strong> treatment course. </label><br><br>
+    <input type="radio" name="treatment" value="before"> Before she was pregnant with the neonate being evaluated<br>
+    <input type="radio" name="treatment" value="during_before"> During her pregnancy with the neonate being evaluated greater than 30 days prior to delivery<br>
+    <input type="radio" name="treatment" value="during_after"> During her pregnancy with the neonate being evaluated less than 30 days prior to delivery<br>
+    <input type="radio" name="treatment" value="not treated"> She was not treated<br>
+    <input type="radio" name="treatment" value="unknown"> Unknown<br><br><br>
+
+    <label id="question3" for="appropriateTreatment">3. Was the birthing mother's syphilis treatment in question #2 appropriate for her stage of disease? </label><br><br>
+    <label id="note3"> IM benzathine penicillin G once per week for 3 weeks in a row is appropriate treatment for almost all of the maternal syphilis that we see in our patient population (exception: tertiary syphilis, neurosyphilis). If more than 9 days elapsed between IM doses, the entire series should have been repeated. Consider this inadequate treatment if the series was <strong>not</strong> repeated. <br>
+    A single dose of IM benzathine penicillin G may have been appropriate in a mother who had symptoms at the time of diagnosis. <br>
+    Please contact the SSM ID Division if you have further questions about this. Selecting 'unknown' will default the most conservative course, which may not be appropriate depending on the patient's scenario.</label><br><br>
+
+    <input type="radio" name="appropriateTreatment" value="yes"> Yes <br>
+    <input type="radio" name="appropriateTreatment" value="no"> No <br>
+    <input type="radio" name="appropriateTreatment" value="unknown"> Unknown <br>
+    <input type="radio" name="appropriateTreatment" value="NA"> Not Applicable <br> <br><br>
+    
+
+    <label id="question4" for="highRisk">4. Has the birthing mother and/or her partner(s) had any high-risk sexual activity or symptoms to suggest a newly acquired infection? </label><br><br>
+    <label id="note4"> See the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' Step #1 (Reviewing Mother's History) for a list of appropriate questions to ask the birthing mother in order to discern whether syphilitic risk factors are present. Clicking 'unknown' to this question should be an uncommon occurence (i.e. mother who declines to answer, is not available etc) <br> 
+    <a href="https://docs.google.com/document/d/1FshwW9mEXHS-gHpdxoPo_nevr0eY6P5LIYh0Y45FsEU/edit?usp=sharing" target="_blank">View the Cheat Sheet</a></label><br><br>
+    <input type="radio" name="highRisk" value="yes"> Yes <br>
+    <input type="radio" name="highRisk" value="no"> No <br>
+    <input type="radio" name="highRisk" value="unknown"> Unknown <br><br><br>
+
+    <label id="question5" for="cmiaResult">5. What was the birthing mother's most recent CMIA (treponemal antibody test) during pregnancy? </label><br><br>
+    <input type="radio" name="cmiaResult" value="reactive"> CMIA reactive <br>
+    <input type="radio" name="cmiaResult" value="not available"> CMIA results unknown (mom's medical records are not available or testing was not obtained during pregnancy) <br><br><br>
+
+    <label id="question6" for="rprTiter">6. What was the birthing mother's RPR titer during pregnancy? If the RPR titer was only checked once during pregnancy, select an option that includes "throughout pregnancy." If the RPR titer was checked twice/multiple times, select an option that pertains to how the RPR result changed/did not change over time. </label><br><br>
+    <input type="radio" name="rprTiter" value="non-reactive"> RPR non-reactive throughout pregnancy  <br>
+    <input type="radio" name="rprTiter" value="low level positive"> RPR low level positive (1:1, 1:2, 1:4) throughout pregnancy<br>
+    <input type="radio" name="rprTiter" value="reactive"> RPR reactive at 1:8 or higher throughout pregnancy<br>
+    <input type="radio" name="rprTiter" value="initially reactive"> RPR initially reactive during pregnancy but non-reactive prior to delivery<br>
+    <input type="radio" name="rprTiter" value="initially non-reactive"> RPR initially non-reactive during pregnancy but reactive prior to delivery<br>
+    <input type="radio" name="rprTiter" value="unknown"> RPR unknown (mom's medical records are not available or testing was not obtained during pregnancy) <br> <br><br>
+
+    <label id="question7" for="tp_pa">7. What was the birthing mother's <strong>most recent</strong> TP-PA result during pregnancy? </label><br><br>
+    <label id="note7">In mothers for which there are discordant results (CMIA reactive, RPR non-reactive), a confirmatory treponemal test on the mother called the TP-PA is sent <strong>automatically </strong> to an outside lab with a 3-5 day turnaround time. If discordant results are not present (e.g. CMIA reactive, RPR reactive), a TP-PA is <strong>not</strong> sent. Please contact the SSM Infectious Disease division if you have further questions about this. </label><br><br>
+    <input type="radio" name="tp_pa" value="pending"> The TP-PA from before delivery is still pending<br>
+    <input type="radio" name="tp_pa" value="reactive"> The TP-PA was reactive <br>
+    <input type="radio" name="tp_pa" value="non-reactive"> The TP-PA was non-reactive <br>
+    <input type="radio" name="tp_pa" value="NA"> The mother did not have discordant results (e.g. the mother's CMIA and RPR are both reactive) so a TP-PA was not sent. This question is not applicable. <br>
+    <input type="radio" name="tp_pa" value="unknown"> I do not know if there were discordant results. I do not have access to the mother's medical records or CMIA/RPR testing was not obtained during pregnancy <br><br><br>
+     
+    <label id="question8" for="physicalExam">8. Does the neonate's physical exam show any evidence of congenital syphilis? </label><br><br>
+    <label id="note8">Physical exam findings associated with congenital syphilis are mentioned in Question #10 of the "Congenital Syphilis Cheat Sheet for SSM Clinicians." Physical exam findings of congenital syphilis are rare in neonates; clicking yes to this question should be an uncommon occurence.  <br>
+    <a href="https://docs.google.com/document/d/1FshwW9mEXHS-gHpdxoPo_nevr0eY6P5LIYh0Y45FsEU/edit?usp=sharing" target="_blank">View the Cheat Sheet</a></label><br><br>
+    <input type="radio" name="physicalExam" value="yes"> Yes<br>
+    <input type="radio" name="physicalExam" value="no"> No<br> <br><br>
+
+    <label id="question9" for="reliableFollowUp">9. Are you confident that the neonate can and will follow up in the Infectious Disease clinic after discharge if needed? </label><br><br>
+    <input type="radio" name="reliableFollowUp" value="yes"> Yes
+    <input type="radio" name="reliableFollowUp" value="no"> No<br> <br><br>
+
+    <button type="button" onclick="calculateRecommendations()">Submit</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+
+document.body.style.backgroundImage = "url('images/my-background.jpg')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center center";
+
+
+// Function to automatically convert text into a hyperlink
+function autoHyperlinkText(text) {
+    const targetText = "Congenital Syphilis Cheat Sheet for SSM Clinicians";
+    const hyperlink = `<a href="https://docs.google.com/document/d/1FshwW9mEXHS-gHpdxoPo_nevr0eY6P5LIYh0Y45FsEU/edit?usp=sharing" target="_blank">${targetText}</a>`;
+    // Replace the target text with a hyperlink
+    return text.split(targetText).join(hyperlink);
+}
+
+function calculateRecommendations() {
+    const history = document.querySelector('input[name="history"]:checked');
+    const treatment = document.querySelector('input[name="treatment"]:checked');
+    const appropriateTreatment = document.querySelector('input[name="appropriateTreatment"]:checked');
+    const highRisk = document.querySelector('input[name="highRisk"]:checked');
+    const cmiaResult = document.querySelector('input[name="cmiaResult"]:checked');
+    const rprTiter = document.querySelector('input[name="rprTiter"]:checked');
+    const tp_pa = document.querySelector('input[name="tp_pa"]:checked');
+    const physicalExam = document.querySelector('input[name="physicalExam"]:checked');
+    const reliableFollowUp = document.querySelector('input[name="reliableFollowUp"]:checked');
+
+    const recommendations = [];
+    let rationale = '';
+    let noMatch = true;  // Flag to track if any scenario matched
+
+
+    
+    // Scenario #1
+    if (
+        history.value === "yes" &&
+        treatment.value === "before" &&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
+        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
+        (physicalExam.value === "no") &&
+        reliableFollowUp.value === "yes"
+    ) {
+        recommendations.push("• Check the neonate's RPR");
+        recommendations.push("• If non-reactive, no ID follow up or treatment needed");
+        recommendations.push("• In the unlikely event that it is reactive, the correct approach would depend on the titer. Please discuss with the ID physician on call. Reliability of follow up will be helpful information in this circumstance.");
+        recommendations.push("• The result of TP-PA would not change management.");
+        
+        noMatch = false; // A match was found
+
+        rationale = `
+    • The mother's history and syphilis testing results indicate that she has been adequately treated prior to the current pregnancy. Given her known history of syphilis, we would expect her to have a positive treponemal antibodies for life. Thus, the TP-PA result does not change management. In the unlikely event that her CMIA is positive and TP-PA is negative, we would still consider her 'treponemal antibody positive.' <br> <br>
+
+    • We recommend checking the neonate's RPR as a precaution in case the mother has reacquired syphilis but sufficient time has not passed for the mother's RPR to become reactive. This is an unlikely scenario as the mother reports no high-risk sexual activity or symptoms of syphilis. <br> 
+
+    <ul>
+        <li> If the neonate's RPR is non-reactive (expected), no penicillin therapy is needed, and no ID follow-up is needed. This would fall into the AAP Red Book category of 'CS unlikely.'</li><br>
+
+        <li> In the unlikely event that the neonate's RPR is reactive, this supports reacquired syphilis in the mother. The optimal approach in this scenario is less clear. Please discuss with the ID physician on call.</li>
+    </ul><br>
+`;
+
+        noMatch = false; // A match was found
+    }
+
+    // Scenario #2
+    if (
+        history.value === "yes" &&
+        (treatment.value === "before" || treatment.value === "during_before") &&
+        appropriateTreatment.value === "yes" &&
+        (highRisk.value === "yes" || highRisk.value === "unknown" ) &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive") &&
+        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" ) &&
+        (physicalExam.value === "no" || physicalExam.value=== "yes") &&
+        reliableFollowUp.value === "yes"
+    ) {
+        recommendations.push("• Obtain an RPR on the neonate. Based on the neonate's PE and RPR, the neonate might fall into the category of 'CS proven or highly probable' OR 'possible congenital syphilis.' Physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone. ");
+        recommendations.push("• Please complete a lumbar puncture, administer a 10 day course of penicillin, obtain a baseline ALT, and arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("• Further diagnostic testing required depends on the neonate's congenital syphilis risk categorization. See the rationale section below for more information. ");
+
+        noMatch = false; // A match was found
+        
+        
+        rationale = 
+        "• The mother's high-risk behaviors or symptoms to suggest a newly acquired syphilis infection significantly increase the likelihood that she has been reinfected, regardless of her RPR results. A mother for whom information on whether she is high risk or not is unavailable is treated as if she were high risk.  <br> <br> " +
+
+        "• If the neonate's exam is abnormal (see question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians') or the neonate's RPR is fourfold (or greater) than then maternal RPR, the neonate falls into the AAP Red Book category of 'CS proven or highly probable.' <br> <br> " +
+
+        " • If the neonate's exam is normal and the neonate's RPR is not fourfold greater than the maternal RPR, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.'  <br> <br> " +
+
+        " •See question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' and Table 3.72 of the AAP Red Book for a list of the diagnostic testing required in each scenario. <br> <br> " +
+
+        "• Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+
+        
+
+        noMatch = false; // A match was found
+    }
+
+
+
+    // Scenario #3
+    if (
+        history.value === "yes" &&
+        treatment.value === "before" &&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        rprTiter.value === "low level positive" &&
+        (tp_pa.value === "NA") &&
+        physicalExam.value === "no" &&
+        reliableFollowUp.value === "yes"
+    ) {
+        recommendations.push("• Check the neonate's RPR");
+        recommendations.push("• If non-reactive or low level positive, follow up in ID clinic in 3 months for repeat RPR. No need to give penicillin.");
+        recommendations.push("• If the neonate's RPR is 4x greater than maternal RPR, complete a full diagnostic evaluation per category 'proven or highly probable congenital syphilis.' See Table 3.72 of the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for information about what additional testing may be needed. Complete a 10 day course of penicillin and arrange follow up in the ID clinic in 3 months.");
+
+        noMatch = false; // A match was found
+
+        rationale = `
+    • ~25% of appropriately treated patients are serofast, which means that their RPR titers remain low level positive for years to life after successful treatment (see question #2 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more details). <br> <br>
+
+    • Although mom's RPR titer at 1:1/1:2 after appropriate treatment likely represents a serofast state, there is a small possibility that mom has inadequately treated syphilis or has reacquired syphilis. Therefore, we should still check the neonate's RPR. <br> 
+
+    <ul>
+        <li> If the neonate's RPR is non-reactive or low level positive, it is unlikely that mom was inadequately treated or reacquired syphilis. To rule out that possibility, we recommend that the infant follows up in the ID clinic in 3 months for a repeat RPR. An increased RPR at that point supports congenital syphilis and would require full evaluation and treatment. </li><br>
+
+        <li> If the neonate's RPR is 4x greater than the maternal RPR, the mom likely had inadequately treated syphilis or reacquired syphilis prior to delivery, both of which significantly increase the likelihood of congenital syphilis in the neonate. In this scenario, the patient would require 10 days of penicillin treatment for coverage of congenital syphilis and neurosyphilis. </li>
+    </ul><br>
+`;
+        
+        
+        noMatch = false; // A match was found
+    }
+
+    // Scenario #4
+    if (
+        history.value === "yes" &&
+        treatment.value === "before" &&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive") &&
+        tp_pa.value === "NA" &&
+        (physicalExam.value === "no" || physicalExam.value=== "yes") &&
+        reliableFollowUp.value === "yes"
+    ) {
+        
+        recommendations.push("• Obtain an RPR on the neonate. Based on the neonate's PE and RPR findings per the AAP Red Book algorithm, the neonate might fall into the category of 'CS proven or highly probable' OR 'possible congenital syphilis.' Physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone. ");
+        recommendations.push("• Please complete a lumbar puncture, administer a 10 day course of penicillin, obtain a baseline ALT, and arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("• Further diagnostic testing required depends on the neonate's congenital syphilis risk categorization. See the rationale section below for more information. ");
+        
+        noMatch = false; // A match was found
+
+        rationale = 
+        "• The mother's reactive RPR titer significantly increase the likelihood that she has been reinfected. <br> <br> " +
+
+        "• If the neonate's exam is abnormal (see question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians') or the neonate's RPR is fourfold (or greater) than then maternal RPR, the neonate falls into the AAP Red Book category of 'CS proven or highly probable.' <br> <br> " +
+
+        " • If the neonate's exam is normal and the neonate's RPR is not fourfold greater than the maternal RPR, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
+
+        " •See question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' and table 3.72 in the AAP Red Book for a list of the diagnostic testing required in each scenario. <br> <br> " +
+        
+        "• Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+
+        noMatch = false; // A match was found
+    }
+
+
+    // Scenario #5
+    if (
+        history.value === "yes" &&
+        (treatment.value === "during_before" )&&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "initially reactive" ) &&
+        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
+        physicalExam.value === "no" &&
+        reliableFollowUp.value === "yes"
+    ) {
+        recommendations.push("•Check the neonate's RPR and compare the titer to the maternal RPR");
+        recommendations.push("•If the neonate's RPR is fourfold greater than the mother's RPR, complete a full diagnostic evaluation of the neonate (see category 'proven or highly probable congenital syphilis' in Table 3.72 of the Red Book and question #13 in 'Congenital Syphilis Cheat Sheet for SSM Clinicians.') Complete a 10 day course of penicillin. Arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("•If the neonate's RPR is not fourfold greater than mother's RPR, this would fall into the AAP Red Book category of 'CS less likely.' See table 3.72 of the Red Book and question #13 in 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' The neonate will need a single dose of IM benzathine penicillin G. Arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("•The result of the TP-PA does not change management.");
+
+        noMatch = false; // A match was found
+
+        rationale = `
+        •In this scenario, the mother was treated during pregnancy which puts the neonate at a slightly higher risk of CS than if mother was treated prior to pregnancy. The mother's history and labs suggest appropriate treatment with an adequate response to therapy (decrease in RPR titer to non-reactive). It is important to check the neonate's RPR to ensure it is not fourfold greater than the mother's. <br>
+        <ul>
+        
+            <li>If the neonate's RPR is fourfold greater than the mother's, this indicates that the mother was likely reinfected with syphilis after treatment, which significantly increases the likelihood of congenital syphilis in the neonate. The neonate will need a 10 day course of penicillin for neurosyphilis coverage. Additional testing may be needed, as illustrated in the 'recommendation' section. <br><br>
+        
+            <li> If the neonate's RPR is not fourfold greater than the mother's, this supports treatment efficacy in the mother. One dose of benzathine penicillin G for the neonate is recommended as a precaution. <br><br>
+
+            <li>Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending at that point, this supports treatment failure. <br>
+
+        </ul><br>
+
+`;
+
+
+
+        noMatch = false; // A match was found
+    }
+
+    // Scenario #6
+    if (
+        history.value === "yes" &&
+        (treatment.value === "during_before")&&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "initially non-reactive" || rprTiter.value === "reactive")&&
+        tp_pa.value === "NA" &&
+        (physicalExam.value === "no" || physicalExam.value === "yes")&&
+        reliableFollowUp.value === "yes"
+    ) {
+        
+        recommendations.push("• Obtain an RPR on the neonate. Based on the neonate's PE and RPR findings per the AAP Red Book algorithm, the neonate might fall into the category of 'CS proven or highly probable' OR 'possible congenital syphilis.' Physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone. ");
+        recommendations.push("• Please complete a lumbar puncture, administer a 10 day course of penicillin, obtain a baseline ALT, and arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("• Further diagnostic testing required depends on the neonate's congenital syphilis risk categorization. See the rationale section below for more information. ");
+
+        noMatch = false; // A match was found
+        
+        rationale = 
+        "• The mother's reactive RPR titer significantly increase the likelihood that she has been reinfected. <br> <br> " +
+
+        "• If the neonate's exam is abnormal (see question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians') or the neonate's RPR is fourfold (or greater) than then maternal RPR, the neonate falls into the AAP Red Book category of 'CS proven or highly probable.' <br> <br> " +
+
+        " • If the neonate's exam is normal and the neonate's RPR is not fourfold greater than the maternal RPR, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.'  <br> <br> " +
+
+        " •See question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' and table 3.72 of the AAP Red Book for a list of the diagnostic testing required in each scenario. <br> <br> " + 
+
+        "• Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+
+        noMatch = false; // A match was found
+       
+    }
+    
+
+        
+    //Scenario #7
+    if (
+        history.value === "yes"  &&
+        (treatment.value === "during_after" || treatment.value=== "not treated" || treatment.value=== "unknown" ) &&
+        (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" ||appropriateTreatment.value === "NA" ) &&
+        (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+        (cmiaResult.value === "reactive" ) &&
+        (rprTiter.value === "non-reactive"|| rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value === "initially reactive" || rprTiter.value === "initially non-reactive" ) &&
+        (tp_pa.value === "pending"  || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" ) &&
+        (physicalExam.value === "yes" || physicalExam.value === "no") &&
+        reliableFollowUp.value === "yes"
+     )  {
+        recommendations.push("• Based on the neonate's PE and RPR findings, the neonate might fall into the category of 'CS proven or highly probable' OR 'possible congenital syphilis.' Physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone. ");
+        recommendations.push("• Please complete a lumbar puncture, administer a 10 day course of penicillin, obtain a baseline ALT, and arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("• Further diagnostic testing required depends on the neonate's congenital syphilis risk categorization. See the rationale section below for more information. ");
+
+        noMatch = false; // A match was found
+        
+        rationale = 
+        "• In this case, the mom has a known history of syphilis that was not treated, treatment was <30 days prior to delivery, or treatment was undocumented/inappropriate, which puts the neonate at high risk of congenital syphilis. <br><br>" + 
+
+        "• If the neonate's exam is abnormal (see question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians') or the neonate's RPR is fourfold (or greater) than then maternal RPR, the neonate falls into the AAP Red Book category of 'CS proven or highly probable.' <br> <br> " +
+
+        " • If the neonate's exam is normal and the neonate's RPR is not fourfold greater than the maternal RPR, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.'  <br> <br> " +
+        
+        " •See question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' table 3.72 of the AAP Red Book for a list of the diagnostic testing required.  <br> <br> " + 
+
+        "• Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+
+        noMatch = false; // A match was found
+
+
+    }
+
+
+    //Scenario #9
+    if (
+    history.value === "yes" &&
+    treatment.value === "during_before" &&
+    appropriateTreatment.value === "yes" &&
+    highRisk.value === "no"  &&
+    cmiaResult.value === "reactive" &&
+    rprTiter.value === "low level positive" &&
+    (tp_pa.value === "NA") &&
+    physicalExam.value === "no" &&
+    reliableFollowUp.value === "yes"
+)  {
+        recommendations.push("•Check the neonate's RPR and ensure it is not fourfold greater than the mother's RPR (e.g. mother 1:4, baby 1:16)");
+        recommendations.push("•If the neonate's RPR is fourfold greater than the mother's RPR, complete a full diagnostic evaluation of the neonate (see category 'proven or highly probable congenital syphilis' in Table 3.72 of the Red Book and question #13 in 'Congenital Syphilis Cheat Sheet for SSM Clinicians.') Complete a 10 day course of penicillin. Arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("•If the neonate's RPR is not fourfold greater than mother's RPR, this would fall into the AAP Red Book category of 'CS less likely.' See table 3.72 of the Red Book and question #13 in 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' The neonate will need a single dose of IM benzathine penicillin G. Arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("•The result of the TP-PA does not change management");
+
+        noMatch = false; // A match was found
+
+        rationale = 
+        "•In this scenario, the mother was treated during pregnancy which puts the neonate at a slightly higher risk of CS than if mother was treated prior to pregnancy. <br> <br>" +
+        "•The mother's RPR titer has remained low level positive throughout pregnancy. ~25% of appropriately treated patients are serofast, which means that their RPR titers remain low level positive for years to life, despite successful treatment (see question #2 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more details).  <br> <br>" +  
+        "• Although mom's persistent low level positive RPR titer likely represents a serofast state, there is a small possibility that mom has inadequately treated syphilis or has reacquired syphilis. This, along with the increased risk of CS due to treatment during pregnancy, means that we should check the neonate's RPR. <br><br> " +
+        "•If the neonate's RPR is fourfold greater than the mother's, this indicates that the mother was likely reinfected with syphilis after treatment, which significantly increases the likelihood of congenital syphilis in the neonate. The neonate will need a 10 day course of penicillin for neurosyphilis coverage. Additional testing may be needed, as illustrated in the 'recommendation' section. <br> <br>" +
+        "•If the neonate's RPR is not fourfold greater than the mother's, this supports treatment efficacy in the mother. One dose of benzathine penicillin G is recommended as a precaution. <br> <br> " +
+        "•Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending at that point, this supports treatment failure."; 
+
+        noMatch = false; // A match was found
+
+}
+
+// Scenario #10
+if (
+        history.value === "yes" &&
+        treatment.value === "before" &&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
+        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
+        (physicalExam.value === "yes") &&
+        (reliableFollowUp.value === "yes")
+    ) {
+        recommendations.push("• Physical exam findings associated with congenital syphilis are rare. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+        recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division for further recommendations and rationale. ");
+        
+        noMatch = false; // Scenario matched, no need to show error
+        
+
+}
+
+    // Scenario #11
+    if (
+        history.value === "yes" &&
+        treatment.value === "before" &&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        rprTiter.value === "low level positive" &&
+        (tp_pa.value === "NA") &&
+        physicalExam.value === "yes" &&
+        reliableFollowUp.value === "yes"
+    ) {
+        recommendations.push("• Physical exam findings associated with congenital syphilis are rare. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+        recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division for further recommendations and rationale. ")
+        
+        noMatch = false; // Scenario matched, no need to show error
+    }
+
+    // Scenario #12
+    if (
+        history.value === "yes" &&
+        (treatment.value === "during_before" ) &&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "initially reactive" ) &&
+        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
+        physicalExam.value === "yes" &&
+        reliableFollowUp.value === "yes"
+    ) {
+        recommendations.push("•Check the neonate's RPR and ensure it is not fourfold greater than the mother's RPR (e.g. mother 1:4, baby 1:16)");
+        recommendations.push("•If the neonate's RPR is fourfold greater than the mother's RPR, complete a full diagnostic evaluation of the neonate (see category 'proven or highly probable congenital syphilis' in Table 3.72 of the Red Book and question #13 in 'Congenital Syphilis Cheat Sheet for SSM Clinicians.') Complete a 10 day course of penicillin. Arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("• According to the AAP Red Book, if the neonate's RPR is <strong>not</strong> fourfold greater than the mother's RPR, but the physical exam is <strong>abnormal</strong>, the infant still falls into the category of 'proven or highly probable congenital syphilis.' However, physical exam findings associated with congenital syphilis are <strong>uncommon</strong>. Please refer to Question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' and contact the Infectious Disease division prior to making any decisions on syphilis risk categorization based on physical exam alone.");
+
+        noMatch = false; // A match was found
+
+
+        rationale = 
+        "•In this scenario, the mother was treated during pregnancy which puts the neonate at a slightly higher risk of CS than if mother was treated prior to pregnancy. The mother's history and labs suggest appropriate treatment with an adequate response to therapy (decrease in RPR titer to non-reactive). It is important to check the neonate's RPR to ensure it is not fourfold greater than the mother's. <br> <br>" +
+
+        "•If the neonate's RPR is fourfold greater than the mother's, this indicates that the mother was likely reinfected with syphilis after treatment, which significantly increases the likelihood of congenital syphilis in the neonate. The neonate will need a 10 day course of penicillin for neurosyphilis coverage. Additional testing may be needed, as illustrated in the 'recommendation' section. <br> <br>" +
+
+        "•If the neonate's RPR is not fourfold greater than the mother's, this supports treatment efficacy in the mother. However, a true abnormal physical exam in the neonate could indicate that the mother's treatment was not effective and put the infant into the category of 'proven or highly probable congenital syphilis.' As physical exam manifestations of congenital syphilis are unusual, please contact the SSM Infectious Disease division prior to making decisions on risk categorization based on physical exam alone.  <br> <br> " +
+
+        "•Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending at that point, further treatment may be warranted.";
+
+        noMatch = false; // A match was found
+    }
+
+
+    //Scenario #13
+    if (
+    history.value === "yes" &&
+    treatment.value === "during_before" &&
+    appropriateTreatment.value === "yes" &&
+    highRisk.value === "no"  &&
+    cmiaResult.value === "reactive" &&
+    rprTiter.value === "low level positive" &&
+    (tp_pa.value === "NA") &&
+    physicalExam.value === "yes" &&
+    reliableFollowUp.value === "yes"
+)  {
+        recommendations.push("•Check the neonate's RPR and ensure it is not fourfold greater than the mother's RPR (e.g. mother 1:4, baby 1:16)");
+        recommendations.push("•If the neonate's RPR is fourfold greater than the mother's RPR, complete a full diagnostic evaluation of the neonate (see category 'proven or highly probable congenital syphilis' in Table 3.72 of the Red Book and question #13 in 'Congenital Syphilis Cheat Sheet for SSM Clinicians.') Complete a 10 day course of penicillin. Arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("• According to the AAP Red Book, if the neonate's RPR is <strong>not</strong> fourfold greater than the mother's RPR, but the physical exam is <strong>abnormal</strong>, the infant still falls into the category of 'proven or highly probable congenital syphilis.' However, physical exam findings associated with congenital syphilis are <strong>uncommon</strong>. Please refer to Question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' and contact the Infectious Disease division prior to making any decisions on syphilis risk categorization based on physical exam alone.");
+
+        noMatch = false; // A match was found
+
+
+        rationale = 
+        "•In this scenario, the mother was treated during pregnancy which puts the neonate at a slightly higher risk of CS than if mother was treated prior to pregnancy. Further, the mother's RPR titer has remained low level positive throughout pregnancy. ~25% of appropriately treated patients are serofast, which means that their RPR titers remain low level positive for years to life after successful treatment (see question #2 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more details). <br> <br>" +
+        "• Although mom's persistent low level positive RPR titer likely represents a serofast state, there is a small possibility that mom has inadequately treated syphilis or has reacquired syphilis. This, along with the increased risk of CS due to treatment during pregnancy, means that we should check the neonate's RPR. <br><br> " +
+        "•If the neonate's RPR is fourfold greater than the mother's, this indicates that the mother was likely reinfected with syphilis after treatment, which significantly increases the likelihood of congenital syphilis in the neonate. The neonate will need a 10 day course of penicillin for neurosyphilis coverage. Additional testing may be needed, as illustrated in the 'recommendation' section. <br> <br>" +
+        "•If the neonate's RPR is not fourfold greater than the mother's, this supports treatment efficacy in the mother. However, a true abnormal physical exam in the neonate could indicate that the mother's treatment was not effective and put the infant into the category of 'proven or highly probable congenital syphilis.' As physical exam manifestations of congenital syphilis are unusual, please contact the SSM Infectious Disease division prior to making decisions on risk categorization based on physical exam alone. <br> <br> " +
+        "•Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending at that point, this supports treatment failure."; 
+
+        noMatch = false; // A match was found
+
+}
+
+// Scenario #14
+if (
+        history.value === "yes" &&
+        treatment.value === "before" &&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
+        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
+        (physicalExam.value === "no") &&
+        reliableFollowUp.value === "no"
+    ) {
+        recommendations.push("• Check the neonate's RPR");
+        recommendations.push("• If non-reactive, no ID follow up or treatment is needed");
+        recommendations.push("• In the unlikely event that it is reactive, the correct approach would depend on the titer. Please discuss with the ID physician on call. Be sure to mention the uncertainty of follow up in the neonate as this may favor a more conservative treatment approach.");
+        recommendations.push("• The result of TP-PA would not change management.");
+        noMatch = false; // A match was found
+
+        rationale = 
+        "• The mother's history and syphilis testing results indicate that she has been adequately treated prior to the current pregnancy. A mother who has been successfully treated prior to pregnancy could have a nonreactive RPR OR a low level positive RPR during her pregnancy. Given her known history of syphilis, we would expect her to have a positive treponemal antibodies for life. Thus, the TP-PA result does not change management. In the unlikely event that her CMIA is positive and TP-PA is negative, we would still consider her 'treponemal antibody positive.' <br> <br> " +
+
+        "• We recommend checking the neonate's RPR as a precaution in case the mother has reacquired syphilis but sufficient time has not passed for the mother's RPR to become reactive. This is an unlikely scenario as the mother reports no high risk sexual activity or symptoms of syphilis. <br> <br> " +
+
+        "• If the neonate's RPR is non-reactive (expected), no penicillin therapy is needed, and no ID follow up is needed. This would fall into the AAP Red Book category of 'CS unlikely.' <br> <br>" +
+
+        "• In the unlikely event that the neonate's RPR is reactive, this supports reacquired syphilis in the mother. The optimal approach in this scenario is less clear. Please discuss with the ID physician on call.";
+        noMatch = false; // A match was found
+    }
+
+    // Scenario #15
+if (
+        history.value === "yes" &&
+        treatment.value === "before" &&
+        appropriateTreatment.value === "yes" &&
+        highRisk.value === "no" &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
+        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
+        (physicalExam.value === "yes") &&
+        (reliableFollowUp.value === "no")
+    ) {
+        recommendations.push("• Physical exam findings associated with congenital syphilis are rare. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+        recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division for further recommendations and rationale. Be sure to mention the uncertainty of follow up in the neonate as this may favor a more conservative treatment approach. ");
+        
+        noMatch = false; // Scenario matched, no need to show error
+    }
+
+
+    //Scenario #16
+if (
+    history.value === "yes" &&
+    (treatment.value === "during_before" || treatment.value=== "during_after" || treatment.value === "not treated" || treatment.value === "unknown" ) &&
+    (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" || 
+     rprTiter.value === "low level positive" || 
+     rprTiter.value === "reactive" || 
+     rprTiter.value === "initially reactive" || 
+     rprTiter.value === "initially non-reactive" ) &&
+    (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" )&&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "no"
+) {
+
+    recommendations.push("• It is crucial that we do not discharge any neonate from the nursery who might need further diagnostic evaluation or penicillin therapy unless we are confident that the ID team will be able to establish follow up care. For certain unstable social situations where follow up is uncertain, it is better to error on the side of overtreatment in-house prior to discharge.");
+    recommendations.push("• Please contact the Infectious Disease division for further recommendations and rationale.");
+
+    noMatch = false; // Scenario matched, no need to show error
+}
+
+    // Scenario #17
+    if (
+        history.value === "yes" &&
+        (treatment.value === "before")&&
+        (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
+        (highRisk.value === "yes" || highRisk.value === "no" ||highRisk.value === "unknown" ) &&
+        cmiaResult.value === "reactive" &&
+        (rprTiter.value === "low level positive" || 
+        rprTiter.value === "reactive" ||
+        rprTiter.value === "initially non-reactive" ) &&
+        (tp_pa.value === "NA" ) &&
+        (physicalExam.value === "no" || physicalExam.value=== "yes") &&
+        reliableFollowUp.value === "no"
+    ) {
+        
+    recommendations.push("• It is crucial that we do not discharge any neonate from the nursery who might need further diagnostic evaluation or penicillin therapy unless we are confident that the ID team will be able to establish follow up care. For certain unstable social situations where follow up is uncertain, it is better to error on the side of overtreatment in-house prior to discharge.");
+    recommendations.push("• Please contact the Infectious Disease division for further recommendations and rationale.");
+
+    noMatch = false; // Scenario matched, no need to show error 
+
+    }
+
+    //Scenario #18
+
+    if (
+    history.value === "yes" &&
+    (treatment.value === "before" || treatment.value === "during_before" ) &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" || 
+     rprTiter.value === "low level positive" || 
+     rprTiter.value === "reactive" || 
+     rprTiter.value === "initially reactive" || 
+     rprTiter.value === "initially non-reactive") &&
+    (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" )&&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+
+) {
+
+    recommendations.push("• If mom has a known history of syphilis that was not treated, treated was undocumumented, or treatment was inadequate, the neonate needs a full diagnostic evaluation and a 10-day course of penicillin regardless of RPR and TP-PA results.");
+    recommendations.push("• Based on the PE and RPR findings per the AAP Red Book algorithm, the neonate might fall into the category of 'CS proven or highly probable' or 'possible congenital syphilis.' Physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone.");
+    recommendations.push("• Please complete a lumbar puncture, administer a 10 day course of penicillin, obtain a baseline ALT, and arrange follow up in the ID clinic in 3 months. ");
+    recommendations.push("• Specific diagnostic testing required depends on the neonate's syphilitic risk categorization. See the rationale section below. ");
+    noMatch = false; // A match was found
+
+    rationale = 
+        "• Maternal treatment less than 30 days prior to delivery or inadequate/incomplete treatment significantly increases the likelihood of congenital syphilis in the neonate. <br> <br>" + 
+        "• If the neonate's exam is abnormal (see question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians') or the neonate's RPR is fourfold (or greater) than then maternal RPR, the neonate falls into the AAP Red Book category of 'CS proven or highly probable.' <br> <br> " +
+
+        " • If the neonate's exam is normal and the neonate's RPR is not fourfold greater than the maternal RPR, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.'  <br> <br> " +
+        
+        " •See Table 3.72 of the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for a list of the diagnostic testing required in each scenario. <br> <br> " + 
+
+        "• Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+        noMatch = false; // A match was found
+}
+
+//Scenario #19
+if (
+    (history.value === "yes") &&
+    (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after" ) &&
+    (appropriateTreatment.value === "yes") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (rprTiter.value === "unknown" ) &&
+    (tp_pa.value === "unknown") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+) {
+
+    recommendations.push("• •Complete a full diagnostic evaluation of the neonate in accordance with 'proven or highly probable congenital syphilis'  (see table 3.72 in the Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet.'");
+    recommendations.push("• Complete a 10 day course of penicillin. ");
+    recommendations.push("•Arrange follow up in the ID clinic in 3 months. ");
+    recommendations.push(" •This recommendation would be the same even if the neonate's RPR after birth is non-reactive.");
+    noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, although the mother reports a history of syphilitic treatment, syphilitic testing results are not available. This makes it challenging to assess the neonate's syphilitic risk.    <br> <br>" +
+
+        "•In these situations, we generally err on the side of full treatment of the neonate for congenital syphilis and workup in accordance with a neonate at high risk.";
+        noMatch = false; // A match was found
+    
+
+}
+
+//Scenario #20
+
+if (
+    (history.value === "yes") &&
+    (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after" ) &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (rprTiter.value === "unknown" ) &&
+    (tp_pa.value === "unknown") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+) {
+
+    recommendations.push("• •Complete a full diagnostic evaluation of the neonate in accordance with 'proven or highly probable congenital syphilis'  (see table 3.72 in the Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet.'");
+    recommendations.push("• Complete a 10 day course of penicillin. ");
+    recommendations.push("•Arrange follow up in the ID clinic in 3 months. ");
+    recommendations.push(" •This recommendation would be the same even if the neonate's RPR after birth is non-reactive.");
+    noMatch = false; // A match was found
+
+
+    rationale = 
+        "•In this scenario, although the mother reports a history of syphilitic treatment, further information on the nature of treatment is not available or treatment was incomplete/inappropriate. Syphilitic testing results are not available.  This makes it challenging to assess the neonate's syphilitic risk.    <br> <br>" +
+
+        "•In these situations, we generally err on the side of full treatment of the neonate for congenital syphilis and workup in accordance with a neonate at high risk.";
+        
+        noMatch = false; // A match was found
+    
+
+}
+
+//Scenario #21
+
+if (
+    (history.value === "yes") &&
+    (treatment.value === "not treated" || treatment.value=== "unknown") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (rprTiter.value === "unknown" ) &&
+    (tp_pa.value === "unknown") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+) {
+
+    recommendations.push("• •Complete a full diagnostic evaluation of the neonate in accordance with 'proven or highly probable congenital syphilis'  (see table 3.72 in the Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet.'");
+    recommendations.push("• Complete a 10 day course of penicillin. ");
+    recommendations.push("•Arrange follow up in the ID clinic in 3 months. ");
+    recommendations.push(" •This recommendation would be the same even if the neonate's RPR after birth is non-reactive.");
+    noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, the mother reports a history of syphilis but was not treated or treatment is unknown. Syphilitic testing results are not available.  This makes it challenging to assess the neonate's syphilitic risk.    <br> <br>" +
+
+        "•In these situations, we generally err on the side of full treatment of the neonate for congenital syphilis and workup in accordance with a neonate at high risk.";
+
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #22
+
+if (
+    (history.value === "yes") &&
+    (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after") &&
+    (appropriateTreatment.value === "yes") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (rprTiter.value === "unknown" ) &&
+    (tp_pa.value === "unknown") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "no"
+    
+) {
+
+    recommendations.push("• In this scenario, the mother reports appropriate syphilitic treatment but syphilitic testing results are not available to confirm treatment efficacy and reliable follow up is not present.");
+    recommendations.push("• For infants for whom maternal syphilitic testing results are not available, we generally err on the side of full diagnostic workup and treatment regardless of the neonatal RPR results. We would recommend diagnostic workup and treatment in accordance with 'proven or highly probable congenital syphilis' (see table 3.72 in the Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet.' ");
+    recommendations.push("• For neonates categorized as 'proven or highly probable congenital syphilis,' follow up in 3 months is essential to track their RPR trend. The lack of reliable follow up in this case is very concerning. Please contact the SSM Infectious Disease division for further recommendations ");
+    
+    noMatch = false; // A match was found
+
+
+}
+
+//Scenario #23
+
+if (
+    (history.value === "yes") &&
+    (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (rprTiter.value === "unknown" ) &&
+    (tp_pa.value === "unknown") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "no"
+    
+) {
+
+    recommendations.push("• In this scenario, the mother reports syphilitic treatment but treatment was incomplete/inappropriate/unknown. Syphilitic testing results are not available to confirm treatment efficacy and reliable follow up is not present.");
+    recommendations.push("• For infants for whom maternal syphilitic testing results are not available, we generally err on the side of full diagnostic workup and treatment regardless of the neonatal RPR results. We would recommend diagnostic workup and treatment in accordance with 'proven or highly probable congenital syphilis' (see table 3.72 in the Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet.' ");
+    recommendations.push("• For neonates categorized as 'proven or highly probable congenital syphilis,' follow up in 3 months is essential to track their RPR trend. The lack of reliable follow up in this case is very concerning. Please contact the SSM Infectious Disease division for further recommendations ");
+    
+    noMatch = false; // A match was found
+
+
+}
+
+//Scenario #24
+
+if (
+    (history.value === "yes") &&
+    (treatment.value === "not treated" || treatment.value=== "unknown" ) &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (rprTiter.value === "unknown" ) &&
+    (tp_pa.value === "unknown") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "no"
+    
+) {
+
+    recommendations.push("• In this scenario, the mother reports a history of syphilis but she was either not treated or treatment information is unavailable. Syphilitic testing results are not available to track RPR trends and reliable follow up is not present.");
+    recommendations.push("• The lack of medical information on the mother means that this infant is at very high risk of congenital syphilis, regardless of the neonate's RPR results. We would recommend diagnostic workup and treatment in accordance with 'proven or highly probable congenital syphilis' (see table 3.72 in the Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet.' ");
+    recommendations.push("• For neonates categorized as 'proven or highly probable congenital syphilis,' follow up in 3 months is essential to track their RPR trend. The lack of reliable follow up in this case is very concerning. Please contact the SSM Infectious Disease division for further recommendations ");
+    
+    noMatch = false; // A match was found
+
+
+}
+
+
+//Scenario #25
+
+if (
+    (history.value === "unknown") &&
+    (treatment.value === "unknown" ) &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (rprTiter.value === "unknown" ) &&
+    (tp_pa.value === "unknown") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+) {
+
+    recommendations.push("•Complete a full diagnostic evaluation of the neonate in accordance with 'proven or highly probable congenital syphilis' (see table 3.72 in the Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet.'");
+    recommendations.push("• Complete a 10 day course of penicillin. ");
+    recommendations.push("• Arrange follow up in the ID clinic in 3 months. ");
+    recommendations.push(" •This recommendation would be the same even if the neonate's RPR after birth is non-reactive.");
+    noMatch = false; // A match was found
+
+    rationale = 
+        "•On occasion, various scenarios can occur where the pediatric team has no information about the mother's medical history and the mother is not available to interview and to obtain diagnostic testing. In these situations, we generally err on the side of full treatment of the neonate for congenital syphilis and workup in accordance with a neonate at high risk.  <br> <br>";  
+
+
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #26
+
+if (
+    (history.value === "unknown") &&
+    (treatment.value === "unknown" ) &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (rprTiter.value === "unknown" ) &&
+    (tp_pa.value === "unknown") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "no"
+    
+) {
+
+    recommendations.push("•Complete a full diagnostic evaluation of the neonate in accordance with 'proven or highly probable congenital syphilis' (see table 3.72 in the Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet.'");
+    recommendations.push("• Complete a 10 day course of penicillin. ");
+    recommendations.push(" •This recommendation would be the same even if the neonate's RPR after birth is non-reactive.");
+    recommendations.push("• Follow up in the ID clinic in 3 months is important to track the neonate's RPR and confirm treatment efficacy. Please contact the ID division for further recommendations given the lack of reliable follow up in this case. ");
+
+    noMatch = false; // A match was found
+
+    rationale = 
+        "•On occasion, various scenarios can occur where the pediatric team has no information about the mother's medical history and the mother is not available to interview and to obtain diagnostic testing. In these situations, we generally err on the side of full treatment of the neonate for congenital syphilis and workup in accordance with a neonate at high risk.  <br> <br>" + 
+        "•Neonatal follow up is crucial to confirm treatment efficacy. Please contact the ID division regarding follow up concerns."; 
+
+
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #27
+
+if (
+    (history.value === "no") &&
+    (treatment.value === "unknown" || treatment.value === "not treated") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" ) &&
+    (tp_pa.value === "pending") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+) {
+
+
+        recommendations.push("• Obtain an RPR on the neonate. Based on the neonate's PE and RPR findings per the AAP Red Book algorithm, the neonate might fall into the category of 'CS proven or highly probable' OR 'possible congenital syphilis.' Physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone. ");
+        recommendations.push("• Please complete a lumbar puncture, administer a 10 day course of penicillin, obtain a baseline ALT, and arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("• Further diagnostic testing required depends on the neonate's congenital syphilis risk categorization. See the rationale section below for more information. ");
+        
+
+    noMatch = false; // A match was found
+
+   rationale =  
+        "• The mom's reactive CMIA and nonreactive RPR could represent one of the following: <br>" + 
+        "<ul>" + 
+            "   <li>a. Maternal CMIA is a false positive (majority of these patients will have a negative TP-PA) </li><br>" + 
+            "   <li>b. Mother has recently acquired syphilis and has mounted a treponemal antibody response, but has not yet mounted an RPR antibody response; </li><br>" + 
+            "   <li>c. Mother has untreated latent syphilis (a small percentage of untreated adults will over time lose their non-treponemal antibody response); </li><br>" + 
+            "   <li>d. Mother actually does have a history of syphilis and was treated adequately in the past (this would be unusual as most people would remember receiving one of more IM injections) </li>" + 
+            "</ul><br>" +
+
+        "• The mother's possible high-risk behaviors or symptoms to suggest a newly acquired syphilis infection significantly increase the likelihood of b or c above. It is also possible that the prozone effect, a falsely negative RPR in the setting of a high RPR titer, is playing a part in the RPR non-reactivity. See Question #2 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information on the prozone effect. <br> <br> " +
+
+        "• The neonate should be categorized as 'proven or highly possible congenital syphilis' or 'possible congenital syphilis' based on the neonate's RPR results and physical exam.  <br> <br> " +
+
+        "• If the neonate's exam is abnormal (see question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians') or the neonate's RPR is fourfold (or greater) than then maternal RPR, the neonate falls into the AAP Red Book category of 'CS proven or highly probable.' <br> <br> " +
+
+        " • If the neonate's exam is normal and the neonate's RPR is not fourfold greater than the maternal RPR, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.'  <br>  <br>" +
+
+        " •See table 3.72 in the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for a list of the diagnostic testing required in each scenario. <br> <br> " +
+
+        "• Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+
+
+        noMatch = false; // A match was found
+
+}
+
+
+
+//Scenario #28
+
+if (
+    (history.value === "no") &&
+    (treatment.value === "unknown" || treatment.value === "not treated") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" ) &&
+    (tp_pa.value === "reactive") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+) {
+
+
+        recommendations.push("• Obtain an RPR on the neonate. Based on the neonate's PE and RPR findings per the AAP Red Book algorithm, the neonate might fall into the category of 'CS proven or highly probable' OR 'possible congenital syphilis.' Physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone. ");
+        recommendations.push("• Please complete a lumbar puncture, administer a 10 day course of penicillin, obtain a baseline ALT, and arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("• Further diagnostic testing required depends on the neonate's congenital syphilis risk categorization. See the rationale section below for more information. ");
+        
+
+    noMatch = false; // A match was found
+
+        rationale = 
+        "• Recall that the CMIA and TP-PA are treponemal tests that typically stay positive for life in adults/adolescents infected with syphilis. RPR is a non-treponemal test that is prone to false negatives in the first few weeks following syphilitic infection and can become negative in cases of late latent syphilis. <br> <br> " +
+
+        "• Reactive treponemal and confirmatory treponemal tests, especially in the setting of possible high risk sexual activity/syphilitic symptoms, increase the likelihood that the mother has an untreated syphilis infection. <br> <br> " +
+
+        "• The neonate should be categorized as 'proven or highly possible congenital syphilis' or 'possible congenital syphilis' based on the neonate's RPR results and physical exam.  <br> <br> " +
+
+        "• If the neonate's exam is abnormal (see question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians') or the neonate's RPR is fourfold (or greater) than then maternal RPR, the neonate falls into the AAP Red Book category of 'CS proven or highly probable.' <br> <br> " +
+
+        " • If the neonate's exam is normal and the neonate's RPR is not fourfold greater than the maternal RPR, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.'  <br>  <br>" +
+
+        " •See table 3.72 in the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for a list of the diagnostic testing required in each scenario. <br> <br> " +
+
+        "• Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+
+
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #29
+
+if (
+    (history.value === "no") &&
+    (treatment.value === "unknown" || treatment.value === "not treated") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" ) &&
+    (tp_pa.value === "non-reactive") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+) {
+
+
+        recommendations.push("• Obtain an RPR on the neonate. Based on the neonate's PE and RPR findings per the AAP Red Book algorithm, the neonate might fall into the category of 'CS proven or highly probable' OR 'possible congenital syphilis.' Physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone. ");
+        recommendations.push("• Please complete a lumbar puncture, administer a 10 day course of penicillin, obtain a baseline ALT, and arrange follow up in the ID clinic in 3 months. ");
+        recommendations.push("• Further diagnostic testing required depends on the neonate's congenital syphilis risk categorization. See the rationale section below for more information. ");
+        recommendations.push("• Infectious Disease clinic follow up in 3 months is important both scenarios."); 
+        
+
+    noMatch = false; // A match was found
+
+        rationale = 
+        "• Recall that the CMIA and TP-PA are treponemal tests that typically stay positive for life in adults/adolescents infected with syphilis. RPR is a non-treponemal test that is prone to false negatives in the first few weeks following syphilitic infection and can become negative in cases of late latent syphilis. <br> <br> " +
+
+        "• A reactive CMIA and non-reactive TP-PA can points towards initial treponemal test false positivity. See section 'treponemal tests' in question #2 of the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' However, the potential of high risk sexual activity/symptoms of syphiltic infection in the mother significantly increase the likelihood that the mother has an untreated syphilis infection. <br> <br> " +
+
+        "• The neonate should be categorized as 'proven or highly possible congenital syphilis' or 'possible congenital syphilis' based on the neonate's RPR results and physical exam.  <br> <br> " +
+
+        "• If the neonate's exam is abnormal (see question #10 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians') or the neonate's RPR is fourfold (or greater) than then maternal RPR, the neonate falls into the AAP Red Book category of 'CS proven or highly probable.' <br> <br> " +
+
+        " • If the neonate's exam is normal and the neonate's RPR is not fourfold greater than the maternal RPR, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.'  <br>  <br>" +
+
+        " •See table 3.72 in the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for a list of the diagnostic testing required in each scenario. <br> <br> " +
+
+        "• Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+
+
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #30
+
+if (
+    (history.value === "no") &&
+    (treatment.value === "unknown" || treatment.value === "not treated") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" ) &&
+    (tp_pa.value === "pending") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    (reliableFollowUp.value === "yes")
+    
+) {
+
+
+        recommendations.push("• Obtain an RPR on the neonate and administer a single dose of IM benzathine penicillin G. ");
+        recommendations.push("• If the neonate's RPR is <strong>non-reactive and  physical exam is normal:</strong>, the neonate can be discharged following a single dose of benzathine penicillin with arrangement to follow up in ID clinic once the maternal TP-PA results return. If the maternal TP-PA results are non-reactive, no further action is required. If the TP-PA results are reactive, the neonate would need to undergo a diagnostic evaluation in accordance with 'possible congenital syphilis.' Please see table 3.72 in the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information. ");
+        recommendations.push("• If the neonate's RPR is <strong>reactive and/or physical exam is abnormal:</strong>, complete a full diagnostic evaluation and treatment of the neonate in accordance with 'proven or highy probable congenital syphilis.' Please see table 3.72 in the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+        recommendations.push("• Of note, physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone."); 
+        recommendations.push("• Please contact the Infectious Disease division for follow up recommendations."); 
+        
+
+    noMatch = false; // A match was found
+
+        rationale = 
+        "• Recall that the CMIA and TP-PA are treponemal tests that typically stay positive for life in adults/adolescents infected with syphilis. RPR is a non-treponemal test that is prone to false negatives in the first few weeks following syphilitic infection and can become negative in cases of late latent syphilis. <br> <br> " +
+
+        "• If mom does NOT have any risk factors for untreated syphilis, then the maternal CMIA is likely a false positive or mom was treated appropriately in the past but does not recall treatment. Although there is low suspicion for congenital syphilis, it is recommended to obtain an RPR on the baby. It is extremely important to assess if follow up is certain in this scenario because the TP-PA has a 3-5 day turnaround time. The certainty of follow up may determine whether the patient can be discharged. <br> <br> " +
+
+        "• If the neonatal RPR is non-reactive and follow up is certain, the baby may be able to be discharged after 1 dose of IM benzathine penicillin G. The ID team may be able to follow the TP-PA results outpatient. If the maternal TP-PA results as nonreactive, this represents a nonreactive confirmatory treponemal test and increases the likelihood that the other treponemal test (CMIA) was a false positive. No further testing or follow up of the neonate is needed. However, if the confirmatory treponemal test is reactive, this confirms that the mother truly has a treponemal antibody. This likely represents early untreated syphilis in the mother or untreated latent syphilis. Thus, the infant would need to undergo further diagnostic evaluation and treatment. Please contact the SSM Infectious Disease division for further recommendations and rationale. <br> <br> " +
+
+        "• In the unlikely event that the neonatal RPR is reactive, we recommend a full diagnostic evaluation on the neonate in accordance with 'proven or highly probable congenital syphilis' and a 10 day course of penicillin.  Neonatal RPR reactivity in this case indicates congenital syphilis infection in the infant." ; 
+
+
+
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #31
+
+if (
+    (history.value === "no") &&
+    (treatment.value === "unknown" || treatment.value === "not treated") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" ) &&
+    (tp_pa.value === "reactive") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    (reliableFollowUp.value === "yes")
+    
+) {
+
+
+        recommendations.push("• Obtain an RPR on the neonate and administer a single dose of IM benzathine penicillin G. ");
+        recommendations.push("• If the neonate's RPR is <strong>non-reactive and  physical exam is normal:</strong>, the neonate would fall into the category of 'possible congenital syphilis.' Please see table 3.72 in the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information. ");
+        recommendations.push("• If the neonate's RPR is <strong>reactive and/or physical exam is abnormal:</strong>, complete a full diagnostic evaluation and treatment of the neonate in accordance with 'proven or highy probable congenital syphilis.' Please see table 3.72 in the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+        recommendations.push("• Of note, physical exam findings associated with congenital syphilis are uncommon in neonates; please contact the Infectious Disease division prior to making management decisions based on neonatal physical exam findings alone."); 
+        recommendations.push("• Infectious Disease clinic follow up in 3 months is important both scenarios."); 
+        
+
+    noMatch = false; // A match was found
+
+        rationale = 
+        "• Recall that the CMIA and TP-PA are treponemal tests that typically stay positive for life in adults/adolescents infected with syphilis. RPR is a non-treponemal test that is prone to false negatives in the first few weeks following syphilitic infection and can become negative in cases of late latent syphilis. <br> <br> " +
+
+        "• Although the mom does not have any risk factors/symptoms of syphilitic infection, the reactive treponemal and confirmatory treponemal tests indicate that the mother truly has a treponemal antibody. The mother likely has early untreated syphilis or untreated latent syphilis. Thus, the infant would need to undergo further diagnostic evaluation and treatment.  <br> <br> " +
+
+        "• If the neonatal RPR is non-reactive and physical exam is normal, the neonate falls into the category of 'possible congenital syphilis.' If the neonatal RPR is reactive and/or the physical exam is abnormal, the neonate falls into the category of 'proven or highly probable congenital syphilis.'" ; 
+
+
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #32
+
+if (
+    (history.value === "no") &&
+    (treatment.value === "unknown" || treatment.value === "not treated") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" ) &&
+    (tp_pa.value === "non-reactive") &&
+    (physicalExam.value === "no") &&
+    (reliableFollowUp.value === "yes" || reliableFollowUp.value === "no")
+    
+) {
+
+
+        recommendations.push("• The mother's reactive CMIA is likely a false positive. No further testing or follow up is needed. ");
+        
+
+    noMatch = false; // A match was found
+
+        rationale = 
+        "• Recall that the CMIA and TP-PA are treponemal tests that typically stay positive for life in adults/adolescents infected with syphilis. RPR is a non-treponemal test that is prone to false negatives in the first few weeks following syphilitic infection and can become negative in cases of late latent syphilis. <br> <br> " +
+
+        "• In this case, the mother reports no history of syphilis and no risk factors/symptoms of syphilitic infection. Both her RPR and confirmatory treponemal test are non-reactive. It is likely that her reactive CMIA represents a false positive. The infant does not need any diagnostic testing, treatment, or follow up." ; 
+
+    
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #33
+
+if (
+    (history.value === "no") &&
+    (treatment.value === "unknown" || treatment.value === "not treated") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" ) &&
+    (tp_pa.value === "non-reactive") &&
+    (physicalExam.value === "yes") &&
+    (reliableFollowUp.value === "yes")
+    
+) {
+
+
+        recommendations.push("• Based on maternal history and test results, the neonate should be at very low risk for congenital syphilis.  Neonatal physical exam findings associated with congenital syphilis are uncommon. Please contact the SSM Infectious Disease division for recommendations and rationale in this case. ");
+        
+
+    noMatch = false; // A match was found
+
+        rationale = 
+        "• Recall that the CMIA and TP-PA are treponemal tests that typically stay positive for life in adults/adolescents infected with syphilis. RPR is a non-treponemal test that is prone to false negatives in the first few weeks following syphilitic infection and can become negative in cases of late latent syphilis. <br> <br> " +
+
+        "• In this case, the mother reports no history of syphilis and no risk factors/symptoms of syphilitic infection. Both her RPR and confirmatory treponemal test are non-reactive. It is likely that her reactive CMIA represents a false positive. <br> <br> " +
+
+        "• Neonatal physical exam findings of congenital syphilis may complicate the clinical picture. Please contact the SSM Infectious Disease division for further recommendations and rationale. " ; 
+
+    
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #34
+if (
+    (history.value === "no") &&
+    (treatment.value === "not treated" || treatment.value=== "unknown" ) &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "unknown" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value=== "initially reactive" || rprTiter.value === "initially non-reactive" ) &&
+    (tp_pa.value === "unknown" || tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+) {
+
+    recommendations.push("•Complete a full diagnostic evaluation of the neonate in accordance with 'proven or highly probable congenital syphilis'  (see table 3.72 in the Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet.'");
+    recommendations.push("• Complete a 10 day course of penicillin. ");
+    recommendations.push("•Arrange follow up in the ID clinic in 3 months. ");
+    recommendations.push(" •This recommendation would be the same even if the neonate's RPR after birth is non-reactive.");
+
+    noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, although the mother denies a history of syphilis, RPR results are either unknown or are/have been reactive. This significantly increases the likelihood of congenital syphilis in the neonate.  <br> <br>" +
+
+        "•In these situations, we generally err on the side of full treatment of the neonate for congenital syphilis and workup in accordance with a neonate at high risk.";
+
+        noMatch = false; // A match was found
+    
+
+}
+
+//Scenario #35
+
+
+if (
+    (history.value === "no") &&
+    (treatment.value === "not treated" || treatment.value=== "unknown" ) &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive" || rprTiter.value === "unknown" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value=== "initially reactive" || rprTiter.value === "initially non-reactive" ) &&
+    (tp_pa.value === "unknown" || tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "NA") &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "no"
+) {
+
+    recommendations.push("• It is crucial that we do not discharge any baby from the nursery who might need further diagnostic evaluation or penicillin therapy unless we are confident that the ID team will be able to establish follow up care. For certain unstable social situations where follow up is uncertain, it is better to error on the side of overtreatment in-house prior to discharge.");
+    recommendations.push("• Please contact the Infectious Disease division for further recommendations and rationale.");
+
+
+    noMatch = false; // A match was found
+    
+
+}
+
+//Scenario #36
+
+
+if (
+    (history.value === "no") &&
+    (treatment.value === "not treated" || treatment.value=== "unknown" ) &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no") &&
+    cmiaResult.value === "reactive" &&
+    (rprTiter.value === "non-reactive") &&
+    (tp_pa.value === "non-reactive") &&
+    (physicalExam.value === "yes") &&
+    reliableFollowUp.value === "no"
+) {
+
+    recommendations.push("• It is crucial that we do not discharge any baby from the nursery who might need further diagnostic evaluation or penicillin therapy unless we are confident that the ID team will be able to establish follow up care. For certain unstable social situations where follow up is uncertain, it is better to error on the side of overtreatment in-house prior to discharge.");
+    recommendations.push("• Please contact the Infectious Disease division for further recommendations and rationale.");
+
+
+    noMatch = false; // A match was found
+    
+
+}
+
+    
+    // Check if no scenario matched
+    if (noMatch) {
+        recommendations.push("ERROR: The scenario coding doesn't exist for the provided input.");
+        rationale = "ERROR: No matching scenario was found for the provided input values.";
+    } else {
+        let recommendationText = recommendations.join('<br><br>');
+        let fullResult = `
+            <div>
+                <strong>Recommendations:</strong><br>
+                ${recommendationText}<br><br>
+                
+        `;
+
+         // Only add rationale if it is not empty
+    if (rationale) {
+        fullResult += `
+            <strong>Rationale:</strong><br>
+            ${rationale}
+        `;
+    }
+
+    fullResult += `</div>`;
+    
+    fullResult = autoHyperlinkText(fullResult); // Add the hyperlink to the result
+    document.getElementById("result").innerHTML = fullResult;
+
+    }
+    
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
