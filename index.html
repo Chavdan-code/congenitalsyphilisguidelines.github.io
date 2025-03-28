@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Congenital Syphilis Management Guidelines</title>
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -13,78 +12,191 @@
 
 <strong>Disclaimer: </strong> This website is designed to be a tool to help clinicians understand congenital syphilis diagnosis and management. The algorithm will populate specific recommendations and rationale based on the answers to the below questions. These guidelines are not intended to replace clinical decision making, the AAP Red Book, and/or Infectious Disease consultation. <br><br><br>
 
-
 <form id="guidelinesForm">
-    <label id="question1" for="history">1. Does the birthing parent have a history of syphilis?</label><br><br>
-    <input type="radio" name="history" value="yes"> Yes<br>
-    <input type="radio" name="history" value="no"> No<br>
-    <input type="radio" name="history" value="unknown"> Unknown <br><br><br>
+    <label id="question1" for="history">1. Has the birthing parent had a known diagnosis of syphilis (either currently or in the past)? </label><br><br>
+    <input type="radio" name="history" value="yes" onchange="showQuestions()"> Yes<br>
+    <input type="radio" name="history" value="no" onchange="showQuestions()"> No<br>
+    <input type="radio" name="history" value="unknown" onchange="showQuestions()"> Unknown <br><br><br>
 
-    <label id="question2" for="treatment">2. When was the birthing parent treated for syphilis? If the birthing mother has been treated multiple times, please respond with the <strong>most recent</strong> treatment course. </label><br><br>
-    <input type="radio" name="treatment" value="before"> Before they were pregnant with the neonate currently being evaluated<br>
-    <input type="radio" name="treatment" value="during_before"> During their pregnancy with the neonate currently being evaluated <strong>greater</strong> than 30 days prior to delivery<br>
-    <input type="radio" name="treatment" value="during_after"> During their pregnancy with the neonate currently being evaluated <strong>less</strong> than 30 days prior to delivery<br>
-    <input type="radio" name="treatment" value="not treated"> She was not treated<br>
-    <input type="radio" name="treatment" value="unknown"> Unknown<br><br><br>
+    <div id="question2" style="display:none;">
+        <label for="treatment">2. When was the birthing parent treated for syphilis? If the birthing parent has been treated multiple times, please respond with the <strong>most recent</strong> treatment course. </label><br><br>
+        <input type="radio" name="treatment" value="before" onchange="showQuestions()"> Before they were pregnant with the neonate currently being evaluated<br>
+        <input type="radio" name="treatment" value="during_before" onchange="showQuestions()"> During their pregnancy with the neonate currently being evaluated <strong>greater</strong> than 30 days prior to delivery<br>
+        <input type="radio" name="treatment" value="during_after" onchange="showQuestions()"> During their pregnancy with the neonate currently being evaluated <strong>less</strong> than 30 days prior to delivery<br>
+        <input type="radio" name="treatment" value="not treated" onchange="showQuestions()"> They were not treated<br>
+        <input type="radio" name="treatment" value="unknown" onchange="showQuestions()"> Birthing parent does not recall treatment<br><br><br>
+    </div>
 
-    <label id="question3" for="appropriateTreatment">3. Was the birthing parent's syphilis treatment in question #2 appropriate for her stage of disease? </label><br><br>
-    <label id="note3"> IM benzathine penicillin G once per week for 3 weeks in a row is appropriate treatment for almost all of the birthing parental syphilis that we see in our patient population (exception: tertiary syphilis, neurosyphilis). If more than 9 days elapsed between IM doses, the entire series should have been repeated. Consider this inadequate treatment if the series was <strong>not</strong> repeated. <br>
-    A single dose of IM benzathine penicillin G may have been appropriate in someone who had symptoms at the time of diagnosis. <br>
-    Please contact the SSM ID Division if you have further questions about this. Selecting 'unknown' will default the most conservative course, which may not be appropriate depending on the patient's scenario.</label><br><br>
+    <div id="question3" style="display:none;">
+        <label for="appropriateTreatment">3. Was the birthing parent's syphilis treatment in question #2 appropriate for their stage of disease? </label><br><br>
+        <label id="note3">IM benzathine penicillin G (Bicillin LA) once per week for 3 weeks in a row is appropriate treatment for late latent syphilis or latent syphilis of unknown duration. This is the most common scenario that we see in our patient population. If more than 9 days elapsed between IM doses, the entire series should have been repeated. Consider this inadequate treatment if the series was not repeated.<br><br>
+            If the birthing parent's provider <strong>documented</strong> that they had primary, secondary, or early latent syphilis, a single dose of IM benzathine penicillin G should be considered adequate treatment. <br><br>
+            If the birthing parent was treated with a non-penicillin antibiotic <strong>during their pregnancy</strong>, this should be considered inadequate treatment. If the birthing parent was treated with an appropriate non-penicillin antibiotic (doxycycline, ceftriaxone) <strong>prior to pregnancy</strong>, this should be considered sufficient treatment provided that the full prescribed medication course was completed.<br><br>
+            Please contact the SSM Infectious Disease Division if you have further questions about this. Selecting 'unknown' will default to the most conservative course, which may not be appropriate depending on the patient's scenario. </label><br><br>
+        <input type="radio" name="appropriateTreatment" value="yes" onchange="showQuestions()"> Yes <br>
+        <input type="radio" name="appropriateTreatment" value="no" onchange="showQuestions()"> No <br>
+        <input type="radio" name="appropriateTreatment" value="unknown" onchange="showQuestions()"> Unknown <br>
+        <input type="radio" name="appropriateTreatment" value="NA" onchange="showQuestions()"> Not Applicable <br><br><br>
+    </div>
 
-    <input type="radio" name="appropriateTreatment" value="yes"> Yes <br>
-    <input type="radio" name="appropriateTreatment" value="no"> No <br>
-    <input type="radio" name="appropriateTreatment" value="unknown"> Unknown <br>
-    <input type="radio" name="appropriateTreatment" value="NA"> Not Applicable <br> <br><br>
+    <label id="question4" for="highRisk">4. Has the birthing parent and/or their partner(s) had any high-risk sexual activity or symptoms to suggest a newly acquired infection following previous treatment? </label><br><br>
+    <label id="note4"> High risk sexual activity is defined as sex with multiple partners, sex in conjunction with drug use, or transactional sex. Symptoms of new syphilitic infection include genital lesion(s) and/or rash. <br> 
+        If the birthing parent has none of these risk factors/symptoms and the partner is not available, please select “yes” or “no” based on the birthing parent's responses  <br> 
+        Please select "unknown" if the birthing parent is not available or declines to answer </label><br><br> 
+    <input type="radio" name="highRisk" value="yes" onchange="showQuestions()"> Yes <br>
+    <input type="radio" name="highRisk" value="no" onchange="showQuestions()"> No <br>
+    <input type="radio" name="highRisk" value="unknown" onchange="showQuestions()"> Unknown <br><br><br>
+
+    <label id="question5" for="cmiaResult">5. What was the result of the birthing parent's initial treponemal antibody test (referred to as CMIA in SSM Epic) during pregnancy? </label><br><br>
+    <input type="radio" name="cmiaResult" value="reactive" id="cmiaReactive" onchange="showCMIAMessage()"> CMIA reactive <br>
+    <input type="radio" name="cmiaResult" value="non-reactive" id="cmiaNonReactive" onchange="showCMIAMessage()"> CMIA non-reactive <br>
+    <input type="radio" name="cmiaResult" value="not available" id="cmiaNotAvailable" onchange="showCMIAMessage()">CMIA results unknown <br><br><br>
+
+
+    <label id="question6" for="screen">6. Was the birthing parent adequately screened for syphilis during their pregnancy? </label><br><br>
+    <input type="radio" name="screen" value="yes" id="screenYes" onchange="showQuestions(); showMessage();" > Yes <br>
+    <input type="radio" name="screen" value="no" id="screenNo" onchange="showQuestions(); showMessage();"> No <br>
+    <input type="radio" name="screen" value="unknown" id="screenUnknown" onchange="showQuestions(); showMessage();"> Unknown <br><br><br>
+
+
+    <div id="question7" style="display:none;">
+        <label id="question7" for="rprTiter">7. What were the birthing parent's RPR titers during pregnancy? Please respond with the titers greater than 4 weeks prior to delivery and within 4 weeks of delivery. </label><br><br> 
+        <label id="note7">If multiple RPR titers were obtained during these timeframes, please select the most recent of each category (i.e. if RPR titers were obtained 34 weeks prior to delivery (1st trimester), 20 weeks prior to delivery (2nd trimester), and one day prior to delivery, please respond with respect to the 20 weeks prior to delivery and the one day prior to delivery titer). Please contact the SSM Infectious Disease division for more information if this is unclear. </label><br><br>
+        <input type="radio" name="rprTiter" value="non-reactive" onchange="showQuestions()"> RPR greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery non-reactive <br>
+        <input type="radio" name="rprTiter" value="low level positive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery was low level positive (1:1, 1:2, 1:4); RPR within 4 weeks of delivery low level positive <br>
+        <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher; RPR within 4 weeks of delivery 1:8 or higher <br><br>
     
+        <input type="radio" name="rprTiter" value="initially reactive" onchange="showQuestions()"> RPR greater than 4 weeks prior to delivery low level positive (1:1, 1:2, 1:4); RPR within 4 weeks of delivery non-reactive <br>
+        <input type="radio" name="rprTiter" value="initially reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher; RPR within 4 weeks of delivery non-reactive <br> 
+        <input type="radio" name="rprTiter" value="initially non-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery low level positive  <br>
+        <input type="radio" name="rprTiter" value="initially non-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery 1:8 or higher <br><br>
 
-    <label id="question4" for="highRisk">4. Has the birthing parent and/or their partner(s) had any high-risk sexual activity or symptoms to suggest a newly acquired infection? </label><br><br>
-    <label id="note4"> See the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' Step #1 (Reviewing Birthing Parent's History) for a list of appropriate questions to ask the birthing parent in order to discern whether syphilitic risk factors are present. Clicking 'unknown' to this question should be an uncommon occurence (i.e. birthing parent who declines to answer, is not available etc) <br> 
-    <a href="https://docs.google.com/document/d/1FshwW9mEXHS-gHpdxoPo_nevr0eY6P5LIYh0Y45FsEU/edit?usp=sharing" target="_blank">View the Cheat Sheet</a></label><br><br>
-    <input type="radio" name="highRisk" value="yes"> Yes <br>
-    <input type="radio" name="highRisk" value="no"> No <br>
-    <input type="radio" name="highRisk" value="unknown"> Unknown <br><br><br>
+        <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher, RPR within 4 weeks of delivery low level positive <br> 
+        <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery low level positive (1:1, 1:2, 1:4), RPR within 4 weeks of delivery 1:8 or higher <br><br>
 
-    <label id="question5" for="cmiaResult">5. What was the result of the birthing parent's initial treponemal antibody test (CMIA or EIA) during pregnancy? If multiple CMIA or EIA tests were obtained during pregnancy, please respond with the <strong>most recent</strong> result </label><br><br>
-    <input type="radio" name="cmiaResult" value="reactive"> CMIA reactive <br>
-    <input type="radio" name="cmiaResult" value="not available"> CMIA results unknown (birthing parent's medical records are not available or testing was not obtained during pregnancy) <br><br><br>
+        <input type="radio" name="rprTiter" value="unknown" onchange="showQuestions()"> The birthing parent was adequately screened but RPR titers are unknown or not available <br><br><br>
 
-    <label id="question6" for="rprTiter">6. What was the birthing parent's RPR titer during pregnancy? If the RPR titer was only checked once during pregnancy, select an option that includes "throughout pregnancy." If the RPR titer was checked twice/multiple times, select an option that pertains to how the RPR result changed/did not change over time. </label><br><br>
-    <input type="radio" name="rprTiter" value="non-reactive"> RPR non-reactive throughout pregnancy  <br>
-    <input type="radio" name="rprTiter" value="low level positive"> RPR low level positive (1:1, 1:2, 1:4) throughout pregnancy<br>
-    <input type="radio" name="rprTiter" value="reactive"> RPR reactive at 1:8 or higher throughout pregnancy<br>
-    <input type="radio" name="rprTiter" value="initially reactive"> RPR initially reactive during pregnancy but non-reactive prior to delivery<br>
-    <input type="radio" name="rprTiter" value="initially non-reactive"> RPR initially non-reactive during pregnancy but reactive prior to delivery<br>
-    <input type="radio" name="rprTiter" value="unknown"> RPR unknown (birthing parent's medical records are not available or testing was not obtained during pregnancy) <br> <br><br>
+    </div>
 
-    <label id="question7" for="tp_pa">7. What was the birthing parent's <strong>most recent</strong> TP-PA result during pregnancy? </label><br><br>
-    <label id="note7">In birthing parents for whom there are discordant results (CMIA reactive, RPR non-reactive), a confirmatory treponemal test on the called the TP-PA is sent <strong>automatically </strong> to an outside lab with a 3-5 day turnaround time. If discordant results are not present (e.g. CMIA reactive, RPR reactive), a TP-PA is <strong>not</strong> sent. Please contact the SSM Infectious Disease division if you have further questions about this. </label><br><br>
-    <input type="radio" name="tp_pa" value="pending"> The TP-PA from before delivery is still pending<br>
-    <input type="radio" name="tp_pa" value="reactive"> The TP-PA was reactive <br>
-    <input type="radio" name="tp_pa" value="non-reactive"> The TP-PA was non-reactive <br>
-    <input type="radio" name="tp_pa" value="NA"> The birthing parent did not have discordant results (e.g. the mother's CMIA and RPR are both reactive) so a TP-PA was not sent. This question is not applicable. <br>
-    <input type="radio" name="tp_pa" value="unknown"> I do not know if there were discordant results. I do not have access to the birthing parent's medical records or CMIA/RPR testing was not obtained during pregnancy <br><br><br>
-     
-    <label id="question8" for="physicalExam">8. Does the neonate's physical exam show any evidence of congenital syphilis? </label><br><br>
-    <label id="note8">Physical exam findings associated with congenital syphilis are mentioned in Question #10 of the "Congenital Syphilis Cheat Sheet for SSM Clinicians." Physical exam findings of congenital syphilis are rare in neonates; clicking yes to this question should be an uncommon occurence.  <br>
-    <a href="https://docs.google.com/document/d/1FshwW9mEXHS-gHpdxoPo_nevr0eY6P5LIYh0Y45FsEU/edit?usp=sharing" target="_blank">View the Cheat Sheet</a></label><br><br>
-    <input type="radio" name="physicalExam" value="yes"> Yes<br>
-    <input type="radio" name="physicalExam" value="no"> No<br> <br><br>
 
-    <label id="question9" for="reliableFollowUp">9. Are you confident that the neonate can and will follow up in the Infectious Disease clinic after discharge if needed? </label><br><br>
-    <input type="radio" name="reliableFollowUp" value="yes"> Yes
-    <input type="radio" name="reliableFollowUp" value="no"> No<br> <br><br>
+    <div id="question8" style="display:none;">
+        <label id="question8" for="tp_pa">8. What was the birthing parent's <strong>most recent</strong> TP-PA result during pregnancy? </label><br><br>
+        <input type="radio" name="tp_pa" value="pending" onchange="showQuestions()"> The TP-PA result is still pending<br>
+        <input type="radio" name="tp_pa" value="reactive" onchange="showQuestions()"> The TP-PA was reactive <br>
+        <input type="radio" name="tp_pa" value="non-reactive" onchange="showQuestions()"> The TP-PA was non-reactive <br><br><br>
+    </div>
+
+    
+    <label id="question9" for="physicalExam">9. Does the neonate's physical exam show any evidence of congenital syphilis? </label><br><br>
+    <label id="note9">Physical exam findings associated with congenital syphilis are mentioned in Question #10 of the "Congenital Syphilis Cheat Sheet for SSM Clinicians." Physical exam findings of congenital syphilis are uncommon in neonates; clicking yes to this question should be an infrequent occurence.  <br>
+        <a href="https://docs.google.com/document/d/1FshwW9mEXHS-gHpdxoPo_nevr0eY6P5LIYh0Y45FsEU/edit?usp=sharing" target="_blank">View the Cheat Sheet</a></label><br><br>
+    <input type="radio" name="physicalExam" value="yes" onchange="showQuestions()"> Yes<br>
+    <input type="radio" name="physicalExam" value="no" onchange="showQuestions()"> No<br> <br><br>
+
+    <label id="question10" for="reliableFollowUp">10. Are there any high risk social factors that would suggest this neonate would not follow up as recommended with the Infectious Diseases clinic if needed? </label><br><br>
+    <input type="radio" name="reliableFollowUp" value="yes" onchange="showQuestions()"> Yes<br>
+    <input type="radio" name="reliableFollowUp" value="no" onchange="showQuestions()"> No<br><br><br>
 
     <button type="button" onclick="calculateRecommendations()">Submit</button>
 </form>
 
 <div id="result"></div>
 
+
 <script>
 
-document.body.style.backgroundImage = "url('images/my-background.jpg')";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center center";
+function showMessage() {
+    var screenNo = document.getElementById('screenNo');
+    var screenUnknown = document.getElementById('screenUnknown');
+
+    var messageDiv = document.getElementById('result');
+
+    // Check if the answer to question #6 is "no" or "unknown"
+    if (screenNo.checked || screenUnknown.checked) {
+        messageDiv.innerHTML = "In this scenario, the birthing parent was not appropriately screened for syphilis during pregnancy. Please contact the SSM Infectious Disease division to discuss the appropriate approach.";
+    } else {
+        messageDiv.innerHTML = ""; // Clear the message if not "no" or "unknown"
+    }
+}
+
+
+
+function showCMIAMessage() {
+    var cmiaNonReactive = document.getElementById('cmiaNonReactive');
+    
+    var messageDiv = document.getElementById('result');
+
+    // If CMIA result is "non-reactive", display the message
+    if (cmiaNonReactive.checked) {
+        messageDiv.innerHTML = "Birthing parents with a history of syphilis typically have a reactive CMIA titer for life. If the birthing parent of a neonate with suspicion for congenital syphilis has a non-reactive CMIA, please contact the SSM Infectious Disease division for recommendations and rationale.";
+    } else {
+        messageDiv.innerHTML = ""; // Clear the message if not "non-reactive"
+    }
+}
+
+
+
+// Function to show or hide questions based on form data
+function showQuestions() {
+    const history = document.querySelector('input[name="history"]:checked');
+    const treatment = document.querySelector('input[name="treatment"]:checked');
+    const screen = document.querySelector('input[name="screen"]:checked');
+    const cmiaResult = document.querySelector('input[name="cmiaResult"]:checked');
+    const rprTiter = document.querySelector('input[name="rprTiter"]:checked');
+    
+    // Question 2 visibility based on Question 1 (history)
+    const question2 = document.getElementById('question2');
+    if (history && history.value === 'yes') {
+        question2.style.display = 'block';
+    } else {
+        question2.style.display = 'none';
+    }
+
+    // Question 3 visibility based on Question 2 (treatment)
+    const question3 = document.getElementById('question3');
+    if (question2.style.display === 'none') {
+        question3.style.display = 'none';
+    } else {
+        question3.style.display = 'block';
+    }
+
+    // Always show questions 4, 5, and 6
+    document.getElementById('question4').style.display = 'block';
+    document.getElementById('question5').style.display = 'block';
+    document.getElementById('question6').style.display = 'block';
+
+    // Show Question 7 based on Question 6 (screen)
+    const question7 = document.getElementById('question7');
+    if (screen && screen.value === 'yes') {
+        question7.style.display = 'block';  // Ensure the entire block (label + choices) is shown
+    } else {
+        question7.style.display = 'none';
+    }
+
+    const question8 = document.getElementById('question8');
+    if (cmiaResult && cmiaResult.value === 'reactive' && rprTiter && (rprTiter.value === 'non-reactive' || rprTiter.value === 'initially reactive')) {
+        question8.style.display = 'block';
+    } else {
+        question8.style.display = 'none';
+    }
+
+
+    // Always show questions 9, and 10
+    document.getElementById('question9').style.display = 'block';
+    document.getElementById('question10').style.display = 'block';
+
+    // Display recommendations or other messages if needed
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = "Recommendations will be displayed here.";
+
+}
+
+
+
+// Initialize display based on previous answers (if any)
+document.addEventListener('DOMContentLoaded', function() {
+    showQuestions();
+});
 
 
 // Function to automatically convert text into a hyperlink
@@ -112,6 +224,7 @@ function calculateRecommendations() {
 
 
     
+
     // Scenario #1
     if (
         history.value === "yes" &&
@@ -125,7 +238,7 @@ function calculateRecommendations() {
         reliableFollowUp.value === "yes"
     ) {
 
-        recommendations.push("• Check the neonate's RPR");
+        recommendations.push("• Check the neonate's RPR titer");
         recommendations.push("• If the neonate's RPR is non-reactive, no further syphilis-related diagnostic testing is needed, no treatment is needed, and no ID follow up is needed. The result of the TP-PA is not relevant in this circumstance. ");
         recommendations.push("• In the unlikely event that the neonate's RPR is reactive, the management of the neonate should be made on a case-by-case basis in consultation with the pediatric ID physician.  In this case, the height of the RPR titer and the reliability of follow up will be helpful in determining the plan. The result of the TP-PA is not relevant in this circumstance.");
         
@@ -180,7 +293,7 @@ function calculateRecommendations() {
         rationale = 
         "• The birthing parent's high-risk behaviors or symptoms to suggest a newly acquired syphilis infection significantly increase the likelihood that they have been reinfected, regardless of their RPR results. A birthing parent for whom information on whether they are high risk or not is unavailable is treated as if they were high risk.  <br> <br> " +
 
-        "• If the neonate's RPR titer is fourfold (or greater) than then birthing parent's RPR titer <strong>and/or</strong> the neonate's diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'congenital syphilis proven or highly probable.' <br> <br> " +
+        "• If the neonate's RPR titer is fourfold greater than then birthing parent's RPR titer <strong>and/or</strong> the neonate's diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'congenital syphilis proven or highly probable.' <br> <br> " +
 
         " • If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR, <strong>and</strong> the neonate's the diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
 
@@ -209,7 +322,7 @@ function calculateRecommendations() {
 
 
         var fullRecommendation = 
-        "•Check the neonate's RPR <br>" +
+        "•Check the neonate's RPR titer <br>" +
         "• If the neonate's RPR is non-reactive or low level positive (< or = 1:4), follow up in ID clinic approximately 3 months of age for repeat RPR.  No penicillin therapy is indicated. <br><br>" +
         "• If the neonate's RPR is 4-fold greater than the maternal RPR, <u>obtain neonatal: </u><br>" +
         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
@@ -308,7 +421,7 @@ function calculateRecommendations() {
         reliableFollowUp.value === "yes"
     ) {
         var fullRecommendation = 
-        "•Check the neonate's RPR <br><br>" +
+        "•Check the neonate's RPR titer <br><br>" +
         "•If the neonate's RPR titer is <strong>not</strong> fourfold greater than the birthing parent's RPR, <u>no further diagnostic workup is needed.</u> " + 
         "-<u>Treat</u> the neonate with one dose of IM benzathine penicillin G." +
         "-<u>Contact</u> the SSM Infectious Disease division to schedule a follow up appointment for the neonate in approximately 3 months <br><br>" +
@@ -455,7 +568,7 @@ function calculateRecommendations() {
 )  {
 
     var fullRecommendation = 
-        "•Check the neonate's RPR <br><br>" +
+        "•Check the neonate's RPR titer <br><br>" +
         "•If the neonate's RPR titer is <strong>not</strong> fourfold greater than the birthing parent's RPR, <u>no further diagnostic workup is needed.</u> " + 
         "-<u>Treat</u> the neonate with one dose of IM benzathine penicillin G." +
         "-<u>Contact</u> the SSM Infectious Disease division to schedule a follow up appointment for the neonate in approximately 3 months <br><br>" +
@@ -539,10 +652,10 @@ if (
 
 
         var fullRecommendation = 
-        "•Obtain neonatal RPR <br>" +
-        "•Contact an SSM Infectious Disease physician to evaluate whether the neonate truly has physical exam findings consistent with congenital syphilis <br><br>" + 
+        "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
         "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
         "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain neonatal: <br>" +
+        "- RPR titer <br>" +
         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
         "- CBC with differential and platelet count <br>" +
         "- Long bone radiography <br>" +
@@ -581,7 +694,7 @@ if (
 
 
     var fullRecommendation = 
-        "•Contact an SSM Infectious Disease physician to evaluate whether the neonate truly has physical exam findings consistent with congenital syphilis <br><br>" + 
+        "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
         "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
         "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain neonatal: <br>" +
         "- RPR <br>" +
@@ -808,9 +921,9 @@ if (
     rationale = 
         "•In this scenario, the birthing parent reports a history of syphilitic treatment but testing results are not available. This makes it challenging to assess the neonate's syphilitic risk. <br> <br>" +
 
-        "•In these situations, the neonate falls into the AAP Red Book category 'proven or highly probable congenital syphilis.' Full Full diagnostic workup and treatment of the neonate for congenital syphilis and neurosyphilis is needed. <br><br> "+ 
+        "•In these situations, the neonate falls into the AAP Red Book category 'proven or highly probable congenital syphilis.' Full diagnostic workup and treatment of the neonate for congenital syphilis and neurosyphilis is needed. <br><br> "+ 
 
-        "•The neonate may require additional diagnostic testing. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information."; 
+        "•The neonate may require diagnostic testing in addition to what is mentioned above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information."; 
 
 
         noMatch = false; // A match was found
@@ -1458,33 +1571,38 @@ if (
 
 }
 
-//Scenario #35 ***
-
-
+//Scenario #35
 if (
-    (history.value === "no") &&
-    (treatment.value === "not treated" || treatment.value=== "unknown" ) &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
-    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
-    cmiaResult.value === "reactive" &&
-    (rprTiter.value === "non-reactive" || rprTiter.value === "unknown" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value=== "initially reactive" || rprTiter.value === "initially non-reactive" ) &&
-    (tp_pa.value === "unknown" || tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "NA") &&
-    (physicalExam.value === "no" || physicalExam.value === "yes") &&
-    (reliableFollowUp.value === "no")
-    
-) {
+        history && history.value === "no" &&
+        highRisk && (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+        cmiaResult && cmiaResult.value === "reactive" &&
+        rprTiter && (
+            rprTiter.value === "non-reactive" || 
+            rprTiter.value === "unknown" || 
+            rprTiter.value === "low level positive" || 
+            rprTiter.value === "reactive" || 
+            rprTiter.value === "initially reactive" || 
+            rprTiter.value === "initially non-reactive"
+        ) &&
+        tp_pa && (
+            tp_pa.value === "unknown" || 
+            tp_pa.value === "pending" || 
+            tp_pa.value === "reactive" || 
+            tp_pa.value === "NA"
+        ) &&
+        physicalExam && (physicalExam.value === "no" || physicalExam.value === "yes") &&
+        reliableFollowUp && reliableFollowUp.value === "no"
+    ) {
+        // If the scenario matches, show the recommendations and rationale
+        recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale.");
 
-    recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale.");
+        rationale =
+            "• The unreliability of follow up complicates the clinical approach in this scenario. If the neonate has physical exam findings suggestive of congenital syphilis, this may also affect the treatment approach. <br>" +
+            "• Please contact the SSM Infectious Disease division for specific recommendations and rationale."; 
 
-    noMatch = false; // Scenario matched, no need to show error 
-
-    
-    rationale=
-        "•The unreliability of follow up complicates the clinical approach in this scenario. If the neonate has physical exam findings suggestive of congenital syphilis, this may also affect the treatment approach. <br>" +
-        "•Please contact the SSM Infectious Disease division for specific recommendations and rationale."; 
-        
         noMatch = false; // Scenario matched, no need to show error
     }
+
 
 //Scenario #36
 
@@ -1802,6 +1920,7 @@ if (
 
 
 
+
     // Check if no scenario matched
     if (noMatch) {
         recommendations.push("ERROR: The scenario coding doesn't exist for the provided input.");
@@ -1829,16 +1948,15 @@ if (
     document.getElementById("result").innerHTML = fullResult;
 
     }
-    
+
 }
+
+
 
 </script>
 
 </body>
 </html>
-
-
-
 
 
 
