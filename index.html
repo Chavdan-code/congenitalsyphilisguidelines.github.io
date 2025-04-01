@@ -54,22 +54,22 @@
 
 
     <label id="question6" for="screen">6. Was the birthing parent adequately screened for syphilis during their pregnancy? </label><br><br>
+    <label id="note6"> Adequate screening for syphilis during pregnancy is defined as at least 2 RPR titers obtained during pregnancy, one of which must have been obtained more than 4 weeks before delivery and another obtained within 4 weeks of delivery. </label><br><br> 
     <input type="radio" name="screen" value="yes" id="screenYes" onchange="showQuestions(); showMessage();" > Yes <br>
     <input type="radio" name="screen" value="no" id="screenNo" onchange="showQuestions(); showMessage();"> No <br>
     <input type="radio" name="screen" value="unknown" id="screenUnknown" onchange="showQuestions(); showMessage();"> Unknown <br><br><br>
 
 
     <div id="question7" style="display:none;">
-        <label id="question7" for="rprTiter">7. What were the birthing parent's RPR titers during pregnancy? Please respond with the titers greater than 4 weeks prior to delivery and within 4 weeks of delivery. </label><br><br> 
-        <label id="note7">If multiple RPR titers were obtained during these timeframes, please select the most recent of each category (i.e. if RPR titers were obtained 34 weeks prior to delivery (1st trimester), 20 weeks prior to delivery (2nd trimester), and one day prior to delivery, please respond with respect to the 20 weeks prior to delivery and the one day prior to delivery titer). Please contact the SSM Infectious Disease division for more information if this is unclear. </label><br><br>
+        <label id="question7" for="rprTiter">7. How did the birthing parent's RPR titer(s) greater than 4 weeks prior to delivery compare to their titer(s) within 4 weeks of delivery? If multiple RPR titers were rechecked within 4 weeks of delivery, please respond with the <strong>most recent</strong> titer </label><br><br> 
         <input type="radio" name="rprTiter" value="non-reactive" onchange="showQuestions()"> RPR greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery non-reactive <br>
         <input type="radio" name="rprTiter" value="low level positive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery was low level positive (1:1, 1:2, 1:4); RPR within 4 weeks of delivery low level positive <br>
         <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher; RPR within 4 weeks of delivery 1:8 or higher <br><br>
     
-        <input type="radio" name="rprTiter" value="initially reactive" onchange="showQuestions()"> RPR greater than 4 weeks prior to delivery low level positive (1:1, 1:2, 1:4); RPR within 4 weeks of delivery non-reactive <br>
-        <input type="radio" name="rprTiter" value="initially reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher; RPR within 4 weeks of delivery non-reactive <br> 
-        <input type="radio" name="rprTiter" value="initially non-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery low level positive  <br>
-        <input type="radio" name="rprTiter" value="initially non-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery 1:8 or higher <br><br>
+        <input type="radio" name="rprTiter" value="initially-reactive" onchange="showQuestions()"> RPR greater than 4 weeks prior to delivery low level positive (1:1, 1:2, 1:4); RPR within 4 weeks of delivery non-reactive <br>
+        <input type="radio" name="rprTiter" value="initially-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher; RPR within 4 weeks of delivery non-reactive <br> 
+        <input type="radio" name="rprTiter" value="initially-non-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery low level positive  <br>
+        <input type="radio" name="rprTiter" value="initially-non-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery 1:8 or higher <br><br>
 
         <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher, RPR within 4 weeks of delivery low level positive <br> 
         <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery low level positive (1:1, 1:2, 1:4), RPR within 4 weeks of delivery 1:8 or higher <br><br>
@@ -78,12 +78,12 @@
 
     </div>
 
-
     <div id="question8" style="display:none;">
         <label id="question8" for="tp_pa">8. What was the birthing parent's <strong>most recent</strong> TP-PA result during pregnancy? </label><br><br>
         <input type="radio" name="tp_pa" value="pending" onchange="showQuestions()"> The TP-PA result is still pending<br>
         <input type="radio" name="tp_pa" value="reactive" onchange="showQuestions()"> The TP-PA was reactive <br>
-        <input type="radio" name="tp_pa" value="non-reactive" onchange="showQuestions()"> The TP-PA was non-reactive <br><br><br>
+        <input type="radio" name="tp_pa" value="non-reactive" onchange="showQuestions()"> The TP-PA was non-reactive <br>
+        <input type="radio" name="tp_pa" value="unknown" onchange="showQuestions()"> I do not know what the TP-PA result is. It is not available in the medical record. <br>
     </div>
 
     
@@ -104,20 +104,6 @@
 
 
 <script>
-
-function showMessage() {
-    var screenNo = document.getElementById('screenNo');
-    var screenUnknown = document.getElementById('screenUnknown');
-
-    var messageDiv = document.getElementById('result');
-
-    // Check if the answer to question #6 is "no" or "unknown"
-    if (screenNo.checked || screenUnknown.checked) {
-        messageDiv.innerHTML = "In this scenario, the birthing parent was not appropriately screened for syphilis during pregnancy. Please contact the SSM Infectious Disease division to discuss the appropriate approach.";
-    } else {
-        messageDiv.innerHTML = ""; // Clear the message if not "no" or "unknown"
-    }
-}
 
 
 
@@ -213,6 +199,7 @@ function calculateRecommendations() {
     const appropriateTreatment = document.querySelector('input[name="appropriateTreatment"]:checked');
     const highRisk = document.querySelector('input[name="highRisk"]:checked');
     const cmiaResult = document.querySelector('input[name="cmiaResult"]:checked');
+    const screen = document.querySelector('input[name="screen"]:checked');
     const rprTiter = document.querySelector('input[name="rprTiter"]:checked');
     const tp_pa = document.querySelector('input[name="tp_pa"]:checked');
     const physicalExam = document.querySelector('input[name="physicalExam"]:checked');
@@ -232,10 +219,11 @@ function calculateRecommendations() {
         appropriateTreatment.value === "yes" &&
         highRisk.value === "no" &&
         cmiaResult.value === "reactive" &&
-        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
-        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
+        screen.value ==="yes" &&
+        (rprTiter.value === "non-reactive" || rprTiter.value === "initially-reactive" || rprTiter.value ==="initially-reactive") &&
+        (tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
         (physicalExam.value === "no") &&
-        reliableFollowUp.value === "yes"
+        reliableFollowUp.value === "no"
     ) {
 
         recommendations.push("• Check the neonate's RPR titer");
@@ -266,10 +254,11 @@ function calculateRecommendations() {
         appropriateTreatment.value === "yes" &&
         (highRisk.value === "yes" || highRisk.value === "unknown" ) &&
         cmiaResult.value === "reactive" &&
-        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive") &&
-        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" ) &&
+        screen.value ==="yes" &&
+        (rprTiter.value === "non-reactive" || rprTiter.value === "initially-reactive" || rprTiter.value === "initially-reactive" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive") &&
+        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
         (physicalExam.value === "no") &&
-        reliableFollowUp.value === "yes"
+        reliableFollowUp.value === "no"
     ) {
         
        var fullRecommendation = 
@@ -309,15 +298,15 @@ function calculateRecommendations() {
 
     // Scenario #3
     if (
-        history.value === "yes" &&
-        treatment.value === "before" &&
-        appropriateTreatment.value === "yes" &&
-        highRisk.value === "no" &&
-        cmiaResult.value === "reactive" &&
-        rprTiter.value === "low level positive" &&
-        (tp_pa.value === "NA") &&
-        physicalExam.value === "no" &&
-        reliableFollowUp.value === "yes"
+        history && history.value === "yes" &&
+        treatment && treatment.value === "before" &&
+        appropriateTreatment && appropriateTreatment.value === "yes" &&
+        highRisk && highRisk.value === "no" &&
+        cmiaResult && cmiaResult.value === "reactive" &&
+        screen && screen.value === "yes" &&
+        rprTiter && rprTiter.value === "low level positive" &&
+        physicalExam && physicalExam.value === "no" &&
+        reliableFollowUp && reliableFollowUp.value === "no"
     ) {
 
 
@@ -359,15 +348,15 @@ function calculateRecommendations() {
 
     // Scenario #4
     if (
-        history.value === "yes" &&
-        treatment.value === "before" &&
-        appropriateTreatment.value === "yes" &&
-        highRisk.value === "no" &&
-        cmiaResult.value === "reactive" &&
-        (rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive") &&
-        tp_pa.value === "NA" &&
-        (physicalExam.value === "no" ) &&
-        reliableFollowUp.value === "yes"
+        history && history.value === "yes" &&
+        treatment && treatment.value === "before" &&
+        appropriateTreatment && appropriateTreatment.value === "yes" &&
+        highRisk && highRisk.value === "no" &&
+        cmiaResult && cmiaResult.value === "reactive" &&
+        screen && screen.value ==="yes" &&
+        (rprTiter && (rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive")) &&
+        (physicalExam && physicalExam.value === "no" ) &&
+        reliableFollowUp && reliableFollowUp.value === "no"
     ) {
         
 
@@ -415,10 +404,11 @@ function calculateRecommendations() {
         appropriateTreatment.value === "yes" &&
         highRisk.value === "no" &&
         cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         (rprTiter.value === "initially reactive" ) &&
         (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
         physicalExam.value === "no" &&
-        reliableFollowUp.value === "yes"
+        reliableFollowUp.value === "no"
     ) {
         var fullRecommendation = 
         "•Check the neonate's RPR titer <br><br>" +
@@ -458,17 +448,18 @@ function calculateRecommendations() {
         noMatch = false; // A match was found
     }
 
+
     // Scenario #6
     if (
-        history.value === "yes" &&
-        (treatment.value === "during_before")&&
-        appropriateTreatment.value === "yes" &&
-        highRisk.value === "no" &&
-        cmiaResult.value === "reactive" &&
-        (rprTiter.value === "initially non-reactive" || rprTiter.value === "reactive")&&
-        tp_pa.value === "NA" &&
-        (physicalExam.value === "no")&&
-        reliableFollowUp.value === "yes"
+        history && history.value === "yes" &&
+        (treatment && treatment.value === "during_before")&&
+        appropriateTreatment && appropriateTreatment.value === "yes" &&
+        highRisk && highRisk.value === "no" &&
+        cmiaResult && cmiaResult.value === "reactive" &&
+        screen && screen.value ==="yes" &&
+        (rprTiter && (rprTiter.value === "initially non-reactive" || rprTiter.value === "reactive")) &&
+        (physicalExam && physicalExam.value === "no")&&
+        reliableFollowUp && reliableFollowUp.value === "no"
     ) {
         
         var fullRecommendation = 
@@ -513,10 +504,11 @@ function calculateRecommendations() {
         (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" ||appropriateTreatment.value === "NA" ) &&
         (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
         (cmiaResult.value === "reactive" ) &&
+        screen.value ==="yes" &&
         (rprTiter.value === "non-reactive"|| rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value === "initially reactive" || rprTiter.value === "initially non-reactive" ) &&
-        (tp_pa.value === "pending"  || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" ) &&
+        (tp_pa.value === "pending"  || tp_pa.value === "reactive" || tp_pa.value === "non-reactive") &&
         (physicalExam.value === "no") &&
-        reliableFollowUp.value === "yes"
+        reliableFollowUp.value === "no"
      )  
      {
         var fullRecommendation = 
@@ -553,19 +545,19 @@ function calculateRecommendations() {
         
     }
 
-
     //Scenario #9
     if (
-    history.value === "yes" &&
-    treatment.value === "during_before" &&
-    appropriateTreatment.value === "yes" &&
-    highRisk.value === "no"  &&
-    cmiaResult.value === "reactive" &&
-    rprTiter.value === "low level positive" &&
-    (tp_pa.value === "NA") &&
-    physicalExam.value === "no" &&
-    reliableFollowUp.value === "yes"
-)  {
+    history && history.value === "yes" &&
+    treatment && treatment.value === "during_before" &&
+    appropriateTreatment && appropriateTreatment.value === "yes" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && cmiaResult.value === "reactive" &&
+    screen && screen.value ==="yes" &&
+    rprTiter && rprTiter.value === "low level positive" &&
+    physicalExam && physicalExam.value === "no" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+)  
+    {
 
     var fullRecommendation = 
         "•Check the neonate's RPR titer <br><br>" +
@@ -606,10 +598,11 @@ if (
         appropriateTreatment.value === "yes" &&
         highRisk.value === "no" &&
         cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
         (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
         (physicalExam.value === "yes") &&
-        (reliableFollowUp.value === "yes")
+        (reliableFollowUp.value === "no")
     ) {
         recommendations.push("• Physical exam findings associated with congenital syphilis are rare. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
         recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division for further recommendations and rationale. ");
@@ -619,17 +612,18 @@ if (
 
 }
 
+
     // Scenario #11
     if (
-        history.value === "yes" &&
-        treatment.value === "before" &&
-        appropriateTreatment.value === "yes" &&
-        highRisk.value === "no" &&
-        cmiaResult.value === "reactive" &&
-        rprTiter.value === "low level positive" &&
-        (tp_pa.value === "NA") &&
-        physicalExam.value === "yes" &&
-        reliableFollowUp.value === "yes"
+        history && history.value === "yes" &&
+        treatment && treatment.value === "before" &&
+        appropriateTreatment && appropriateTreatment.value === "yes" &&
+        highRisk && highRisk.value === "no" &&
+        cmiaResult && cmiaResult.value === "reactive" &&
+        screen && screen.value ==="yes" &&
+        rprTiter && rprTiter.value === "low level positive" &&
+        physicalExam && physicalExam.value === "yes" &&
+        reliableFollowUp && reliableFollowUp.value === "no"
     ) {
         recommendations.push("• Physical exam findings associated with congenital syphilis are rare. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
         recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division for further recommendations and rationale. ")
@@ -644,10 +638,11 @@ if (
         appropriateTreatment.value === "yes" &&
         highRisk.value === "no" &&
         cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         (rprTiter.value === "initially reactive" ) &&
         (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
         physicalExam.value === "yes" &&
-        reliableFollowUp.value === "yes"
+        reliableFollowUp.value === "no"
     ) {
 
 
@@ -681,15 +676,15 @@ if (
 
     //Scenario #13
     if (
-    history.value === "yes" &&
-    treatment.value === "during_before" &&
-    appropriateTreatment.value === "yes" &&
-    highRisk.value === "no"  &&
-    cmiaResult.value === "reactive" &&
-    rprTiter.value === "low level positive" &&
-    (tp_pa.value === "NA") &&
-    physicalExam.value === "yes" &&
-    reliableFollowUp.value === "yes"
+    history && history.value === "yes" &&
+    treatment && treatment.value === "during_before" &&
+    appropriateTreatment && appropriateTreatment.value === "yes" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && cmiaResult.value === "reactive" &&
+    screen && screen.value ==="yes" &&
+    rprTiter && rprTiter.value === "low level positive" &&
+    physicalExam && physicalExam.value === "yes" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
 )  {
 
 
@@ -727,10 +722,11 @@ if (
         appropriateTreatment.value === "yes" &&
         highRisk.value === "no" &&
         cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
         (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
         (physicalExam.value === "no") &&
-        reliableFollowUp.value === "no"
+        reliableFollowUp.value === "yes"
     ) {
      recommendations.push("• Check the neonate's RPR");
      recommendations.push("• If the neonate's RPR is non-reactive, no further syphilis-related diagnostic testing is needed, no treatment is needed, and no ID follow up is needed. The result of the TP-PA is not relevant in this circumstance. ");
@@ -762,10 +758,11 @@ if (
         appropriateTreatment.value === "yes" &&
         highRisk.value === "no" &&
         cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
         (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
         (physicalExam.value === "yes") &&
-        (reliableFollowUp.value === "no")
+        (reliableFollowUp.value === "yes")
     ) {
         recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale."); 
         
@@ -787,14 +784,15 @@ if (
     (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "reactive" &&
+    screen.value ==="yes" &&
     (rprTiter.value === "non-reactive" || 
      rprTiter.value === "low level positive" || 
      rprTiter.value === "reactive" || 
      rprTiter.value === "initially reactive" || 
      rprTiter.value === "initially non-reactive" ) &&
-    (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" )&&
+    (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
     (physicalExam.value === "yes" || physicalExam.value === "no") &&
-    reliableFollowUp.value === "no"
+    reliableFollowUp.value === "yes"
 ) {
 
     recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale."); 
@@ -812,17 +810,17 @@ if (
 
     // Scenario #17
     if (
-        history.value === "yes" &&
-        (treatment.value === "before")&&
-        (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
-        (highRisk.value === "yes" || highRisk.value === "no" ||highRisk.value === "unknown" ) &&
-        cmiaResult.value === "reactive" &&
-        (rprTiter.value === "low level positive" || 
+        history && history.value === "yes" &&
+        (treatment && treatment.value === "before")&&
+        (appropriateTreatment && (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown")) &&
+        (highRisk && (highRisk.value === "yes" || highRisk.value === "no" || highRisk.value === "unknown" )) &&
+        cmiaResult && cmiaResult.value === "reactive" &&
+        screen && screen.value ==="yes" &&
+        (rprTiter && (rprTiter.value === "low level positive" || 
         rprTiter.value === "reactive" ||
-        rprTiter.value === "initially non-reactive" ) &&
-        (tp_pa.value === "NA" ) &&
-        (physicalExam.value === "no") &&
-        reliableFollowUp.value === "no"
+        rprTiter.value === "initially non-reactive" )) &&
+        (physicalExam && physicalExam.value === "no") &&
+        reliableFollowUp && reliableFollowUp.value === "yes"
     ) {
         
     recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale.");
@@ -838,7 +836,7 @@ if (
     }
 
 
-    //Scenario #18 
+    //Scenario #18
 
     if (
     history.value === "yes" &&
@@ -846,14 +844,15 @@ if (
     (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
     (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "reactive" &&
+    screen.value === "yes" &&
     (rprTiter.value === "non-reactive" || 
      rprTiter.value === "low level positive" || 
      rprTiter.value === "reactive" || 
      rprTiter.value === "initially reactive" || 
      rprTiter.value === "initially non-reactive") &&
-    (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" )&&
+    (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive") &&
     (physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    reliableFollowUp.value === "no"
 
 ) {
         var fullRecommendation = 
@@ -889,17 +888,17 @@ if (
 
 }
 
+
 //Scenario #19 
 if (
-    (history.value === "yes") &&
-    (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after" ) &&
-    (appropriateTreatment.value === "yes") &&
-    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
-    cmiaResult.value === "not available" &&
-    (rprTiter.value === "unknown" ) &&
-    (tp_pa.value === "unknown") &&
-    (physicalExam.value === "yes" || physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    (history && history.value === "yes") &&
+    (treatment && (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after" )) &&
+    (appropriateTreatment && appropriateTreatment.value === "yes") &&
+    (highRisk && (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown")) &&
+    cmiaResult && cmiaResult.value === "not available" &&
+    (screen && (screen.value === "no" || screen.value === "unknown" )) &&
+    (physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no")) &&
+    reliableFollowUp && reliableFollowUp.value === "no"
 ) 
     {
         var fullRecommendation = 
@@ -931,18 +930,19 @@ if (
 
 }
 
+
+
 //Scenario #20
 
 if (
-    (history.value === "yes") &&
-    (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after" ) &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
-    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    (history && history.value === "yes") &&
+    (treatment && (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after" )) &&
+    (appropriateTreatment && (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown")) &&
+    (highRisk && (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown")) &&
     cmiaResult.value === "not available" &&
-    (rprTiter.value === "unknown" ) &&
-    (tp_pa.value === "unknown") &&
-    (physicalExam.value === "yes" || physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    (screen && (screen.value === "no" || screen.value === "unknown")) &&
+    (physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no")) &&
+    reliableFollowUp && reliableFollowUp.value === "no"
     
 ) {
         var fullRecommendation = 
@@ -983,10 +983,9 @@ if (
     (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "not available" &&
-    (rprTiter.value === "unknown" ) &&
-    (tp_pa.value === "unknown") &&
+    (screen.value === "no" || screen.value === "unknown") &&
     (physicalExam.value === "yes" || physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    reliableFollowUp.value === "no"
     
 )
     {
@@ -1027,10 +1026,9 @@ if (
     (appropriateTreatment.value === "yes") &&
     (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "not available" &&
-    (rprTiter.value === "unknown" ) &&
-    (tp_pa.value === "unknown") &&
+    (screen.value === "no" || screen.value === "unknown") &&
     (physicalExam.value === "yes" || physicalExam.value === "no") &&
-    reliableFollowUp.value === "no"
+    reliableFollowUp.value === "yes"
     
 ) {
       var fullRecommendation = 
@@ -1069,10 +1067,9 @@ if (
     (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
     (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "not available" &&
-    (rprTiter.value === "unknown" ) &&
-    (tp_pa.value === "unknown") &&
+    (screen.value === "no" || screen.value === "unknown") &&
     (physicalExam.value === "yes" || physicalExam.value === "no") &&
-    reliableFollowUp.value === "no"
+    reliableFollowUp.value === "yes"
     
 ) {
 
@@ -1113,10 +1110,9 @@ if (
     (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "not available" &&
-    (rprTiter.value === "unknown" ) &&
-    (tp_pa.value === "unknown") &&
+    (screen.value === "no" || screen.value === "unknown") &&
     (physicalExam.value === "yes" || physicalExam.value === "no") &&
-    reliableFollowUp.value === "no"
+    reliableFollowUp.value === "yes"
     
 )
     {
@@ -1153,14 +1149,11 @@ if (
 
 if (
     (history.value === "unknown") &&
-    (treatment.value === "unknown" ) &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "unknown") &&
     cmiaResult.value === "not available" &&
-    (rprTiter.value === "unknown" ) &&
-    (tp_pa.value === "unknown") &&
+    (screen.value === "no" || screen.value === "unknown") &&
     (physicalExam.value === "yes" || physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    reliableFollowUp.value === "no"
     
 ) {
       var fullRecommendation = 
@@ -1195,14 +1188,11 @@ if (
 
 if (
     (history.value === "unknown") &&
-    (treatment.value === "unknown" ) &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "unknown") &&
     cmiaResult.value === "not available" &&
-    (rprTiter.value === "unknown" ) &&
-    (tp_pa.value === "unknown") &&
+    (screen.value === "no" || screen.value === "unknown") &&
     (physicalExam.value === "yes" || physicalExam.value === "no") &&
-    reliableFollowUp.value === "no"
+    reliableFollowUp.value === "yes"
     
 ) {
       var fullRecommendation = 
@@ -1233,18 +1223,17 @@ if (
 }
 
 
-//Scenario #27
+//Scenario #27 
 
 if (
     (history.value === "no") &&
-    (treatment.value === "unknown" || treatment.value === "not treated") &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "reactive" &&
+    screen.value === "yes" &&
     (rprTiter.value === "non-reactive" ) &&
     (tp_pa.value === "pending") &&
     (physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    reliableFollowUp.value === "no"
     
 ) {
         
@@ -1302,14 +1291,13 @@ if (
 
 if (
     (history.value === "no") &&
-    (treatment.value === "unknown" || treatment.value === "not treated") &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "reactive" &&
+    screen.value ==="yes" &&
     (rprTiter.value === "non-reactive" ) &&
     (tp_pa.value === "reactive") &&
     (physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    reliableFollowUp.value === "no"
     
 ) {
 
@@ -1358,14 +1346,13 @@ if (
 
 if (
     (history.value === "no") &&
-    (treatment.value === "unknown" || treatment.value === "not treated") &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "reactive" &&
+    screen.value ==="yes" &&
     (rprTiter.value === "non-reactive" ) &&
     (tp_pa.value === "non-reactive") &&
     (physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    reliableFollowUp.value === "no"
     
 ) {
 
@@ -1408,14 +1395,13 @@ if (
 
 if (
     (history.value === "no") &&
-    (treatment.value === "unknown" || treatment.value === "not treated") &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "no") &&
     cmiaResult.value === "reactive" &&
+    screen.value ==="yes" &&
     (rprTiter.value === "non-reactive" ) &&
     (tp_pa.value === "pending") &&
     (physicalExam.value === "no") &&
-    (reliableFollowUp.value === "yes")
+    (reliableFollowUp.value === "no")
     
 ) {
     var fullRecommendation = 
@@ -1455,14 +1441,13 @@ if (
 
 if (
     (history.value === "no") &&
-    (treatment.value === "unknown" || treatment.value === "not treated") &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "no") &&
     cmiaResult.value === "reactive" &&
+    screen.value ==="yes" &&
     (rprTiter.value === "non-reactive" ) &&
     (tp_pa.value === "reactive") &&
     (physicalExam.value === "no") &&
-    (reliableFollowUp.value === "yes")
+    (reliableFollowUp.value === "no")
     
 ) {
 
@@ -1501,10 +1486,9 @@ if (
 
 if (
     (history.value === "no") &&
-    (treatment.value === "unknown" || treatment.value === "not treated") &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "no") &&
     cmiaResult.value === "reactive" &&
+    screen.value ==="yes" &&
     (rprTiter.value === "non-reactive" ) &&
     (tp_pa.value === "non-reactive") &&
     (physicalExam.value === "no") &&
@@ -1533,14 +1517,13 @@ if (
 //Scenario #34 
 if (
     (history.value === "no") &&
-    (treatment.value === "not treated" || treatment.value=== "unknown" ) &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "reactive" &&
+    screen.value ==="yes" &&
     (rprTiter.value === "unknown" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value=== "initially reactive" || rprTiter.value === "initially non-reactive" ) &&
     (tp_pa.value === "unknown" || tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA") &&
     (physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    reliableFollowUp.value === "no"
 ) {
     var fullRecommendation = 
          "• <u>Obtain neonatal: </u><br>" +
@@ -1576,6 +1559,7 @@ if (
         history && history.value === "no" &&
         highRisk && (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
         cmiaResult && cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         rprTiter && (
             rprTiter.value === "non-reactive" || 
             rprTiter.value === "unknown" || 
@@ -1591,7 +1575,7 @@ if (
             tp_pa.value === "NA"
         ) &&
         physicalExam && (physicalExam.value === "no" || physicalExam.value === "yes") &&
-        reliableFollowUp && reliableFollowUp.value === "no"
+        reliableFollowUp && reliableFollowUp.value === "yes"
     ) {
         // If the scenario matches, show the recommendations and rationale
         recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale.");
@@ -1609,14 +1593,13 @@ if (
 
 if (
     (history.value === "no") &&
-    (treatment.value === "not treated" || treatment.value=== "unknown" ) &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
     (highRisk.value === "no") &&
     cmiaResult.value === "reactive" &&
+    screen.value ==="yes" &&
     (rprTiter.value === "non-reactive") &&
     (tp_pa.value === "non-reactive") &&
     (physicalExam.value === "yes") &&
-    reliableFollowUp.value === "no"
+    reliableFollowUp.value === "yes"
 ) {
 
 recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale.");
@@ -1640,10 +1623,11 @@ if (
         appropriateTreatment.value === "yes" &&
         (highRisk.value === "yes" || highRisk.value === "unknown" ) &&
         cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive") &&
         (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" ) &&
         (physicalExam.value === "yes") &&
-        reliableFollowUp.value === "yes"
+        reliableFollowUp.value === "no"
     ) {
         
 
@@ -1687,10 +1671,10 @@ if (
         appropriateTreatment.value === "yes" &&
         highRisk.value === "no" &&
         cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         (rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive") &&
-        tp_pa.value === "NA" &&
         (physicalExam.value === "yes" ) &&
-        reliableFollowUp.value === "yes"
+        reliableFollowUp.value === "no"
     ) {
 
 
@@ -1733,10 +1717,10 @@ if (
         appropriateTreatment.value === "yes" &&
         highRisk.value === "no" &&
         cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         (rprTiter.value === "initially non-reactive" || rprTiter.value === "reactive")&&
-        tp_pa.value === "NA" &&
         (physicalExam.value === "yes")&&
-        reliableFollowUp.value === "yes"
+        reliableFollowUp.value === "no"
     ) {
         
         var fullRecommendation = 
@@ -1778,10 +1762,11 @@ if (
         (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" ||appropriateTreatment.value === "NA" ) &&
         (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
         (cmiaResult.value === "reactive" ) &&
+        screen.value ==="yes" &&
         (rprTiter.value === "non-reactive"|| rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value === "initially reactive" || rprTiter.value === "initially non-reactive" ) &&
         (tp_pa.value === "pending"  || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" ) &&
         (physicalExam.value === "yes") &&
-        reliableFollowUp.value === "yes"
+        reliableFollowUp.value === "no"
      )  
      {
         var fullRecommendation = 
@@ -1822,12 +1807,12 @@ if (
         (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
         (highRisk.value === "yes" || highRisk.value === "no" ||highRisk.value === "unknown" ) &&
         cmiaResult.value === "reactive" &&
+        screen.value ==="yes" &&
         (rprTiter.value === "low level positive" || 
         rprTiter.value === "reactive" ||
         rprTiter.value === "initially non-reactive" ) &&
-        (tp_pa.value === "NA" ) &&
         (physicalExam.value === "yes") &&
-        reliableFollowUp.value === "no"
+        reliableFollowUp.value === "yes"
     ) {
         
     recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale.");
@@ -1850,6 +1835,7 @@ if (
     (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
     (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
     cmiaResult.value === "reactive" &&
+    screen.value ==="yes" &&
     (rprTiter.value === "non-reactive" || 
      rprTiter.value === "low level positive" || 
      rprTiter.value === "reactive" || 
@@ -1857,7 +1843,7 @@ if (
      rprTiter.value === "initially non-reactive") &&
     (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA" )&&
     (physicalExam.value === "no") &&
-    reliableFollowUp.value === "yes"
+    reliableFollowUp.value === "no"
 
 ) {
         var fullRecommendation = 
@@ -1890,18 +1876,17 @@ if (
 
 
 
-//Scenario #43
+//Scenario #43 
+
 
 if (
-    (history.value === "no") &&
-    (treatment.value === "unknown" || treatment.value === "not treated") &&
-    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
-    (highRisk.value === "yes" || highRisk.value === "no" || highRisk.value === "unknown") &&
-    cmiaResult.value === "reactive" &&
-    (rprTiter.value === "non-reactive" || rprTiter.value === "unknown" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value=== "initially reactive" || rprTiter.value === "initially non-reactive" ) &&
-    (tp_pa.value === "unknown" || tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "NA") &&
-    (physicalExam.value === "yes") &&
-    (reliableFollowUp.value === "yes"|| reliableFollowUp.value === "no")
+    (history && history.value === "no") &&
+    highRisk && (highRisk.value === "yes" || highRisk.value === "no" || highRisk.value === "unknown") &&
+    cmiaResult && cmiaResult.value === "reactive" &&
+    screen && screen.value ==="yes" &&
+    rprTiter && tp_pa &&
+    (physicalExam && physicalExam.value === "yes") &&
+    reliableFollowUp && (reliableFollowUp.value === "yes" || reliableFollowUp.value === "no")
     
 ) {    recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale.");
 
@@ -1920,9 +1905,394 @@ if (
 
 
 
+//Scenario #44 
+if (
+    (history && history.value === "yes") &&
+    (treatment && (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after" )) &&
+    (appropriateTreatment && appropriateTreatment.value === "yes") &&
+    (highRisk && (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown")) &&
+    cmiaResult && cmiaResult.value === "not available" &&
+    (screen.value === "yes" ) &&
 
-    // Check if no scenario matched
-    if (noMatch) {
+    (physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no")) &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+) 
+    {
+        var fullRecommendation = 
+         "• <u>Obtain neonatal: </u><br>" +
+         "- RPR <br>" +
+         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+         "- CBC with differential and platelet count <br>" +
+         "- Long bone radiography <br>" +
+         "- Baseline ALT <br><br>" +
+         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
+         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment."; 
+         
+         
+     // Push the full recommendation to the recommendations array
+     recommendations.push(fullRecommendation);
+ 
+         noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, the birthing parent reports a history of syphilitic treatment but testing results are not available. This makes it challenging to assess the neonate's syphilitic risk. <br> <br>" +
+
+        "•In these situations, the neonate falls into the AAP Red Book category 'proven or highly probable congenital syphilis.' Full diagnostic workup and treatment of the neonate for congenital syphilis and neurosyphilis is needed. <br><br> "+ 
+
+        "•The neonate may require diagnostic testing in addition to what is mentioned above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information."; 
+
+
+        noMatch = false; // A match was found
+    
+
+}
+
+
+//Scenario #45 
+if (
+    (history && history.value === "yes") &&
+    (treatment && (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after" )) &&
+    (appropriateTreatment && appropriateTreatment.value === "yes") &&
+    (highRisk && (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown")) &&
+    cmiaResult && cmiaResult.value === "not available" &&
+    (screen && screen.value === "yes" ) &&
+    rprTiter && rprTiter.value === "unknown" &&
+    (physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no")) &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+) 
+    {
+        var fullRecommendation = 
+         "• <u>Obtain neonatal: </u><br>" +
+         "- RPR <br>" +
+         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+         "- CBC with differential and platelet count <br>" +
+         "- Long bone radiography <br>" +
+         "- Baseline ALT <br><br>" +
+         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
+         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment."; 
+         
+         
+     // Push the full recommendation to the recommendations array
+     recommendations.push(fullRecommendation);
+ 
+         noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, the birthing parent reports a history of syphilitic treatment but testing results are not available. This makes it challenging to assess the neonate's syphilitic risk. <br> <br>" +
+
+        "•In these situations, the neonate falls into the AAP Red Book category 'proven or highly probable congenital syphilis.' Full diagnostic workup and treatment of the neonate for congenital syphilis and neurosyphilis is needed. <br><br> "+ 
+
+        "•The neonate may require diagnostic testing in addition to what is mentioned above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information."; 
+
+
+        noMatch = false; // A match was found
+    
+
+}
+
+
+
+//Scenario #46
+
+if (
+    (history && history.value === "yes") &&
+    (treatment && (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after" )) &&
+    (appropriateTreatment && (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown")) &&
+    (highRisk && (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown")) &&
+    cmiaResult.value === "not available" &&
+    (screen && screen.value === "yes" ) &&
+    rprTiter && rprTiter.value === "unknown" &&
+    (physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no")) &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+    
+) {
+        var fullRecommendation = 
+         "• <u>Obtain neonatal: </u><br>" +
+         "- RPR <br>" +
+         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+         "- CBC with differential and platelet count <br>" +
+         "- Long bone radiography <br>" +
+         "- Baseline ALT <br><br>" +
+         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
+         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment."; 
+         
+         
+     // Push the full recommendation to the recommendations array
+     recommendations.push(fullRecommendation);
+ 
+         noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, the birthing parent has a history of syphilis for which treatment was inappropriate or the appropriateness of treatment is unknown. This significantly increases the likelihood of syphilitic infection in the neonate <br> <br>" +
+
+        "•Thus, the neonate falls into the AAP Red Book category 'proven or highly probable congenital syphilis.' Full diagnostic workup and treatment of the neonate for congenital syphilis and neurosyphilis is needed. <br><br> "+ 
+
+        "•The neonate may require additional diagnostic testing beyond what is listed above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information."; 
+
+
+        noMatch = false; // A match was found
+    
+
+}
+
+
+//Scenario #47
+
+if (
+    (history.value === "yes") &&
+    (treatment.value === "not treated" || treatment.value=== "unknown") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (screen && screen.value === "yes" ) &&
+    rprTiter && rprTiter.value === "unknown" &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "no"
+    
+)
+    {
+        var fullRecommendation = 
+         "• <u>Obtain neonatal: </u><br>" +
+         "- RPR <br>" +
+         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+         "- CBC with differential and platelet count <br>" +
+         "- Long bone radiography <br>" +
+         "- Baseline ALT <br><br>" +
+         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
+         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment."; 
+         
+         
+     // Push the full recommendation to the recommendations array
+     recommendations.push(fullRecommendation);
+ 
+         noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, the birthing parent has a history of syphilis that was not treated or syphilitic treatment is unknown. This significantly increases the likelihood of syphilitic infection in the neonate <br> <br>" +
+
+        "•Thus, the neonate falls into the AAP Red Book category 'proven or highly probable congenital syphilis.' Full diagnostic workup and treatment of the neonate for congenital syphilis and neurosyphilis is needed. <br><br> "+ 
+
+        "•The neonate may require additional diagnostic testing beyond what is listed above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information."; 
+
+        noMatch = false; // A match was found
+    
+
+}
+
+
+//Scenario #48
+
+if (
+    (history.value === "yes") &&
+    (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after") &&
+    (appropriateTreatment.value === "yes") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (screen && screen.value === "yes" ) &&
+    rprTiter && rprTiter.value === "unknown" &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+) {
+      var fullRecommendation = 
+         "• <u>Obtain neonatal: </u><br>" +
+         "- RPR <br>" +
+         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+         "- CBC with differential and platelet count <br>" +
+         "- Long bone radiography <br>" +
+         "- Baseline ALT <br><br>" +
+         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
+         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment."; 
+         
+         
+     // Push the full recommendation to the recommendations array
+     recommendations.push(fullRecommendation);
+ 
+         noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, the birthing parent reports a history of syphilitic treatment but the birthing parent's syphilitic testing results are not available. This makes it challening to assess the risk of syphilitic infection in the neonate. <br> <br>" +
+
+        "•In this situation, the most conservative approach is chosen and the neonate is placed in the AAP Red Book category 'proven or highly probable congenital syphilis.' Full diagnostic workup and treatment of the neonate for congenital syphilis and neurosyphilis is needed. <br><br> " + 
+
+        "•The neonate may require additional diagnostic testing beyond what is listed above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information."; 
+
+        noMatch = false; // A match was found
+    
+
+}
+
+//Scenario #49
+
+if (
+    (history.value === "yes") &&
+    (treatment.value === "before" || treatment.value=== "during_before" || treatment.value=== "during_after") &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (screen && screen.value === "yes" ) &&
+    rprTiter && rprTiter.value === "unknown" &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+) {
+
+
+    var fullRecommendation = 
+         "• <u>Obtain neonatal: </u><br>" +
+         "- RPR <br>" +
+         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+         "- CBC with differential and platelet count <br>" +
+         "- Long bone radiography <br>" +
+         "- Baseline ALT <br><br>" +
+         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
+         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Follow up 3 months after treatment is typically needed in this scenario. Please discuss the uncertainty of follow up with the SSM Infectious Disease division."; 
+         
+         
+     // Push the full recommendation to the recommendations array
+     recommendations.push(fullRecommendation);
+ 
+         noMatch = false; // A match was found
+
+         rationale = 
+        "•In this scenario, the birthing parent reports a history of syphilis but treatment was either inappropriate or the appropriateness of treatment is unknown. This significantly increases the likelihood of syphilitic infection in the neonate. <br> <br>" +
+
+        "•The neonate falls into the AAP Red Book category 'proven or highly probable congenital syphilis.' Full diagnostic workup and treatment of the neonate for congenital syphilis and neurosyphilis is needed. <br><br> " + 
+
+        "•The neonate may require additional diagnostic testing beyond what is listed above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. Please mention the uncertainty of follow up in this case."; 
+
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #50
+
+if (
+    (history.value === "yes") &&
+    (treatment.value === "not treated" || treatment.value=== "unknown" ) &&
+    (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" || appropriateTreatment.value === "NA") &&
+    (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (screen && screen.value === "yes" ) &&
+    rprTiter && rprTiter.value === "unknown" &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+)
+    {
+        var fullRecommendation = 
+         "• <u>Obtain neonatal: </u><br>" +
+         "- RPR <br>" +
+         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+         "- CBC with differential and platelet count <br>" +
+         "- Long bone radiography <br>" +
+         "- Baseline ALT <br><br>" +
+         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
+         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Follow up 3 months after treatment is typically needed in this scenario. Please discuss the uncertainty of follow up with the SSM Infectious Disease division."; 
+         
+         
+     // Push the full recommendation to the recommendations array
+     recommendations.push(fullRecommendation);
+ 
+         noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, the birthing parent has a history of syphilis that was not treated or syphilitic treatment is unknown. This significantly increases the likelihood of syphilitic infection in the neonate <br> <br>" +
+
+        "•Thus, the neonate falls into the AAP Red Book category 'proven or highly probable congenital syphilis.' Full diagnostic workup and treatment of the neonate for congenital syphilis and neurosyphilis is needed. <br><br> "+ 
+
+        "•The neonate may require additional diagnostic testing beyond what is listed above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. Please mention the uncertainty of follow up in this case"; 
+
+        noMatch = false; // A match was found
+    
+
+}
+
+
+//Scenario #51
+
+if (
+    (history.value === "unknown") &&
+    (highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (screen && screen.value === "yes" ) &&
+    rprTiter && rprTiter.value === "unknown" &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "no"
+    
+) {
+      var fullRecommendation = 
+         "• <u>Obtain neonatal: </u><br>" +
+         "- RPR <br>" +
+         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+         "- CBC with differential and platelet count <br>" +
+         "- Long bone radiography <br>" +
+         "- Baseline ALT <br><br>" +
+         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
+         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment."; 
+         
+         
+     // Push the full recommendation to the recommendations array
+     recommendations.push(fullRecommendation);
+ 
+         noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, there is limited information on the birthing parent's medical history and they are not available to interview and obtain diagnostic testing.  <br> <br>" +
+
+        "•In these situations, we generally err on the side of full treatment of the neonate for congenital syphilis and workup in accordance with a neonate in the AAP Red Book category 'proven or highly probable congenital syphilis.' <br><br> " + 
+
+        "•The neonate may require additional diagnostic testing beyond what is listed above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information."; 
+
+        noMatch = false; // A match was found
+    
+}
+
+
+//Scenario #52
+
+if (
+    (history.value === "unknown") &&
+    (highRisk.value === "unknown") &&
+    cmiaResult.value === "not available" &&
+    (screen && screen.value === "yes" ) &&
+    rprTiter && rprTiter.value === "unknown" &&
+    (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp.value === "yes"
+    
+) {
+      var fullRecommendation = 
+         "• <u>Obtain neonatal: </u><br>" +
+         "- RPR <br>" +
+         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+         "- CBC with differential and platelet count <br>" +
+         "- Long bone radiography <br>" +
+         "- Baseline ALT <br><br>" +
+         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
+         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Follow up 3 months after treatment is typically needed in this scenario. Please discuss the uncertainty of follow up with the SSM Infectious Disease division."; 
+         
+         
+     // Push the full recommendation to the recommendations array
+     recommendations.push(fullRecommendation);
+ 
+         noMatch = false; // A match was found
+
+    rationale = 
+        "•In this scenario, there is limited information on the birthing parent's medical history and they are not available to interview and obtain diagnostic testing.  <br> <br>" +
+
+        "•In these situations, we generally err on the side of full treatment of the neonate for congenital syphilis and workup in accordance with a neonate in the AAP Red Book category 'proven or highly probable congenital syphilis.' <br><br> " + 
+
+        "•The neonate may require additional diagnostic testing beyond what is listed above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. Please mention the uncertainty of follow up in this case. "; 
+
+        noMatch = false; // A match was found
+    
+}
+
+
+
+
+if (noMatch) {
         recommendations.push("ERROR: The scenario coding doesn't exist for the provided input.");
         rationale = "ERROR: No matching scenario was found for the provided input values.";
     } else {
@@ -1934,29 +2304,28 @@ if (
                 
         `;
 
-         // Only add rationale if it is not empty
-    if (rationale) {
-        fullResult += `
-            <strong>Rationale:</strong><br>
-            ${rationale}
-        `;
+        // Only add rationale if it is not empty
+        if (rationale) {
+            fullResult += `
+                <strong>Rationale:</strong><br>
+                ${rationale}
+            `;
+        }
+
+        fullResult += `</div>`;
+        
+        fullResult = autoHyperlinkText(fullResult); // Add the hyperlink to the result
+        document.getElementById("result").innerHTML = fullResult;
     }
-
-    fullResult += `</div>`;
-    
-    fullResult = autoHyperlinkText(fullResult); // Add the hyperlink to the result
-    document.getElementById("result").innerHTML = fullResult;
-
-    }
-
 }
+
+
 
 
 </script>
 
 </body>
 </html>
-
 
 
 
