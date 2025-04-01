@@ -7,7 +7,7 @@
 }
 
 /* Styling for notes (italicized text) */
-#note3, #note4, #note7, #note9 {
+#note3, #note4, #note6, #note7, #note9 {
     font-size: 1.05rem; /* Slightly smaller font for notes */
     font-style: italic; /* Italicized font style for notes */
 }
@@ -55,6 +55,7 @@ input[type="radio"] + label {
 [style="display: none;"] {
     display: none !important; /* Hide elements with inline display none (used by JS) */
 }
+
 
 
 
