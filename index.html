@@ -13,7 +13,7 @@
 <strong>Disclaimer: </strong> This website is designed to be a tool to help clinicians understand congenital syphilis diagnosis and management. The algorithm will populate specific recommendations and rationale based on the answers to the below questions. These guidelines are not intended to replace clinical decision making, the AAP Red Book, and/or Infectious Disease consultation. <br><br><br>
 
 <form id="guidelinesForm">
-    <label id="question1" for="history">1. Has the birthing parent had a known diagnosis of syphilis (either currently or in the past)? </label><br><br>
+    <label id="question1" for="history">1. Does the birthing parent have a known diagnosis of syphilis (either currently or in the past)? </label><br><br>
     <input type="radio" name="history" value="yes" onchange="showQuestions()"> Yes<br>
     <input type="radio" name="history" value="no" onchange="showQuestions()"> No<br>
     <input type="radio" name="history" value="unknown" onchange="showQuestions()"> Unknown <br><br><br>
@@ -36,50 +36,51 @@
         <input type="radio" name="appropriateTreatment" value="yes" onchange="showQuestions()"> Yes <br>
         <input type="radio" name="appropriateTreatment" value="no" onchange="showQuestions()"> No <br>
         <input type="radio" name="appropriateTreatment" value="unknown" onchange="showQuestions()"> Unknown <br>
-        <input type="radio" name="appropriateTreatment" value="NA" onchange="showQuestions()"> Not Applicable <br><br><br>
+
     </div>
 
-    <label id="question4" for="highRisk">4. Has the birthing parent and/or their partner(s) had any high-risk sexual activity or symptoms to suggest a newly acquired infection following previous treatment? </label><br><br>
-    <label id="note4"> High risk sexual activity is defined as sex with multiple partners, sex in conjunction with drug use, or transactional sex. Symptoms of new syphilitic infection include genital lesion(s) and/or rash. <br> 
+    <div id="question4" for="highRisk">4. Has the birthing parent and/or their partner(s) had any high-risk sexual activity or symptoms to suggest a newly acquired infection following previous treatment? </label><br><br>
+        <label id="note4"> High risk sexual activity is defined as sex with multiple partners, sex in conjunction with drug use, or transactional sex. Symptoms of new syphilitic infection include genital lesion(s) and/or rash. <br> 
         If the birthing parent has none of these risk factors/symptoms and the partner is not available, please select “yes” or “no” based on the birthing parent's responses  <br> 
         Please select "unknown" if the birthing parent is not available or declines to answer </label><br><br> 
-    <input type="radio" name="highRisk" value="yes" onchange="showQuestions()"> Yes <br>
-    <input type="radio" name="highRisk" value="no" onchange="showQuestions()"> No <br>
-    <input type="radio" name="highRisk" value="unknown" onchange="showQuestions()"> Unknown <br><br><br>
-
-    <label id="question5" for="cmiaResult">5. What was the result of the birthing parent's initial treponemal antibody test (referred to as CMIA in SSM Epic) during pregnancy? </label><br><br>
-    <input type="radio" name="cmiaResult" value="reactive" id="cmiaReactive" onchange="showCMIAMessage()"> CMIA reactive <br>
-    <input type="radio" name="cmiaResult" value="non-reactive" id="cmiaNonReactive" onchange="showCMIAMessage()"> CMIA non-reactive <br>
-    <input type="radio" name="cmiaResult" value="not available" id="cmiaNotAvailable" onchange="showCMIAMessage()">CMIA results unknown <br><br><br>
-
-
-    <label id="question6" for="screen">6. Was the birthing parent adequately screened for syphilis during their pregnancy? </label><br><br>
-    <label id="note6"> Adequate screening for syphilis during pregnancy is defined as at least 2 RPR titers obtained during pregnancy, one of which must have been obtained more than 4 weeks before delivery and another obtained within 4 weeks of delivery. </label><br><br> 
-    <input type="radio" name="screen" value="yes" id="screenYes" onchange="showQuestions(); showMessage();" > Yes <br>
-    <input type="radio" name="screen" value="no" id="screenNo" onchange="showQuestions(); showMessage();"> No <br>
-    <input type="radio" name="screen" value="unknown" id="screenUnknown" onchange="showQuestions(); showMessage();"> Unknown <br><br><br>
-
-
-    <div id="question7" style="display:none;">
-        <label id="question7" for="rprTiter">7. How did the birthing parent's RPR titer(s) greater than 4 weeks prior to delivery compare to their titer(s) within 4 weeks of delivery? If multiple RPR titers were rechecked within 4 weeks of delivery, please respond with the <strong>most recent</strong> titer </label><br><br> 
-        <input type="radio" name="rprTiter" value="non-reactive" onchange="showQuestions()"> RPR greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery non-reactive <br>
-        <input type="radio" name="rprTiter" value="low level positive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery was low level positive (1:1, 1:2, 1:4); RPR within 4 weeks of delivery low level positive <br>
-        <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher; RPR within 4 weeks of delivery 1:8 or higher <br><br>
-    
-        <input type="radio" name="rprTiter" value="initially-reactive" onchange="showQuestions()"> RPR greater than 4 weeks prior to delivery low level positive (1:1, 1:2, 1:4); RPR within 4 weeks of delivery non-reactive <br>
-        <input type="radio" name="rprTiter" value="initially-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher; RPR within 4 weeks of delivery non-reactive <br> 
-        <input type="radio" name="rprTiter" value="initially-non-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery low level positive  <br>
-        <input type="radio" name="rprTiter" value="initially-non-reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery non-reactive; RPR within 4 weeks of delivery 1:8 or higher <br><br>
-
-        <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery 1:8 or higher, RPR within 4 weeks of delivery low level positive <br> 
-        <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR titer greater than 4 weeks prior to delivery low level positive (1:1, 1:2, 1:4), RPR within 4 weeks of delivery 1:8 or higher <br><br>
-
-        <input type="radio" name="rprTiter" value="unknown" onchange="showQuestions()"> The birthing parent was adequately screened but RPR titers are unknown or not available <br><br><br>
+        <input type="radio" name="highRisk" value="yes" onchange="showQuestions()"> Yes <br>
+        <input type="radio" name="highRisk" value="no" onchange="showQuestions()"> No <br>
+        <input type="radio" name="highRisk" value="unknown" onchange="showQuestions()"> Unknown <br><br><br>
 
     </div>
 
+    <div id="question5" for="cmiaResult">5. What was the result of the birthing parent's initial treponemal antibody test (referred to as CMIA in SSM Epic) during pregnancy? </label><br><br>
+        <input type="radio" name="cmiaResult" value="reactive" id="cmiaReactive" onchange="showCMIAMessage()"> CMIA reactive <br>
+        <input type="radio" name="cmiaResult" value="non-reactive" id="cmiaNonReactive" onchange="showCMIAMessage()"> CMIA non-reactive <br>
+        <input type="radio" name="cmiaResult" value="not available" id="cmiaNotAvailable" onchange="showCMIAMessage()">CMIA results unknown <br><br><br>
+
+    </div>
+
+
+    <div id="question6" for="screen">6. Was the birthing parent adequately screened for syphilis during their pregnancy? </label><br><br>
+        <label id="note6"> Adequate screening for syphilis during pregnancy is defined as at least 2 RPR titers obtained during pregnancy, one of which must have been obtained more than 4 weeks before delivery and another obtained within 4 weeks of delivery. </label><br><br> 
+        <input type="radio" name="screen" value="yes" id="screenYes" onchange="showQuestions(); showMessage();" > Yes <br>
+        <input type="radio" name="screen" value="no" id="screenNo" onchange="showQuestions(); showMessage();"> No <br>
+        <input type="radio" name="screen" value="unknown" id="screenUnknown" onchange="showQuestions(); showMessage();"> Unknown <br><br><br>
+
+    </div>
+
+    <div id="question7" style="display:none;">
+        <label id="question7" for="rprTiter">7. What was the birthing parent's most recent RPR titer during pregnancy? </label><br><br>
+        <label id="note7"> Please select the answer choice "reactive" for all reactive RPR titers including: 1:1, 1:2, 1:4, 1:8, 1:16 etc. </label><br><br> 
+        <input type="radio" name="rprTiter" value="non-reactive" onchange="showQuestions()"> RPR non-reactive <br>
+        <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR reactive <br><br>
+    </div>
+
+
     <div id="question8" style="display:none;">
-        <label id="question8" for="tp_pa">8. What was the birthing parent's <strong>most recent</strong> TP-PA result during pregnancy? </label><br><br>
+        <label id="question8" for="rprincrease">8. Was there a four-fold increase in RPR titer following the birthing parent's most recent syphilitic treatment during pregnancy? </label><br><br>
+        <input type="radio" name="rprincrease" value="Yes" onchange="showQuestions()"> Yes <br>
+        <input type="radio" name="rprincrease" value="No" onchange="showQuestions()"> No <br><br>
+    </div>
+
+    <div id="question9" style="display:none;">
+        <label id="question9" for="tp_pa">9. What was the birthing parent's <strong>most recent</strong> TP-PA result during pregnancy? </label><br><br>
         <input type="radio" name="tp_pa" value="pending" onchange="showQuestions()"> The TP-PA result is still pending<br>
         <input type="radio" name="tp_pa" value="reactive" onchange="showQuestions()"> The TP-PA was reactive <br>
         <input type="radio" name="tp_pa" value="non-reactive" onchange="showQuestions()"> The TP-PA was non-reactive <br>
@@ -87,13 +88,13 @@
     </div>
 
     
-    <label id="question9" for="physicalExam">9. Does the neonate's physical exam show any evidence of congenital syphilis? </label><br><br>
-    <label id="note9">Physical exam findings associated with congenital syphilis are mentioned in Question #10 of the "Congenital Syphilis Cheat Sheet for SSM Clinicians." Physical exam findings of congenital syphilis are uncommon in neonates; clicking yes to this question should be an infrequent occurence.  <br>
+    <label id="question10" for="physicalExam">10. Does the neonate's physical exam show any evidence of congenital syphilis? </label><br><br>
+    <label id="note10">Physical exam findings associated with congenital syphilis are mentioned in Question #10 of the "Congenital Syphilis Cheat Sheet for SSM Clinicians." Physical exam findings of congenital syphilis are uncommon in neonates; clicking yes to this question should be an infrequent occurence.  <br>
         <a href="https://docs.google.com/document/d/1FshwW9mEXHS-gHpdxoPo_nevr0eY6P5LIYh0Y45FsEU/edit?usp=sharing" target="_blank">View the Cheat Sheet</a></label><br><br>
     <input type="radio" name="physicalExam" value="yes" onchange="showQuestions()"> Yes<br>
     <input type="radio" name="physicalExam" value="no" onchange="showQuestions()"> No<br> <br><br>
 
-    <label id="question10" for="reliableFollowUp">10. Are there any high risk social factors that would suggest this neonate would not follow up as recommended with the Infectious Diseases clinic if needed? </label><br><br>
+    <label id="question11" for="reliableFollowUp">11. Are there any high risk social factors that would suggest this neonate would not follow up as recommended with the Infectious Diseases clinic if needed? </label><br><br>
     <input type="radio" name="reliableFollowUp" value="yes" onchange="showQuestions()"> Yes<br>
     <input type="radio" name="reliableFollowUp" value="no" onchange="showQuestions()"> No<br><br><br>
 
@@ -114,7 +115,7 @@ function showCMIAMessage() {
 
     // If CMIA result is "non-reactive", display the message
     if (cmiaNonReactive.checked) {
-        messageDiv.innerHTML = "Birthing parents with a history of syphilis typically have a reactive CMIA titer for life. If the birthing parent of a neonate with suspicion for congenital syphilis has a non-reactive CMIA, please contact the SSM Infectious Disease division for recommendations and rationale.";
+        messageDiv.innerHTML = "Birthing parents with a history of syphilis typically have a reactive CMIA titer for life. If the birthing parent of a neonate with suspicion for congenital syphilis has a non-reactive CMIA, please contact the SSM Infectious Disease division for specific recommendations and rationale.";
     } else {
         messageDiv.innerHTML = ""; // Clear the message if not "non-reactive"
     }
@@ -126,10 +127,17 @@ function showCMIAMessage() {
 function showQuestions() {
     const history = document.querySelector('input[name="history"]:checked');
     const treatment = document.querySelector('input[name="treatment"]:checked');
+    const appropriateTreatment = document.querySelector('input[name="appropriateTreatment"]:checked');
+    const highRisk = document.querySelector('input[name="highRisk"]:checked');
     const screen = document.querySelector('input[name="screen"]:checked');
     const cmiaResult = document.querySelector('input[name="cmiaResult"]:checked');
     const rprTiter = document.querySelector('input[name="rprTiter"]:checked');
-    
+    const rprincrease = document.querySelector('input[name="rprincrease"]:checked');
+    const tp_pa = document.querySelector('input[name="tp_pa"]:checked');
+    const physicalExam = document.querySelector('input[name="physicalExam"]:checked');
+    const reliableFollowUp = document.querySelector('input[name="reliableFollowUp"]:checked');
+
+
     // Question 2 visibility based on Question 1 (history)
     const question2 = document.getElementById('question2');
     if (history && history.value === 'yes') {
@@ -138,18 +146,54 @@ function showQuestions() {
         question2.style.display = 'none';
     }
 
-    // Question 3 visibility based on Question 2 (treatment)
+    // Question 3 visibility based on Question 2 (treatment) and Question 1 (history)
     const question3 = document.getElementById('question3');
-    if (question2.style.display === 'none') {
+    
+    if (history && (history.value === 'no' || history&&history.value === 'unknown' )) {
         question3.style.display = 'none';
-    } else {
-        question3.style.display = 'block';
     }
 
-    // Always show questions 4, 5, and 6
-    document.getElementById('question4').style.display = 'block';
-    document.getElementById('question5').style.display = 'block';
-    document.getElementById('question6').style.display = 'block';
+    else {
+    // Check if question #2 is not 'during_after', 'not treated', or 'unknown'
+    if (treatment && treatment.value !== 'during_after' && treatment.value !== 'not treated' && treatment.value !== 'unknown') {
+        question3.style.display = 'block';
+    } else {
+        question3.style.display = 'none';
+    }
+}
+
+
+    //Question 4-8 visibility based on Question 2
+    if (treatment && (treatment.value === 'during_after' || treatment.value === 'not treated' || treatment.value === 'unknown')) {
+        question4.style.display = 'none';
+        question5.style.display = 'none';
+        question6.style.display = 'none';
+        question7.style.display = 'none';
+        question8.style.display = 'none';
+    }
+     
+
+
+    // If Question 3 is "no" or "unknown", hide Questions 4-8
+    if (appropriateTreatment && (appropriateTreatment.value === 'no' || appropriateTreatment.value === 'unknown')) {
+        question4.style.display = 'none';
+        question5.style.display = 'none';
+        question6.style.display = 'none';
+        question7.style.display = 'none';
+        question8.style.display = 'none';
+    } 
+
+
+    // If Question 4 is "yes" or "unknown", hide Questions 5-8
+    if (highRisk && (highRisk.value === 'yes' || highRisk.value === 'unknown')) {
+        question5.style.display = 'none';
+        question6.style.display = 'none';
+        question7.style.display = 'none';
+        question8.style.display = 'none';
+    } else {
+        question5.style.display = 'block';  // Show Question 5 if the answer is not "yes" or "unknown"
+        question6.style.display = 'block';  // Show Question 6 if the answer is not "yes" or "unknown"
+    }
 
     // Show Question 7 based on Question 6 (screen)
     const question7 = document.getElementById('question7');
@@ -159,17 +203,26 @@ function showQuestions() {
         question7.style.display = 'none';
     }
 
+    //Show Question 8 based on Question 7 (rpr titer)
     const question8 = document.getElementById('question8');
-    if (cmiaResult && cmiaResult.value === 'reactive' && rprTiter && (rprTiter.value === 'non-reactive' || rprTiter.value === 'initially reactive')) {
-        question8.style.display = 'block';
+    if (rprTiter && rprTiter.value === 'reactive') {
+        question8.style.display = 'block'; 
     } else {
-        question8.style.display = 'none';
+        question8.style.display = 'none'; 
     }
 
+    //Show Question 9 based on Question 7 (rpr titer)
+    const question9 = document.getElementById('question9');
+    if (rprTiter && rprTiter.value === 'non-reactive') {
+        question9.style.display = 'block'; 
+    } else {
+        question9.style.display = 'none'; 
+    }
+    
 
-    // Always show questions 9, and 10
-    document.getElementById('question9').style.display = 'block';
+    // Always show questions 10 and 11
     document.getElementById('question10').style.display = 'block';
+    document.getElementById('question11').style.display = 'block';
 
     // Display recommendations or other messages if needed
     const resultDiv = document.getElementById('result');
@@ -201,6 +254,7 @@ function calculateRecommendations() {
     const cmiaResult = document.querySelector('input[name="cmiaResult"]:checked');
     const screen = document.querySelector('input[name="screen"]:checked');
     const rprTiter = document.querySelector('input[name="rprTiter"]:checked');
+    const rprincrease = document.querySelector('input[name="rprincrease"]:checked');
     const tp_pa = document.querySelector('input[name="tp_pa"]:checked');
     const physicalExam = document.querySelector('input[name="physicalExam"]:checked');
     const reliableFollowUp = document.querySelector('input[name="reliableFollowUp"]:checked');
@@ -2326,7 +2380,6 @@ if (noMatch) {
 
 </body>
 </html>
-
 
 
 
