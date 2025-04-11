@@ -10,21 +10,21 @@
 
 <h1>SSM Health Cardinal Glennon Congenital Syphilis Management Guidelines</h1>
 
-<strong>Disclaimer: </strong> This website is designed to be a tool to help clinicians understand congenital syphilis diagnosis and management. The algorithm will populate specific recommendations and rationale based on the answers to the below questions. These guidelines are not intended to replace clinical decision making, the AAP Red Book, and/or Infectious Disease consultation. <br><br><br>
+<strong>Disclaimer: </strong> This website is designed to be a tool to help clinicians understand congenital syphilis diagnosis and management. The algorithm will populate specific recommendations and rationale based on the answers to the below questions. These guidelines are <strong>not</strong> intended to replace clinical decision making, the AAP Red Book, and/or Infectious Disease consultation. <br><br><br>
 
 <form id="guidelinesForm">
     <label id="question1" for="history">1. Does the birthing parent have a known diagnosis of syphilis (either currently or in the past)? </label><br><br>
     <input type="radio" name="history" value="yes" onchange="showQuestions()"> Yes<br>
     <input type="radio" name="history" value="no" onchange="showQuestions()"> No<br>
-    <input type="radio" name="history" value="unknown" onchange="showQuestions()"> Unknown <br><br><br>
+    <input type="radio" name="history" value="unknown" onchange="showQuestions()"> The birthing parent is not available for questioning and I don't have access to their medical records. I do not know if they have/have had a known diagnosis of syphilis. <br><br><br>
 
     <div id="question2" style="display:none;">
         <label for="treatment">2. When was the birthing parent treated for syphilis? If the birthing parent has been treated multiple times, please respond with the <strong>most recent</strong> treatment course. </label><br><br>
         <input type="radio" name="treatment" value="before" onchange="showQuestions()"> Before they were pregnant with the neonate currently being evaluated<br>
         <input type="radio" name="treatment" value="during_before" onchange="showQuestions()"> During their pregnancy with the neonate currently being evaluated <strong>greater</strong> than 30 days prior to delivery<br>
         <input type="radio" name="treatment" value="during_after" onchange="showQuestions()"> During their pregnancy with the neonate currently being evaluated <strong>less</strong> than 30 days prior to delivery<br>
-        <input type="radio" name="treatment" value="not treated" onchange="showQuestions()"> They were not treated<br>
-        <input type="radio" name="treatment" value="unknown" onchange="showQuestions()"> Birthing parent does not recall treatment<br><br><br>
+        <input type="radio" name="treatment" value="not treated" onchange="showQuestions()"> The birthing parent was not treated  <br>
+        <input type="radio" name="treatment" value="unknown" onchange="showQuestions()"> The birthing parent does not recall whether or not they were treated <br><br><br>
     </div>
 
     <div id="question3" style="display:none;">
@@ -35,46 +35,46 @@
             Please contact the SSM Infectious Disease Division if you have further questions about this. Selecting 'unknown' will default to the most conservative course, which may not be appropriate depending on the patient's scenario. </label><br><br>
         <input type="radio" name="appropriateTreatment" value="yes" onchange="showQuestions()"> Yes <br>
         <input type="radio" name="appropriateTreatment" value="no" onchange="showQuestions()"> No <br>
-        <input type="radio" name="appropriateTreatment" value="unknown" onchange="showQuestions()"> Unknown <br>
+        <input type="radio" name="appropriateTreatment" value="unknown" onchange="showQuestions()"> Unknown; this information is not available in the birthing parent's medical records <br>
 
     </div>
 
     <div id="question4" for="highRisk">4. Has the birthing parent and/or their partner(s) had any high-risk sexual activity or symptoms to suggest a newly acquired infection following previous treatment? </label><br><br>
         <label id="note4"> High risk sexual activity is defined as sex with multiple partners, sex in conjunction with drug use, or transactional sex. Symptoms of new syphilitic infection include genital lesion(s) and/or rash. <br> 
-        If the birthing parent has none of these risk factors/symptoms and the partner is not available, please select “yes” or “no” based on the birthing parent's responses  <br> 
-        Please select "unknown" if the birthing parent is not available or declines to answer </label><br><br> 
+        If the birthing parent has none of these risk factors/symptoms and the partner is not available, please select “yes” or “no” based on the birthing parent's responses  </label><br><br> 
         <input type="radio" name="highRisk" value="yes" onchange="showQuestions()"> Yes <br>
         <input type="radio" name="highRisk" value="no" onchange="showQuestions()"> No <br>
-        <input type="radio" name="highRisk" value="unknown" onchange="showQuestions()"> Unknown <br><br><br>
+        <input type="radio" name="highRisk" value="unknown" onchange="showQuestions()"> Unknown; the birthing parent is not available for questioning or declines to answer <br><br><br>
 
     </div>
 
     <div id="question5" for="cmiaResult">5. What was the result of the birthing parent's initial treponemal antibody test (referred to as CMIA in SSM Epic) during pregnancy? </label><br><br>
         <input type="radio" name="cmiaResult" value="reactive" id="cmiaReactive" onchange="showCMIAMessage()"> CMIA reactive <br>
         <input type="radio" name="cmiaResult" value="non-reactive" id="cmiaNonReactive" onchange="showCMIAMessage()"> CMIA non-reactive <br>
-        <input type="radio" name="cmiaResult" value="not available" id="cmiaNotAvailable" onchange="showCMIAMessage()">CMIA results unknown <br><br><br>
+        <input type="radio" name="cmiaResult" value="not available" id="cmiaNotAvailable" onchange="showCMIAMessage()"> Unknown; CMIA results are not available in the medical record <br><br><br>
 
     </div>
 
 
     <div id="question6" for="screen">6. Was the birthing parent adequately screened for syphilis during their pregnancy? </label><br><br>
         <label id="note6"> Adequate screening for syphilis during pregnancy is defined as at least 2 RPR titers obtained during pregnancy, one of which must have been obtained more than 4 weeks before delivery and another obtained within 4 weeks of delivery. </label><br><br> 
-        <input type="radio" name="screen" value="yes" id="screenYes" onchange="showQuestions(); showMessage();" > Yes <br>
-        <input type="radio" name="screen" value="no" id="screenNo" onchange="showQuestions(); showMessage();"> No <br>
-        <input type="radio" name="screen" value="unknown" id="screenUnknown" onchange="showQuestions(); showMessage();"> Unknown <br><br><br>
+        <input type="radio" name="screen" value="yes" id="screenYes" onchange="showQuestions()" > Yes <br>
+        <input type="radio" name="screen" value="no" id="screenNo" onchange="showQuestions()"> No <br>
+        <input type="radio" name="screen" value="unknown" id="screenUnknown" onchange="showQuestions()"> Unknown; this information is not available in the medical record  <br><br><br>
 
     </div>
 
     <div id="question7" style="display:none;">
         <label id="question7" for="rprTiter">7. What was the birthing parent's most recent RPR titer during pregnancy? </label><br><br>
-        <label id="note7"> Please select the answer choice "reactive" for all reactive RPR titers including: 1:1, 1:2, 1:4, 1:8, 1:16 etc. </label><br><br> 
         <input type="radio" name="rprTiter" value="non-reactive" onchange="showQuestions()"> RPR non-reactive <br>
+        <input type="radio" name="rprTiter" value="low level positive" onchange="showQuestions()"> RPR low level positive (1:1, 1:2, 1:4) <br>
         <input type="radio" name="rprTiter" value="reactive" onchange="showQuestions()"> RPR reactive <br><br>
     </div>
 
 
     <div id="question8" style="display:none;">
         <label id="question8" for="rprincrease">8. Was there a four-fold increase in RPR titer following the birthing parent's most recent syphilitic treatment during pregnancy? </label><br><br>
+        <label id="note8"> A four-fold increase refers to a two dilution increase. Examples include: 1:4 to 1:16; 1:2 to 1:8; and 1:1 to 1:4  </label><br><br> 
         <input type="radio" name="rprincrease" value="Yes" onchange="showQuestions()"> Yes <br>
         <input type="radio" name="rprincrease" value="No" onchange="showQuestions()"> No <br><br>
     </div>
@@ -84,7 +84,7 @@
         <input type="radio" name="tp_pa" value="pending" onchange="showQuestions()"> The TP-PA result is still pending<br>
         <input type="radio" name="tp_pa" value="reactive" onchange="showQuestions()"> The TP-PA was reactive <br>
         <input type="radio" name="tp_pa" value="non-reactive" onchange="showQuestions()"> The TP-PA was non-reactive <br>
-        <input type="radio" name="tp_pa" value="unknown" onchange="showQuestions()"> I do not know what the TP-PA result is. It is not available in the medical record. <br>
+        <input type="radio" name="tp_pa" value="unknown" onchange="showQuestions()"> Unknown; the TP-PA result is not available in the medical record  <br>
     </div>
 
     
@@ -94,7 +94,7 @@
     <input type="radio" name="physicalExam" value="yes" onchange="showQuestions()"> Yes<br>
     <input type="radio" name="physicalExam" value="no" onchange="showQuestions()"> No<br> <br><br>
 
-    <label id="question11" for="reliableFollowUp">11. Are there any high risk social factors that would suggest this neonate would not follow up as recommended with the Infectious Diseases clinic if needed? </label><br><br>
+    <label id="question11" for="reliableFollowUp">11. Are there any high risk social factors that would suggest this neonate would not follow up with the Infectious Diseases clinic if needed? Please contact the SSM Infectious Disease Division for more information if you are unsure about the response to this question. </label><br><br>
     <input type="radio" name="reliableFollowUp" value="yes" onchange="showQuestions()"> Yes<br>
     <input type="radio" name="reliableFollowUp" value="no" onchange="showQuestions()"> No<br><br><br>
 
@@ -149,7 +149,7 @@ function showQuestions() {
     // Question 3 visibility based on Question 2 (treatment) and Question 1 (history)
     const question3 = document.getElementById('question3');
     
-    if (history && (history.value === 'no' || history&&history.value === 'unknown' )) {
+    if (history && (history.value === 'no' || history.value === 'unknown' )) {
         question3.style.display = 'none';
     }
 
@@ -205,17 +205,19 @@ function showQuestions() {
 
     //Show Question 8 based on Question 7 (rpr titer)
     const question8 = document.getElementById('question8');
-    if (rprTiter && rprTiter.value === 'reactive') {
+    if (rprTiter && (rprTiter.value === 'reactive' || rprTiter.value === 'low level positive' || rprTiter.value === 'non-reactive')) {
         question8.style.display = 'block'; 
-    } else {
-        question8.style.display = 'none'; 
-    }
+    } 
+    
 
     //Show Question 9 based on Question 7 (rpr titer)
     const question9 = document.getElementById('question9');
-    if (rprTiter && rprTiter.value === 'non-reactive') {
-        question9.style.display = 'block'; 
-    } else {
+    if (cmiaResult && cmiaResult.value === "reactive")
+    if (rprTiter && rprTiter.value === 'non-reactive') 
+    {
+        question9.style.display = 'block';
+
+        } else {
         question9.style.display = 'none'; 
     }
     
@@ -268,16 +270,18 @@ function calculateRecommendations() {
 
     // Scenario #1
     if (
-        history.value === "yes" &&
-        treatment.value === "before" &&
-        appropriateTreatment.value === "yes" &&
-        highRisk.value === "no" &&
-        cmiaResult.value === "reactive" &&
-        screen.value ==="yes" &&
-        (rprTiter.value === "non-reactive" || rprTiter.value === "initially-reactive" || rprTiter.value ==="initially-reactive") &&
-        (tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
-        (physicalExam.value === "no") &&
-        reliableFollowUp.value === "no"
+        history && history.value === "yes" &&
+        treatment && treatment.value === "before" &&
+        appropriateTreatment && appropriateTreatment.value === "yes" &&
+        highRisk && highRisk.value === "no" &&
+        cmiaResult && cmiaResult.value === "reactive" &&
+        screen && screen.value ==="yes" &&
+        rprTiter && rprTiter.value === "non-reactive" &&
+        (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "unknown" )) &&
+        physicalExam && physicalExam.value === "no" &&
+        reliableFollowUp && reliableFollowUp.value === "no"
+
+
     ) {
 
         recommendations.push("• Check the neonate's RPR titer");
@@ -302,17 +306,15 @@ function calculateRecommendations() {
     }
 
     // Scenario #2
+
     if (
-        history.value === "yes" &&
-        (treatment.value === "before" || treatment.value === "during_before") &&
-        appropriateTreatment.value === "yes" &&
-        (highRisk.value === "yes" || highRisk.value === "unknown" ) &&
-        cmiaResult.value === "reactive" &&
-        screen.value ==="yes" &&
-        (rprTiter.value === "non-reactive" || rprTiter.value === "initially-reactive" || rprTiter.value === "initially-reactive" || rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive") &&
-        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
-        (physicalExam.value === "no") &&
-        reliableFollowUp.value === "no"
+        history && history.value === "yes" &&
+        (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
+        appropriateTreatment && appropriateTreatment.value === "yes" &&
+        (highRisk && (highRisk.value === "yes" || highRisk.value === "unknown" )) && 
+        physicalExam && physicalExam.value === "no" &&
+        reliableFollowUp && reliableFollowUp.value === "no"
+
     ) {
         
        var fullRecommendation = 
@@ -359,6 +361,7 @@ function calculateRecommendations() {
         cmiaResult && cmiaResult.value === "reactive" &&
         screen && screen.value === "yes" &&
         rprTiter && rprTiter.value === "low level positive" &&
+        rprincrease && rprincrease.value === "no" &&
         physicalExam && physicalExam.value === "no" &&
         reliableFollowUp && reliableFollowUp.value === "no"
     ) {
@@ -403,12 +406,13 @@ function calculateRecommendations() {
     // Scenario #4
     if (
         history && history.value === "yes" &&
-        treatment && treatment.value === "before" &&
+        (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
         appropriateTreatment && appropriateTreatment.value === "yes" &&
         highRisk && highRisk.value === "no" &&
         cmiaResult && cmiaResult.value === "reactive" &&
         screen && screen.value ==="yes" &&
-        (rprTiter && (rprTiter.value === "reactive" || rprTiter.value === "initially non-reactive")) &&
+        (rprTiter && (rprTiter.value === "reactive" || rprTiter.value === "low level positive")) &&
+        (rprincrease && (rprincrease.value === "yes" || rprincrease.value === "no" )) &&
         (physicalExam && physicalExam.value === "no" ) &&
         reliableFollowUp && reliableFollowUp.value === "no"
     ) {
@@ -451,18 +455,19 @@ function calculateRecommendations() {
 }
 
 
-    // Scenario #5
+    //Scenario #5
     if (
-        history.value === "yes" &&
-        (treatment.value === "during_before" )&&
-        appropriateTreatment.value === "yes" &&
-        highRisk.value === "no" &&
-        cmiaResult.value === "reactive" &&
-        screen.value ==="yes" &&
-        (rprTiter.value === "initially reactive" ) &&
-        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
-        physicalExam.value === "no" &&
-        reliableFollowUp.value === "no"
+        history && history.value === "yes" &&
+        treatment && treatment.value === "during_before" &&
+        appropriateTreatment && appropriateTreatment.value === "yes" &&
+        highRisk && highRisk.value === "no" &&
+        cmiaResult && cmiaResult.value === "reactive" &&
+        screen && screen.value ==="yes" &&
+        rprTiter && rprTiter.value === "non-reactive" &&
+        rprincrease && rprincrease.value === "no" &&
+        (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "unknown" )) &&
+        physicalExam && physicalExam.value === "no" &&
+        reliableFollowUp && reliableFollowUp.value === "no"
     ) {
         var fullRecommendation = 
         "•Check the neonate's RPR titer <br><br>" +
@@ -502,65 +507,11 @@ function calculateRecommendations() {
         noMatch = false; // A match was found
     }
 
-
-    // Scenario #6
-    if (
-        history && history.value === "yes" &&
-        (treatment && treatment.value === "during_before")&&
-        appropriateTreatment && appropriateTreatment.value === "yes" &&
-        highRisk && highRisk.value === "no" &&
-        cmiaResult && cmiaResult.value === "reactive" &&
-        screen && screen.value ==="yes" &&
-        (rprTiter && (rprTiter.value === "initially non-reactive" || rprTiter.value === "reactive")) &&
-        (physicalExam && physicalExam.value === "no")&&
-        reliableFollowUp && reliableFollowUp.value === "no"
-    ) {
-        
-        var fullRecommendation = 
-        "• <u>Obtain neonatal: </u><br>" +
-        "- RPR <br>" +
-        "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
-        "- CBC with differential and platelet count <br>" +
-        "- Long bone radiography <br>" +
-        "- Baseline ALT <br><br>" +
-        "• If the neonate's RPR titer is fourfold greater than the birthing parent's titer (neonatal 1:4, birthing parent 1:16) and/or any of the above diagnostic testing is abnormal, additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +         
-        "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment. <br> "; 
-        
-        
-
-    // Push the full recommendation to the recommendations array
-    recommendations.push(fullRecommendation);
-
-        noMatch = false; // A match was found
-        
-        rationale = 
-        "• The birthing parent's reactive RPR titer significantly increase the likelihood that treatment was ineffective or the birthing parent was reinfected with syphilis after treatment. <br> <br> " +
-
-        "• If the neonate's RPR titer is fourfold (or greater) than then birthing parent's RPR titer <strong>and/or</strong> the neonate's diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'congenital syphilis proven or highly probable.' <br> <br> " +
-
-        " • If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR <strong>and</strong> the neonate's the diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
-
-        " • Neonates who fall into the category 'proven or highly probable congenital syphilis' may require additional diagnostic testing. See table 3.72 in the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. <br> <br> " +
-
-        "• 10 days of IV aqueuous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into either category. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
-
-
-        noMatch = false; // A match was found
-       
-    }
-    
-
-        
     //Scenario #7
-    if (
-        history.value === "yes"  &&
-        (treatment.value === "during_after" || treatment.value=== "not treated" || treatment.value=== "unknown" ) &&
-        (appropriateTreatment.value === "yes" || appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" ||appropriateTreatment.value === "NA" ) &&
-        (highRisk.value === "no" || highRisk.value === "yes" || highRisk.value === "unknown") &&
-        (cmiaResult.value === "reactive" ) &&
-        screen.value ==="yes" &&
-        (rprTiter.value === "non-reactive"|| rprTiter.value === "low level positive" || rprTiter.value === "reactive" || rprTiter.value === "initially reactive" || rprTiter.value === "initially non-reactive" ) &&
-        (tp_pa.value === "pending"  || tp_pa.value === "reactive" || tp_pa.value === "non-reactive") &&
+
+if (
+        history && history.value === "yes"  &&
+        (treatment && (treatment.value === "during_after" || treatment.value=== "not treated" || treatment.value=== "unknown" )) &&
         (physicalExam.value === "no") &&
         reliableFollowUp.value === "no"
      )  
@@ -599,15 +550,18 @@ function calculateRecommendations() {
         
     }
 
+
     //Scenario #9
+
     if (
     history && history.value === "yes" &&
     treatment && treatment.value === "during_before" &&
     appropriateTreatment && appropriateTreatment.value === "yes" &&
     highRisk && highRisk.value === "no"  &&
     cmiaResult && cmiaResult.value === "reactive" &&
-    screen && screen.value ==="yes" &&
+    screen && screen.value === "yes" &&
     rprTiter && rprTiter.value === "low level positive" &&
+    rprincrease && rprincrease.value === "no" &&
     physicalExam && physicalExam.value === "no" &&
     reliableFollowUp && reliableFollowUp.value === "no"
 )  
@@ -645,26 +599,263 @@ function calculateRecommendations() {
 
 }
 
+
 // Scenario #10
 if (
-        history.value === "yes" &&
-        treatment.value === "before" &&
-        appropriateTreatment.value === "yes" &&
-        highRisk.value === "no" &&
-        cmiaResult.value === "reactive" &&
-        screen.value ==="yes" &&
-        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
-        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
-        (physicalExam.value === "yes") &&
-        (reliableFollowUp.value === "no")
-    ) {
-        recommendations.push("• Physical exam findings associated with congenital syphilis are rare. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+    history && history.value === "yes" &&
+    (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
+    appropriateTreatment && appropriateTreatment.value === "yes" &&
+    highRisk && highRisk.value === "no" &&
+    cmiaResult && cmiaResult.value === "reactive" &&
+    screen && screen.value === "yes" &&
+    (rprTiter && (rprTiter.value === "reactive" || rprTiter.value === "low level positive")) &&
+    rprincrease && rprincrease.value === "no" &&
+    physicalExam && physicalExam.value === "yes" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+    ) 
+    {
+        recommendations.push("• Physical exam findings associated with congenital syphilis are uncommon. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
         recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division for further recommendations and rationale. ");
         
         noMatch = false; // Scenario matched, no need to show error
         
 
 }
+
+//Scenario #11
+if (history && history.value === "yes"  &&
+    (treatment && (treatment.value === "during_after" || treatment.value=== "not treated" || treatment.value=== "unknown" )) &&
+    physicalExam && physicalExam.value === "yes" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+)
+
+{
+
+var fullRecommendation = 
+    "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
+    "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
+    "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain neonatal: <br>" +
+    "- RPR <br>" +
+    "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+    "- CBC with differential and platelet count <br>" +
+    "- Long bone radiography <br>" +
+    "- Baseline ALT <br>" +
+    "- Additional testing may be needed in this scenario. Please see the rationale section for more information. <br>" +
+    "•<u>Treat</u> with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment. <br> "; 
+    
+    
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+    noMatch = false; // A match was found
+
+
+    rationale = 
+    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+    "•Physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
+
+    noMatch = false; // A match was found
+
+}
+
+//Scenario #12
+if (
+    history && history.value === "yes" &&
+    (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
+    (appropriateTreatment && (appropriateTreatment.value === "no" || appropriateTreatment.value === "unknown" )) &&
+    physicalExam && physicalExam.value === "yes" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+    ) 
+
+    {
+
+var fullRecommendation = 
+    "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
+    "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
+    "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain neonatal: <br>" +
+    "- RPR <br>" +
+    "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+    "- CBC with differential and platelet count <br>" +
+    "- Long bone radiography <br>" +
+    "- Baseline ALT <br>" +
+    "- Additional testing may be needed in this scenario. Please see the rationale section for more information. <br>" +
+    "•<u>Treat</u> with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment. <br> "; 
+    
+    
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+    noMatch = false; // A match was found
+
+
+    rationale = 
+    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+    "•Physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
+
+    noMatch = false; // A match was found
+
+}
+
+//Scenario #13
+if (
+    history && history.value === "yes" &&
+    (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
+    appropriateTreatment && appropriateTreatment.value === "yes" &&
+    (highRisk && (highRisk.value === "yes" || highRisk.value === "unknown")) &&
+    physicalExam && physicalExam.value === "yes" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+) 
+
+{
+
+var fullRecommendation = 
+    "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
+    "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
+    "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain neonatal: <br>" +
+    "- RPR <br>" +
+    "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+    "- CBC with differential and platelet count <br>" +
+    "- Long bone radiography <br>" +
+    "- Baseline ALT <br>" +
+    "- Additional testing may be needed in this scenario. Please see the rationale section for more information. <br>" +
+    "•<u>Treat</u> with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment. <br> "; 
+    
+    
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+    noMatch = false; // A match was found
+
+
+    rationale = 
+    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+    "•Physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
+
+    noMatch = false; // A match was found
+
+}
+
+//Scenario #14
+if (
+    history && history.value === "yes" &&
+    (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
+    appropriateTreatment && appropriateTreatment.value === "yes" &&
+    highRisk && highRisk.value === "no" &&
+    cmiaResult && cmiaResult.value === "reactive" &&
+    (screen && (screen.value === "no" || screen.value === "unknown")) &&
+    physicalExam && physicalExam.value === "yes" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+    ) 
+
+    {
+
+var fullRecommendation = 
+    "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
+    "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
+    "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain neonatal: <br>" +
+    "- RPR <br>" +
+    "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+    "- CBC with differential and platelet count <br>" +
+    "- Long bone radiography <br>" +
+    "- Baseline ALT <br>" +
+    "- Additional testing may be needed in this scenario. Please see the rationale section for more information. <br>" +
+    "•<u>Treat</u> with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment. <br> "; 
+    
+    
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+    noMatch = false; // A match was found
+
+
+    rationale = 
+    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+    "•Physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
+
+    noMatch = false; // A match was found
+
+}
+
+// Scenario #15
+if (
+    history && history.value === "yes" &&
+    (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
+    appropriateTreatment && appropriateTreatment.value === "yes" &&
+    highRisk && highRisk.value === "no" &&
+    cmiaResult && cmiaResult.value === "reactive" &&
+    screen && screen.value === "yes" &&
+    rprTiter && rprTiter.value === "non-reactive" &&
+    rprincrease && rprincrease.value === "no" &&
+    (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "unknown" )) &&
+    physicalExam && physicalExam.value === "yes" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+    ) 
+    {
+        recommendations.push("• Physical exam findings associated with congenital syphilis are uncommon. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+        recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division for further recommendations and rationale. ");
+        
+        noMatch = false; // Scenario matched, no need to show error
+        
+}
+
+
+// Scenario #16
+if (
+    history && history.value === "yes" &&
+    (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
+    appropriateTreatment && appropriateTreatment.value === "yes" &&
+    highRisk && highRisk.value === "no" &&
+    cmiaResult && cmiaResult.value === "reactive" &&
+    screen && screen.value === "yes" &&
+    rprTiter && rprTiter.value === "non-reactive" &&
+    rprincrease && rprincrease.value === "yes" &&
+    (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "unknown" )) &&
+    physicalExam && physicalExam.value === "yes" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+    ) 
+    {
+        recommendations.push("• Physical exam findings associated with congenital syphilis are uncommon. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+        recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division for further recommendations and rationale. ");
+        
+        noMatch = false; // Scenario matched, no need to show error
+        
+}
+
+
+// Scenario #16
+if (
+    history && history.value === "yes" &&
+    (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
+    appropriateTreatment && appropriateTreatment.value === "yes" &&
+    highRisk && highRisk.value === "no" &&
+    cmiaResult && cmiaResult.value === "reactive" &&
+    screen && screen.value === "yes" &&
+    (rprTiter && (rprTiter.value === "low level positive" && rprTiter.value === "reactive"))
+    (rprincrease && rprincrease.value === "yes") &&
+    physicalExam && physicalExam.value === "yes" &&
+    reliableFollowUp && reliableFollowUp.value === "no"
+)
+
+    {
+        recommendations.push("• Physical exam findings associated with congenital syphilis are uncommon. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+        recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division for further recommendations and rationale. ");
+        
+        noMatch = false; // Scenario matched, no need to show error
+        
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     // Scenario #11
@@ -674,7 +865,7 @@ if (
         appropriateTreatment && appropriateTreatment.value === "yes" &&
         highRisk && highRisk.value === "no" &&
         cmiaResult && cmiaResult.value === "reactive" &&
-        screen && screen.value ==="yes" &&
+        screen && screen.value === "yes" &&
         rprTiter && rprTiter.value === "low level positive" &&
         physicalExam && physicalExam.value === "yes" &&
         reliableFollowUp && reliableFollowUp.value === "no"
@@ -725,109 +916,6 @@ if (
         "•Physical exam findings associated with congenital syphilis are <strong>rare</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
 
         noMatch = false; // A match was found
-    }
-
-
-    //Scenario #13
-    if (
-    history && history.value === "yes" &&
-    treatment && treatment.value === "during_before" &&
-    appropriateTreatment && appropriateTreatment.value === "yes" &&
-    highRisk && highRisk.value === "no"  &&
-    cmiaResult && cmiaResult.value === "reactive" &&
-    screen && screen.value ==="yes" &&
-    rprTiter && rprTiter.value === "low level positive" &&
-    physicalExam && physicalExam.value === "yes" &&
-    reliableFollowUp && reliableFollowUp.value === "no"
-)  {
-
-
-    var fullRecommendation = 
-        "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
-        "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
-        "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain neonatal: <br>" +
-        "- RPR <br>" +
-        "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
-        "- CBC with differential and platelet count <br>" +
-        "- Long bone radiography <br>" +
-        "- Baseline ALT <br>" +
-        "• Additional testing may be needed in this scenario. Please see the rationale section for more information. <br>" +
-        "•<u>Treat</u> with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment. <br> "; 
-        
-        
-    // Push the full recommendation to the recommendations array
-    recommendations.push(fullRecommendation);
-
-        noMatch = false; // A match was found
-
-
-        rationale = 
-        "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
-        "•Physical exam findings associated with congenital syphilis are <strong>rare</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
-
-        noMatch = false; // A match was found
-
-}
-
-// Scenario #14
-if (
-        history.value === "yes" &&
-        treatment.value === "before" &&
-        appropriateTreatment.value === "yes" &&
-        highRisk.value === "no" &&
-        cmiaResult.value === "reactive" &&
-        screen.value ==="yes" &&
-        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
-        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
-        (physicalExam.value === "no") &&
-        reliableFollowUp.value === "yes"
-    ) {
-     recommendations.push("• Check the neonate's RPR");
-     recommendations.push("• If the neonate's RPR is non-reactive, no further syphilis-related diagnostic testing is needed, no treatment is needed, and no ID follow up is needed. The result of the TP-PA is not relevant in this circumstance. ");
-     recommendations.push("• In the unlikely event that the neonate's RPR is reactive, the management of the neonate should be made on a case-by-case basis in consultation with the pediatric ID physician.  In this case, the height of the RPR titer and the reliability of follow up will be helpful in determining the plan. The result of the TP-PA is not relevant in this circumstance.");
-
-
-        noMatch = false; // A match was found
-
-        rationale = `
-        • The birthing parent's history and syphilis testing results indicate that they have a known history of syphilis which was adequately treated prior to the current pregnancy. Given their known history of syphilis, we would expect them to have persistently reactive treponemal antibody levels for life, regardless of which methodology (e.g. CMIA, EIA, TP-PA) is used to detect these antibodies. Thus, the parental TP-PA result should not change management in this circumstance. In the unlikely event that their CMIA is positive and TP-PA is negative, we would still consider the birthing parent 'treponemal antibody positive.' <br> <br>
-
-        • We recommend checking the neonate's RPR as a precaution in case the birthing parent reacquired syphilis  during pregnancy but sufficient time has not passed for their RPR to become reactive. This is less likely for this scenario as the birthing parent reports no high risk sexual activity or symptoms of syphilis. <br> 
-
-        <ul>
-        <li> If the neonate's RPR is non-reactive (expected), no penicillin therapy is needed, and no ID follow-up is needed. This would fall into the AAP Red Book category of 'CS unlikely.'</li><br>
-
-        <li> In the unlikely event that the neonate's RPR is reactive, this may be due to reacquired syphilis in the birthing parent, especially if the neonate's RPR is > or = to 1:2. The next steps in management should be made in consultation with the pediatric ID physician on call. The unreliability of follow up in this scenario may favor a more conservative treatment plan.  </li>
-        </ul><br>
-`;
-noMatch = false; // A match was found
-    }
-
-
-
-    // Scenario #15
-if (
-        history.value === "yes" &&
-        treatment.value === "before" &&
-        appropriateTreatment.value === "yes" &&
-        highRisk.value === "no" &&
-        cmiaResult.value === "reactive" &&
-        screen.value ==="yes" &&
-        (rprTiter.value === "non-reactive" || rprTiter.value === "initially reactive") &&
-        (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" ) &&
-        (physicalExam.value === "yes") &&
-        (reliableFollowUp.value === "yes")
-    ) {
-        recommendations.push("• Please contact the SSM Infectious Disease division for specific recommendations and rationale."); 
-        
-        
-        noMatch = false; // A match was found
-
-        rationale=
-        "•The unreliability of follow up and the presence of physical exam findings associated with congenital syphilis complicate the clinical picture in this scenario <br>" +
-        "•Please contact the SSM Infectious Disease division for specific recommendations and rationale."; 
-        
-        noMatch = false; // Scenario matched, no need to show error
     }
 
 
