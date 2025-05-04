@@ -12,19 +12,28 @@
 
 <strong>Purpose of this website:</strong> This website is intended to function as a clinical support tool for clinicians who care for neonates where there is concern for congenital syphilis.  The goal is to provide management recommendations based on the clinical information obtained from the birthing parent and neonate.  Based on how the clinician answers the below questions, the algorithm will populate specific recommendations regarding further diagnostic testing, treatment and follow up.  A rationale for these recommendations will also be provided.  The goal of this clinical support tool is to provide recommendations on a wide range of inputted scenarios, including those that may not be fully addressed in the AAP Red Book. <br><br>
 
-<strong>Disclaimer:</strong> This website is designed to provide recommendations and rationale regarding congenital syphilis management to help clinicians understand next steps when caring for a neonate at risk of congenital syphilis. These guidelines are not intended to replace clinical decision making, the AAP Red Book, and/or Infectious Diseases consultation. <br><br> 
+<strong>Disclaimer:</strong> This website utilizes the reverse screening algorithm to provide recommendations and rationale regarding congenital syphilis management to help clinicians understand next steps when caring for a neonate at risk of congenital syphilis. These guidelines are not intended to replace clinical decision making, the AAP Red Book, and/or Infectious Diseases consultation. <br><br> 
 
 <strong>Authors:</strong> Nishtha Chavda MS4, Aaron Miller MD <br>
 <strong> Date of Creation:</strong> April 2025 <br>
 <strong>&copy;</strong> 2025 Nishtha Chavda, Aaron Miller <br> <br><br>
 
 
-    
 <form id="guidelinesForm">
-    <label id="question1" for="history">1. Does the birthing parent have a known diagnosis of syphilis (either currently or in the past)? </label><br><br>
-    <input type="radio" name="history" value="yes" onchange="showQuestions()"> Yes; the birthing parent reports a history of syphilis and/or has undergone syphilitic treatment <br>
-    <input type="radio" name="history" value="no" onchange="showQuestions()"> No; the birthing parent denies a history of syphilis and has not undergone syphilitic treatment <br>
-    <input type="radio" name="history" value="unknown" onchange="showQuestions()"> Unknown; the birthing parent has had no known syphilitic treatment and refuses parental interview, is not available for parental interview, or does not recall whether or not they have had a known diagnosis of syphilis <br><br><br>
+
+    <div id="question1">
+    <label for="history">1. Does the birthing parent have a known diagnosis of syphilis (either currently or in the past)? If the birthing parent is <strong>not</strong> available for the interview, please select an answer choice corresponding to the <a href="#" id="toggleNote1">information in the medical record.</a>
+    </label><br><br>
+    <div id="note1" style="display:none; margin-top:10px;">        
+        Answer "yes" to this question if, <strong>in a birthing parent not available for interview</strong>, clinician notes mention a history of syphilis or the medical record shows a reactive RPR titer, reactive TP-PA titer, or a reactive syphilis antibody cascading reflex </div><br><br>
+
+
+    <input type="radio" name="history" value="yes" onchange="showQuestions()"> Yes  <br>
+    <input type="radio" name="history" value="no" onchange="showQuestions()"> No <br>
+    <input type="radio" name="history" value="unknown" onchange="showQuestions()"> Unknown; this information is not available in the medical record <strong>and</strong> the birthing parent cannot provide this information <br><br><br>
+    
+</div>
+
 
     <div id="question2" style="display:none;">
         <label for="treatment">2. When was the birthing parent treated for syphilis? If the birthing parent has been treated multiple times, please respond with the <strong>most recent</strong> treatment course. </label><br><br>
@@ -36,36 +45,55 @@
     </div>
 
     <div id="question3" style="display:none;">
-        <label for="appropriateTreatment">3. Was the birthing parent's syphilis treatment in question #2 appropriate for their stage of disease? </label><br><br>
-        <label id="note3">IM benzathine penicillin G (Bicillin LA) once per week for 3 weeks in a row is appropriate treatment for late latent syphilis or latent syphilis of unknown duration. This is the most common scenario that we see in our patient population. If more than 9 days elapsed between IM doses, the entire series should have been repeated. Consider this inadequate treatment if the series was not repeated.<br><br>
-            If the birthing parent's provider <strong>documented</strong> that they had primary, secondary, or early latent syphilis, a single dose of IM benzathine penicillin G should be considered adequate treatment. <br><br>
-            If the birthing parent was treated with a non-penicillin antibiotic <strong>during their pregnancy</strong>, this should be considered inadequate treatment. If the birthing parent was treated with an appropriate non-penicillin antibiotic (doxycycline, ceftriaxone) <strong>prior to pregnancy</strong>, this should be considered sufficient treatment provided that the full prescribed medication course was completed.<br><br>
-            Please contact the SSM Infectious Disease Division if you have further questions about this. Selecting 'unknown' will default to the most conservative course, which may not be appropriate depending on the patient's scenario. </label><br><br>
+        <label for="appropriateTreatment">3. Was the birthing parent's syphilis treatment in question #2 <a href="#" id="toggleNote3">appropriate for their stage of disease</a>?
+        </label>
+        <div id="note3" style="display:none; margin-top:10px;">
+            •If the syphilitic stage is <strong>not</strong> mentioned in the medical record:<br>
+            - IM benzathine penicillin G (Bicillin LA) once per week for 3 weeks in a row is sufficient treatment for essentially all stages of syphilis that we see in our birthing parent population. If more than 9 days elapsed between IM doses, the entire series should have been repeated. Consider this inadequate treatment if the series was not repeated.<br><br>
+            
+            • If the syphilitic stage <strong>is</strong> mentioned in the medical record <strong>or</strong> is clear based on the birthing parent's symptoms at the time: <br>
+            - IM benzathine penicillin G (Bicillin LA) once per week for 3 weeks in a row is <strong>necessary</strong> for appropriate treatment of late latent syphilis and latent syphilis of unknown duration <br>
+            - A single dose of IM benzathine penicillin G is sufficient treatment for primary, secondary, or early latent syphilis <br><br>
+            
+            •If the birthing parent was treated with a non-penicillin antibiotic <strong>during their pregnancy</strong>, this should be considered inadequate treatment. <br>
+            •If the birthing parent was treated with an appropriate non-penicillin antibiotic (doxycycline, ceftriaxone) <strong>prior to pregnancy</strong>, this should be considered sufficient treatment provided that the full prescribed medication course was completed.<br><br>
+            •Please contact the SSM Infectious Disease Division if you have further questions about this. Selecting 'unknown' will default to the most conservative course, which may not be appropriate depending on the patient's scenario. </div><br><br>
+
         <input type="radio" name="appropriateTreatment" value="yes" onchange="showQuestions()"> Yes <br>
         <input type="radio" name="appropriateTreatment" value="no" onchange="showQuestions()"> No <br>
-        <input type="radio" name="appropriateTreatment" value="unknown" onchange="showQuestions()"> Unknown; this information is not available in the birthing parent's medical records <br>
-
+        <input type="radio" name="appropriateTreatment" value="unknown" onchange="showQuestions()"> Unknown; this information is not available in the birthing parent's medical records <br><br>
     </div>
 
-    <div id="question4" for="highRisk">4. Has the birthing parent and/or their partner(s) had any high-risk sexual activity or symptoms to suggest a newly acquired infection following previous treatment (if applicable)? </label><br><br>
-        <label id="note4"> High risk sexual activity is defined as sex with multiple partners, sex in conjunction with drug use, or transactional sex. Symptoms of new syphilitic infection include genital lesion(s) and/or rash. <br> 
-        If the birthing parent's partner(s) are not available, please select “yes” or “no” based on the birthing parent's responses  </label><br><br> 
+
+
+    <div id="question4" for="highRisk">4. Has the birthing parent and/or their partner(s) had any <a href="#" id="toggleNote4">high-risk sexual activity</a> during the current pregnancy? Has either the birthing parent or their partner(s) developed any symptoms during this current pregnancy to suggest a <a href="#" id="toggleNote41">newly acquired syphilis infection</a> following previous treatment (if applicable)?
+    Please answer “yes” if the answer to either of these above questions is yes. If the birthing parent's partner(s) are not available, please select an answer based on the birthing parent's responses. </label>
+
+    <div id="note4" style="display:none; margin-top:10px;">
+        High risk sexual activity is defined as sex with multiple partners, sex in conjunction with drug use, or transactional sex. </div><br>
+    
+    <div id="note41" style="display:none; margin-top:10px;">
+        Symptoms of new syphilitic infection include genital lesion(s) and/or rash. </div><br><br>
+        
         <input type="radio" name="highRisk" value="yes" onchange="showQuestions()"> Yes <br>
         <input type="radio" name="highRisk" value="no" onchange="showQuestions()"> No <br>
-        <input type="radio" name="highRisk" value="unknown" onchange="showQuestions()"> Unknown; the birthing parent is not available for questioning or declines to answer <br><br><br>
+        <input type="radio" name="highRisk" value="unknown" onchange="showQuestions()"> Unknown; the birthing parent is not available for interview or declines to answer <br><br><br>
 
     </div>
 
-    <div id="question5" for="cmiaResult">5. What was the result of the birthing parent's initial treponemal antibody test (referred to as CMIA in SSM Epic) during pregnancy? </label><br><br>
-        <input type="radio" name="cmiaResult" value="reactive" id="cmiaReactive" onchange="showCMIAMessage()"> CMIA reactive <br>
-        <input type="radio" name="cmiaResult" value="non-reactive" id="cmiaNonReactive" onchange="showCMIAMessage()"> CMIA non-reactive <br>
-        <input type="radio" name="cmiaResult" value="not-available" id="cmiaNotAvailable" onchange="showCMIAMessage()"> Unknown; CMIA results are not available in the medical record <br><br><br>
+    <div id="question5" for="cmiaResult">5. What was the result of the birthing parent's initial treponemal antibody test (referred to as “syphilis antibody cascading reflex" or "treponema pallidum antibody" in SSM Epic) during pregnancy? If the treponema pallidum antibody is in process, please fill out this form once the results are available. 
+    </label><br><br>
+        <input type="radio" name="cmiaResult" value="reactive" id="cmiaReactive" onchange="showCMIAMessage()"> Treponema pallidum antibody reactive <br>
+        <input type="radio" name="cmiaResult" value="non-reactive" id="cmiaNonReactive" onchange="showCMIAMessage()"> Treponema pallidum antibody non-reactive <br>
+        <input type="radio" name="cmiaResult" value="not-available" id="cmiaNotAvailable" onchange="showCMIAMessage()"> Unknown; we do not have access to the birthing parent's medical records or a treponema pallidum antibody was not obtained  <br><br><br>
 
     </div>
 
 
-    <div id="question6" for="screen">6. Was the birthing parent adequately screened for syphilis during their pregnancy? </label><br><br>
-        <label id="note6"> Adequate screening for syphilis during pregnancy is defined as at least 2 RPR titers obtained during pregnancy, one of which must have been obtained more than 4 weeks before delivery and another obtained within 4 weeks of delivery. Please select "no" if the medical record does not reflect adequate screening. </label><br><br> 
+    <div id="question6" for="screen">6. Was the birthing parent <a href="#" id="toggleNote6">adequately screened</a> for syphilis during their pregnancy? </label>
+    <div id="note6" style="display:none; margin-top:10px;"> 
+    Adequate screening for syphilis during pregnancy is defined as at least two blood tests for syphilis, one which must have been obtained more than 4 weeks prior to delivery and another obtained within 4 weeks of delivery.<br>
+    Within the SSM system, blood tests for syphilis include the treponema pallidum antibody (syphilis cascading antibody reflex; CMIA), RPR, and TP-PA. An RPR should have been obtained in cases of reactive CMIA. </div><br><br>
         <input type="radio" name="screen" value="yes" id="screenYes" onchange="showQuestions()" > Yes <br>
         <input type="radio" name="screen" value="no" id="screenNo" onchange="showQuestions()"> No <br>
 
@@ -91,7 +119,6 @@
         <input type="radio" name="tp_pa" value="pending" onchange="showQuestions()"> The TP-PA result is still pending<br>
         <input type="radio" name="tp_pa" value="reactive" onchange="showQuestions()"> The TP-PA was reactive <br>
         <input type="radio" name="tp_pa" value="non-reactive" onchange="showQuestions()"> The TP-PA was non-reactive <br>
-        <input type="radio" name="tp_pa" value="unknown" onchange="showQuestions()"> Unknown; the TP-PA result is not available in the medical record  <br>
     </div>
 
     
@@ -191,42 +218,76 @@ function showQuestions() {
     } 
 
 
-    // If Question 4 is "yes" or "unknown", hide Questions 5-8
-    if (highRisk && (highRisk.value === 'yes' || highRisk.value === 'unknown')) {
+    // Question 5-8 based on question 4 
+    if ((history && history.value === 'yes')&& highRisk && (highRisk.value === 'yes' || highRisk.value === 'unknown')) {
         question5.style.display = 'none';
         question6.style.display = 'none';
         question7.style.display = 'none';
         question8.style.display = 'none';
-    } else {
+    } 
+
+    if ((history && history.value === 'yes') && highRisk && (highRisk.value === 'no')) {
+    
         question5.style.display = 'block';  // Show Question 5 if the answer is not "yes" or "unknown"
         question6.style.display = 'block';  // Show Question 6 if the answer is not "yes" or "unknown"
     }
 
-    // Show Question 7 based on Question 6 (screen)
-    const question7 = document.getElementById('question7');
-    if (screen && screen.value === 'yes') {
-        question7.style.display = 'block';  // Ensure the entire block (label + choices) is shown
-    } else {
-        question7.style.display = 'none';
+    if ((history && history.value === 'no') && highRisk && (highRisk.value === 'yes' || highRisk.value === 'unknown' || highRisk.value === 'no')) {
+        question5.style.display = 'block';  // Show Question 5 if the answer is not "yes" or "unknown"
+        question6.style.display = 'block';
+
     }
+
+
+    if ((history && history.value === 'unknown') && highRisk && (highRisk.value === 'yes' || highRisk.value === 'unknown' || highRisk.value === 'no')) {
+
+        question5.style.display = 'none';
+        question6.style.display = 'none';
+        question7.style.display = 'none';
+        question8.style.display = 'none';
+    } 
+
+// Show Question 7 based on Question 6 (screen)
+const question7 = document.getElementById('question7');
+
+if ((history && history.value === 'no') && highRisk && 
+    (highRisk.value === 'yes' || highRisk.value === 'unknown' || highRisk.value === 'no')) {
+    question7.style.display = 'none'; 
+} 
+else if ((!(history && history.value === 'no')) && highRisk &&
+    (highRisk.value === 'yes' || highRisk.value === 'unknown' || highRisk.value === 'no') &&
+    screen && screen.value === 'yes') {
+    question7.style.display = 'block'; 
+} 
+else {
+    question7.style.display = 'none';
+}
+
 
     //Show Question 8 based on Question 7 (rpr titer)
     const question8 = document.getElementById('question8');
     if (rprTiter && (rprTiter.value === 'reactive' || rprTiter.value === 'low level positive' || rprTiter.value === 'non-reactive')) {
         question8.style.display = 'block'; 
-    } else {
+    } 
+
+    else {
         question8.style.display = 'none';
     }
     
 
     //Show Question 9 based on Question 7 (rpr titer)
     const question9 = document.getElementById('question9');
-    if (cmiaResult && cmiaResult.value === "reactive")
-    if (rprTiter && rprTiter.value === 'non-reactive') 
+    if ((cmiaResult && cmiaResult.value === "reactive") && (rprTiter && rprTiter.value === 'non-reactive'))
     {
         question9.style.display = 'block';
+    }
 
-        } else {
+    else if (history && (history.value === 'no') && highRisk && (highRisk.value === 'no') && cmiaResult && (cmiaResult.value === 'reactive' || cmiaResult.value === 'not-available') && screen && (screen.value === 'yes')) 
+        {
+        question9.style.display = 'block';
+    }
+
+    else {
         question9.style.display = 'none'; 
     }
     
@@ -257,6 +318,38 @@ function autoHyperlinkText(text) {
     return text.split(targetText).join(hyperlink);
 }
 
+
+document.getElementById("toggleNote1").addEventListener("click", function(event) {
+    event.preventDefault(); // prevent the # link from scrolling
+    const note = document.getElementById("note1");
+    note.style.display = note.style.display === "none" ? "block" : "none";
+  });
+
+  document.getElementById("toggleNote3").addEventListener("click", function(event) {
+    event.preventDefault(); // prevent the # link from scrolling
+    const note = document.getElementById("note3");
+    note.style.display = note.style.display === "none" ? "block" : "none";
+  });
+
+  document.getElementById("toggleNote4").addEventListener("click", function(event) {
+    event.preventDefault(); // prevent the # link from scrolling
+    const note = document.getElementById("note4");
+    note.style.display = note.style.display === "none" ? "block" : "none";
+  }); 
+
+  document.getElementById("toggleNote41").addEventListener("click", function(event) {
+    event.preventDefault(); // prevent the # link from scrolling
+    const note = document.getElementById("note41");
+    note.style.display = note.style.display === "none" ? "block" : "none";
+  });
+
+  document.getElementById("toggleNote6").addEventListener("click", function(event) {
+    event.preventDefault(); // prevent the # link from scrolling
+    const note = document.getElementById("note6");
+    note.style.display = note.style.display === "none" ? "block" : "none";
+  });
+
+
 function calculateRecommendations() {
     const history = document.querySelector('input[name="history"]:checked');
     const treatment = document.querySelector('input[name="treatment"]:checked');
@@ -275,7 +368,7 @@ function calculateRecommendations() {
     let noMatch = true;  // Flag to track if any scenario matched
 
 
-    
+
 
 
     // Scenario #1
