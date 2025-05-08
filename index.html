@@ -10,7 +10,7 @@
 
 <h1>SSM Health Cardinal Glennon Congenital Syphilis Management Guidelines</h1>
 
-<strong>Purpose of this website:</strong> This website is intended to function as a clinical support tool for clinicians who care for neonates where there is concern for congenital syphilis.  The goal is to provide management recommendations based on the clinical information obtained from the birthing parent and neonate.  Based on how the clinician answers the below questions, the algorithm will populate specific recommendations regarding further diagnostic testing, treatment and follow up.  A rationale for these recommendations will also be provided.  The goal of this clinical support tool is to provide recommendations on a wide range of inputted scenarios, including those that may not be fully addressed in the AAP Red Book. <br><br>
+<strong>Purpose of this website:</strong> This website is intended to function as a clinical support tool for clinicians who care for neonates where there is concern for congenital syphilis.  The goal is to provide management recommendations based on the clinical information obtained from the birthing parent and neonate.  Depending on how the clinician answers the below questions, the algorithm will populate specific recommendations based on the reverse screening algorithm regarding further diagnostic testing, treatment, and follow up.  A rationale for these recommendations will also be provided.  The goal of this clinical support tool is to provide recommendations on a wide range of inputted scenarios, including those that may not be fully addressed in the AAP Red Book. <br><br>
 
 <strong>Disclaimer:</strong> This website utilizes the reverse screening algorithm to provide recommendations and rationale regarding congenital syphilis management to help clinicians understand next steps when caring for a neonate at risk of congenital syphilis. These guidelines are not intended to replace clinical decision making, the AAP Red Book, and/or Infectious Diseases consultation. <br><br> 
 
@@ -22,11 +22,8 @@
 <form id="guidelinesForm">
 
     <div id="question1">
-    <label for="history">1. Does the birthing parent have a known diagnosis of syphilis (either currently or in the past)? If the birthing parent is <strong>not</strong> available for the interview, please select an answer choice corresponding to the <a href="#" id="toggleNote1">information in the medical record.</a>
+    <label for="history">1. Does the birthing parent have a known diagnosis of syphilis (either currently or in the past)? If the birthing parent is <strong>not</strong> available for the interview, please select an answer choice based on the information in the medical record.</a>
     </label><br><br>
-    <div id="note1" style="display:none; margin-top:10px;">        
-        Answer "yes" to this question if, <strong>in a birthing parent not available for interview</strong>, clinician notes mention a history of syphilis or the medical record shows a reactive RPR titer, reactive TP-PA titer, or a reactive syphilis antibody cascading reflex </div><br><br>
-
 
     <input type="radio" name="history" value="yes" onchange="showQuestions()"> Yes  <br>
     <input type="radio" name="history" value="no" onchange="showQuestions()"> No <br>
@@ -92,8 +89,9 @@
 
     <div id="question6" for="screen">6. Was the birthing parent <a href="#" id="toggleNote6">adequately screened</a> for syphilis during their pregnancy? </label>
     <div id="note6" style="display:none; margin-top:10px;"> 
-    Adequate screening for syphilis during pregnancy is defined as at least two blood tests for syphilis, one which must have been obtained more than 4 weeks prior to delivery and another obtained within 4 weeks of delivery.<br>
-    Within the SSM system, blood tests for syphilis include the treponema pallidum antibody (syphilis cascading antibody reflex; CMIA), RPR, and TP-PA. An RPR should have been obtained in cases of reactive CMIA. </div><br><br>
+    Adequate screening for syphilis during pregnancy is <strong>typically</strong> defined as at least two blood tests for syphilis, one which must have been obtained more than 4 weeks prior to delivery and another obtained within 4 weeks of delivery. An RPR should have been obtained in cases of reactive syphilis antibody cascading reflex. <br>
+    For birthing parents with <strong>late prenatal care</strong>, one episode syphilitic blood testing is sufficient, as long as it was obtained within a few days of delivery. </div><br><br>
+
         <input type="radio" name="screen" value="yes" id="screenYes" onchange="showQuestions()" > Yes <br>
         <input type="radio" name="screen" value="no" id="screenNo" onchange="showQuestions()"> No <br>
 
@@ -122,15 +120,16 @@
     </div>
 
     
-    <label id="question10" for="physicalExam">10. Does the neonate's physical exam show any evidence of congenital syphilis? </label><br><br>
-    <label id="note10">Physical exam findings associated with congenital syphilis are mentioned in Question #10 of the "Congenital Syphilis Cheat Sheet for SSM Clinicians." Physical exam findings of congenital syphilis are uncommon in neonates; clicking yes to this question should be an infrequent occurence.  <br>
-        <a href="https://docs.google.com/document/d/1FshwW9mEXHS-gHpdxoPo_nevr0eY6P5LIYh0Y45FsEU/edit?usp=sharing" target="_blank">View the Cheat Sheet</a></label><br><br>
+    <div id="question10" for="physicalExam">10. Does the neonate's physical exam show any <a href="#" id="toggleNote10">evidence of congenital syphilis?</a> </div><br>
+    <div id="note10">Physical exam findings associated with congenital syphilis are mentioned in Question #10 of the "Congenital Syphilis Cheat Sheet for SSM Clinicians." Physical exam findings of congenital syphilis are uncommon in neonates; clicking yes to this question should be an infrequent occurence.  <br>
+        <a href="https://docs.google.com/document/d/1FshwW9mEXHS-gHpdxoPo_nevr0eY6P5LIYh0Y45FsEU/edit?usp=sharing" target="_blank">View the Cheat Sheet</a></div><br><br>
     <input type="radio" name="physicalExam" value="yes" onchange="showQuestions()"> Yes<br>
     <input type="radio" name="physicalExam" value="no" onchange="showQuestions()"> No<br> <br><br>
 
     <label id="question11" for="reliableFollowUp">11. Are there any high risk social factors that would suggest this neonate would not follow up with the Infectious Diseases clinic if needed? Please contact the SSM Infectious Disease Division for more information if you are unsure about the response to this question. </label><br><br>
     <input type="radio" name="reliableFollowUp" value="yes" onchange="showQuestions()"> Yes<br>
     <input type="radio" name="reliableFollowUp" value="no" onchange="showQuestions()"> No<br><br><br>
+    </div>
 
     <button type="button" onclick="calculateRecommendations()">Submit</button>
 </form>
@@ -319,12 +318,6 @@ function autoHyperlinkText(text) {
 }
 
 
-document.getElementById("toggleNote1").addEventListener("click", function(event) {
-    event.preventDefault(); // prevent the # link from scrolling
-    const note = document.getElementById("note1");
-    note.style.display = note.style.display === "none" ? "block" : "none";
-  });
-
   document.getElementById("toggleNote3").addEventListener("click", function(event) {
     event.preventDefault(); // prevent the # link from scrolling
     const note = document.getElementById("note3");
@@ -349,6 +342,12 @@ document.getElementById("toggleNote1").addEventListener("click", function(event)
     note.style.display = note.style.display === "none" ? "block" : "none";
   });
 
+  document.getElementById("toggleNote10").addEventListener("click", function(event) {
+    event.preventDefault(); // prevent the # link from scrolling
+    const note = document.getElementById("note10");
+    note.style.display = note.style.display === "none" ? "block" : "none";
+  });
+
 
 function calculateRecommendations() {
     const history = document.querySelector('input[name="history"]:checked');
@@ -368,7 +367,7 @@ function calculateRecommendations() {
     let noMatch = true;  // Flag to track if any scenario matched
 
 
-
+    
 
 
     // Scenario #1
@@ -384,8 +383,7 @@ function calculateRecommendations() {
         tp_pa && (
             tp_pa.value === "pending" || 
             tp_pa.value === "reactive" || 
-            tp_pa.value === "non-reactive" || 
-            tp_pa.value === "unknown" 
+            tp_pa.value === "non-reactive"
         ) &&
         physicalExam && physicalExam.value === "no" &&
         reliableFollowUp && (reliableFollowUp.value === "no" || reliableFollowUp.value === "yes")
@@ -573,7 +571,7 @@ function calculateRecommendations() {
         screen && screen.value ==="yes" &&
         rprTiter && rprTiter.value === "non-reactive" &&
         rprincrease && rprincrease.value === "No" &&
-        (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "unknown" )) &&
+        (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" )) &&
         physicalExam && physicalExam.value === "no" &&
         reliableFollowUp && reliableFollowUp.value === "no"
     ) {
@@ -852,7 +850,7 @@ if (
     screen && screen.value === "yes" &&
     rprTiter && rprTiter.value === "non-reactive" &&
     rprincrease && rprincrease.value === "No"  &&
-    (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "unknown" )) &&
+    (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" )) &&
     physicalExam && physicalExam.value === "yes" &&
     reliableFollowUp && (reliableFollowUp.value === "no" || reliableFollowUp.value === "yes")
     ) 
@@ -885,7 +883,7 @@ if (
     screen && screen.value === "yes" &&
     rprTiter && rprTiter.value === "non-reactive" &&
     rprincrease && rprincrease.value === "Yes" &&
-    (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" || tp_pa.value === "unknown" )) &&
+    (tp_pa && (tp_pa.value === "pending" || tp_pa.value === "reactive" || tp_pa.value === "non-reactive" )) &&
     physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no") &&
     reliableFollowUp && (reliableFollowUp.value === "no" || reliableFollowUp.value === "yes")
 
@@ -1312,11 +1310,12 @@ if (
         
 }
 
-
 //Scenario #29
 if (
     history && history.value === "no" &&
     highRisk && (highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && (screen.value === "yes" || screen.value === "no") &&
     physicalExam && physicalExam.value === "no" &&
     reliableFollowUp && reliableFollowUp.value === "no" 
 
@@ -1324,7 +1323,9 @@ if (
 
     {
         var fullRecommendation = 
-         "• <u>Obtain neonatal: </u><br>" +
+         "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive. <br><br>"+ 
+         "- If this is <strong>not</strong> the birthing parent's lab results, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br><br>"+ 
+         "-If this <strong>is</strong> the birthing parent's lab results, please <u>obtain neonatal: </u><br>" +
          "- RPR <br>" +
          "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
          "- CBC with differential and platelet count <br>" +
@@ -1340,39 +1341,48 @@ if (
          noMatch = false; // A match was found
 
 
-    rationale = 
-        "•In this scenario, although the birthing parent does not have a known history of syphilis, they may have high risk sexual activity or symptoms to sugest newly acquired infection. This significantly increases the likelihood of congenital syphilis in the neonate.  <br> <br>" +
+        rationale = 
+    "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
 
-        "• If the neonate's RPR titer is fourfold greater than then birthing parent's RPR titer <strong>and/or</strong> the neonate's diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'congenital syphilis proven or highly probable.' <br> <br> " +
+    "•In this scenario, a birthing parent with an unknown or reactive initial treponemal test reports no history of syphilis. This is either inconsistent or, in the case of unknown initial treponemal test, assumed to be inconsistent with the parental history <br><br>" +
 
-        " • If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR, <strong>and</strong> the neonate's the diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
+    "•The CMIA result could be a false positive but the presence of confirmed or possible high risk sexual activity or symptoms in the birthing parent makes this significantly less likely. <br><br>" +
 
-        " • Neonates who fall into the category 'proven or highly probable congenital syphilis' may require additional diagnostic testing. See table 3.72 in the AAP Red Book and question #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. <br> <br> " +
-
-        "• 10 days of IV aqueuous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into either category. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
-
+    "•Thus, thorough evaluation of the neonate for congenital syphilis is needed. <br><br>" +
+    "<ul>" +
+        "<li>If the neonate's RPR titer is fourfold greater than the birthing parent's RPR titer <strong>and/or</strong> the neonate's diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'congenital syphilis proven or highly probable.'</li><br>" +
+        "<li>If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR, <strong>and</strong> the neonate's diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.'</li><br>" +
+        "<li>Neonates who fall into the category 'proven or highly probable congenital syphilis' may require additional diagnostic testing. See table 3.72 in the AAP Red Book and question #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information.</li><br>" +
+        "<li>10 days of IV aqueous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into either category. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate.</li>" +
+    "</ul><br><br>" ;
 
 
         noMatch = false; // A match was found
-    
 
 }
+
+
 
 //Scenario #30
 
 if (
     history && history.value === "no" &&
     highRisk && (highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && (screen.value === "yes" || screen.value === "no") &&
     physicalExam && physicalExam.value === "yes" &&
     reliableFollowUp && reliableFollowUp.value === "no" 
 
     ) 
+
+
     {
 
 var fullRecommendation = 
-    "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
-    "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
-    "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain neonatal: <br>" +
+
+    "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive. <br><br>" + 
+    "•If this is <strong>not</strong> the birthing parent's lab results, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br><br>"+ 
+    "•If this <strong>is</strong> the birthing parent's lab results, confirm with the SSM Infectious Disease division that the specific abnormal physical exam findings in the neonate are consistent with congenital syphilis. If they are, please <u>obtain neonatal: </u><br>" +
     "- RPR <br>" +
     "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
     "- CBC with differential and platelet count <br>" +
@@ -1382,33 +1392,45 @@ var fullRecommendation =
     "•<u>Treat</u> with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment. <br> "; 
     
     
+
+    
 // Push the full recommendation to the recommendations array
 recommendations.push(fullRecommendation);
 
     noMatch = false; // A match was found
 
-
     rationale = 
-    "•In this scenario, although the birthing parent does not have a known history of syphilis, they may have high risk sexual activity or symptoms to sugest newly acquired infection. This significantly increases the likelihood of congenital syphilis in the neonate.  <br> <br>" +
-    "•Per the AAP Red Book algorithm, if the birthing parent of a neonate has possible high risk sexual activity/syphilitic symptoms and the neonate has physical exam findings suggestive of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
-    "•Recall that physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
+    "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
 
+    "•In this scenario, a birthing parent with an unknown or reactive initial treponemal test reports no history of syphilis. This is either inconsistent or, in the case of unknown initial treponemal test, assumed to be inconsistent with the parental history <br><br>" +
+
+    "•The CMIA result could be a false positive but the presence of confirmed or possible high risk sexual activity or symptoms in the birthing parent makes this significantly less likely. <br><br>" +
+
+    "•Per the AAP Red Book algorithm, if the birthing parent of a neonate has possible high risk sexual activity/syphilitic symptoms and the neonate has physical exam findings suggestive of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+
+    "•Recall that physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
+    
     noMatch = false; // A match was found
 
 }
 
 //Scenario #31
+
 if (
     history && history.value === "no" &&
     highRisk && (highRisk.value === "yes" || highRisk.value === "unknown") &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && (screen.value === "yes" || screen.value === "no") &&
     physicalExam && (physicalExam.value === "no" || physicalExam.value === "yes") &&
     reliableFollowUp && reliableFollowUp.value === "yes" 
 
     ) 
-
+    
     {
         var fullRecommendation = 
-    "•Please obtain neonatal: <br>" +
+    "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive. <br><br>"+ 
+    "•If this is <strong>not</strong> the birthing parent's lab results, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br><br>"+ 
+    "•If this <strong>is</strong> the birthing parent's lab results, please <u>obtain neonatal: </u><br>" +
     "- RPR <br>" +
     "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
     "- CBC with differential and platelet count <br>" +
@@ -1424,55 +1446,272 @@ recommendations.push(fullRecommendation);
 
     noMatch = false; // A match was found
 
+
     rationale = 
-        "•In this scenario, although the birthing parent does not have a known history of syphilis, they may have high risk sexual activity or symptoms to sugest newly acquired infection. This significantly increases the likelihood of congenital syphilis in the neonate.  <br> <br>" +
+    "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
 
-        "• Neonatal follow up in the Infectious Disease clinic is imperative to reasses the neonate and recheck their RPR titer. Please contact the SSM Infectious Disease division for further recommendations and rationale; be sure to mention the uncertainty of follow up in the neonate. "; 
+    "•In this scenario, a birthing parent with an unknown or reactive initial treponemal test reports no history of syphilis. This is either inconsistent or, in the case of unknown initial treponemal test, assumed to be inconsistent with the parental history <br><br>" +
 
-       
-        noMatch = false; // A match was found
-    
+    "•The CMIA result could be a false positive but the presence of confirmed or possible high risk sexual activity or symptoms in the birthing parent makes this significantly less likely. <br><br>" +
+
+    "• Thus, diagnostic evaluation and treatment of the for possible congenital syphilis is necessary. Neonatal follow up in the Infectious Disease clinic following discharge is imperative to reasses the neonate and recheck their RPR titer. Please contact the SSM Infectious Disease division for further recommendations and rationale; be sure to mention the uncertainty of follow up in the neonate. "; 
+
+    noMatch = false; // A match was found
+
 }
 
+
 //Scenario #32
+
 if (
     history && history.value === "no" &&
-    highRisk && highRisk.value === "no" &&
-    cmiaResult && cmiaResult.value === "reactive" &&
-    screen && screen.value === "yes" &&
-    rprTiter && rprTiter.value === "non-reactive" &&
-    rprincrease && rprincrease.value === "No" &&
-    tp_pa && tp_pa.value === "pending" &&
-    physicalExam && physicalExam.value === "no" &&
-    reliableFollowUp && reliableFollowUp.value === "no"
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && screen.value === "no" &&
+    physicalExam && physicalExam.value === "no"  &&
+    reliableFollowUp && reliableFollowUp.value === "no" 
+
     ) 
 
+
     {
+        recommendations.push("• This is a unique situation. Please verify your selections above are correct. If they are correct, please contact the SSM Infectious Disease division for specific recommendations. ");
+        
+        noMatch = false; // Scenario matched, no need to show error
+
+
+    rationale = 
+
+    "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
+
+    "•In this scenario, a birthing parent with an unknown or reactive initial treponemal test reports no history of syphilis. This is either inconsistent or, in the case of unknown initial treponemal test, assumed to be inconsistent with the parental history <br><br>" +
+
+    "•The CMIA result could be a false positive but the lack of adequate syphilitic screening in the birthing parent during pregnancy makes this difficult to determine. <br><br>" +
+
+    "• Please contact the SSM Infectious Disease division for specific recommendations and rationale. We may be able to obtain an RPR on the birthing parent after delivery in order to stratify the neonate's congenital syphilis risk. ";
+
+
+        noMatch = false; // A match was found
+    
+
+}
+
+
+//Scenario #33
+
+if (
+    history && history.value === "no" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && screen.value === "no" &&
+    physicalExam && physicalExam.value === "yes"  &&
+    reliableFollowUp && reliableFollowUp.value === "no" 
+
+    ) 
+
+{
     var fullRecommendation = 
-    "•Obtain an RPR on the neonate <br><br>" +
-    "•If the neonate's RPR titer is <strong>non-reactive</strong>, no further diagnostic testing is needed. Administer a single dose of IM benzathine penicillin G to the neonate. Contact the SSM Infectious Disease division to schedule a follow up appointment for the neonate in clinic. <br><br>" +
-    "•If the neonate's RPR titer is <strong>reactive</strong> the neonate needs a 10 day course of IV aqueous penicillin G. The following diagnostic testing on the neonate is also required: <br>" +
+    "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive. <br><br>" + 
+    "•If this is <strong>not</strong> the birthing parent's lab results, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br><br>"+ 
+    "•If this <strong>is</strong> the birthing parent's lab results, confirm with the SSM Infectious Disease division that the specific abnormal physical exam findings in the neonate are consistent with congenital syphilis. If they are, please <u>obtain neonatal: </u><br>" +
+    "- RPR <br>" +
     "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
     "- CBC with differential and platelet count <br>" +
     "- Long bone radiography <br>" +
-    "- Baseline ALT <br><br>" +
-    "- Additional diagnostic tests may be needed. The next steps in management should be made in consultation with the pediatric ID physician on call. "; 
+    "- Baseline ALT <br>" +
+    "- Additional testing may be needed in this scenario. Please see the rationale section for more information. <br>" +
+    "•<u>Treat</u> with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment. <br> "; 
+    
+    
 
+    
 // Push the full recommendation to the recommendations array
 recommendations.push(fullRecommendation);
 
     noMatch = false; // A match was found
+
+
+    rationale = 
+    "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex and treponema pallidum antibody in SSM Epic; or CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
+
+    "•In this scenario, a birthing parent with an unknown or reactive initial treponemal test reports no history of syphilis. This is either inconsistent or, in the case of unknown initial treponemal test, assumed to be inconsistent with the parental history <br><br>" +
+
+    "•The CMIA result could be a false positive but the lack of adequate syphilitic screening in the birthing parent during pregnancy and physical exam findings suggestive of congenital syphilis in the neonate make this less likely. <br><br>" +
+
+    "•Thus, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+
+    "•Recall that physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
+
+    noMatch = false; // A match was found
+
+
+}
+
+
+
+//Scenario #34
+
+if (
+    history && history.value === "no" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && screen.value === "no" &&
+    physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp && reliableFollowUp.value === "yes" 
+
+    ) 
+
+    {
+        recommendations.push("• This is a unique situation. Please verify your selections above are correct. If they are correct, please contact the SSM Infectious Disease division for specific recommendations. ");
+        
+        noMatch = false; // Scenario matched, no need to show error
+
+
+    rationale = 
+
+"•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
+
+"•In this scenario, a birthing parent with an unknown or reactive initial treponemal test reports no history of syphilis. This is either inconsistent or, in the case of unknown initial treponemal test, assumed to be inconsistent with the parental history <br><br>" +
+
+"•The CMIA result could be a false positive but the lack of adequate syphilitic screening in the birthing parent during pregnancy makes this difficult to determine. The uncertainty of follow up in the neonate also complicates this scenario. <br><br>" +
+
+"• Please contact the SSM Infectious Disease division for specific recommendations and rationale. ";
+
+
+    noMatch = false; // A match was found
+
+
+}
+
+
+
+//Scenario #35
+
+if (
+    history && history.value === "no" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && screen.value === "yes" &&
+    tp_pa && tp_pa.value === "non-reactive" &&
+    physicalExam && (physicalExam.value === "no") &&
+    reliableFollowUp && (reliableFollowUp.value === "yes" || reliableFollowUp.value === "no")
+
+    ) 
+
+
+
+{
+    var fullRecommendation = 
+    "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive; TP-PA non-reactive <br><br>" + 
+    "•If this is <strong>not</strong> the birthing parent's lab results, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br><br>"+ 
+    "•If this <strong>is</strong> the birthing parent's lab results, the neonate does not need any syphilitic treatment, diagnostic testing, or follow up in the Infectious Disease clinic. <br>"; 
+
+
     
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+noMatch = false; // A match was found
+
+
+rationale = 
+"•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
+
+"•In this scenario, a birthing parent with a reactive or unknown (assumed to be reactive) initial treponemal test reports no history of syphilis and no syphilitic symptoms or high risk sexual activity. <br><br>" +
+
+"•The birthing parent's confirmatory treponemal test (TP-PA in SSM Epic) is non-reactive. This significantly increases the likelihood that the initial treponemal test was a false positive <br><br>" +
+
+"•Thus, the neonate does not need any syphilitic treatment, diagnostic testing, or follow up in the Infectious Disease clinic.";
+
+}
+
+//Scenario #36
+
+if (
+    history && history.value === "no" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && screen.value === "yes" &&
+    tp_pa && tp_pa.value === "non-reactive" &&
+    physicalExam && (physicalExam.value === "yes") &&
+    reliableFollowUp && (reliableFollowUp.value === "no" || reliableFollowUp.value === "yes")
+
+    ) 
+
+    { 
+
+    var fullRecommendation = 
+    "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive; TP-PA non-reactive. The neonate has physical exam findings suggestive of congenital syphilis. <br><br>" + 
+    "•If this is not correct, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br><br>"+ 
+    "•If this <strong>is</strong> correct, please contact the SSM Infectious Disease division for specific recommendations.  <br>"; 
+
+
+
+    
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+noMatch = false; // A match was found
+
+    rationale=
+    "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
+
+    "•In this scenario, a birthing parent with a reactive or unknown (assumed to be reactive) initial treponemal test reports no history of syphilis and no syphilitic symptoms or high risk sexual activity. <br><br>" +
+
+    "•The birthing parent's confirmatory treponemal test (TP-PA in SSM Epic) is non-reactive. This significantly increases the likelihood that the initial treponemal test was a false positive <br><br>" +
+
+    "•However, the presence of physical exam findings in the neonate that are suggestive of congenital syphilis complicates this clinical picture. Infectious Disease consultation is necessary to determine whether syphilitic physical exam findings are truly present and, if so, what the appropriate next steps are." ; 
+
+
+    }
+
+
+//Scenario #37
+
+if (
+    history && history.value === "no" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && screen.value === "yes" &&
+    tp_pa && tp_pa.value === "pending" &&
+    physicalExam && (physicalExam.value === "no") &&
+    reliableFollowUp && (reliableFollowUp.value === "no")
+
+    ) 
+
+    {
+    var fullRecommendation = 
+    "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive; TP-PA pending <br><br>" + 
+    "•If this is <strong>not</strong> the birthing parent's lab results, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br><br>"+ 
+    "•If this <strong>is</strong> the birthing parent's lab results: <br>" +
+    "•Obtain an RPR on the neonate" +
+    "<ul>" +
+        "<li>If the neonate's RPR titer is <strong>non-reactive</strong>, no further diagnostic testing is needed. Administer a single dose of IM benzathine penicillin G to the neonate. Contact the SSM Infectious Disease division to schedule a follow up appointment for the neonate in clinic. </li><br>" + 
+        "<li>If the neonate's RPR titer is <strong>reactive</strong> the neonate needs a 10 day course of IV aqueous penicillin G. The following diagnostic testing on the neonate is also required: </li><br>" +
+        "<li>Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) </li><br>" +
+        "<li>CBC with differential and platelet count </li><br>" +
+        "<li>Long bone radiography </li><br>" + 
+        "<li>Baseline ALT </li><br>" + 
+        "<li>Additional diagnostic tests may be needed. The next steps in management should be made in consultation with the pediatric ID physician on call. </li></ul><br>" ; 
+        
+
+    
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+    noMatch = false; // A match was found
 
         rationale = 
-        "• Recall that the CMIA and TP-PA are treponemal tests that typically stay positive for life in adults/adolescents infected with syphilis. RPR is a non-treponemal test that is prone to false negatives in the first few weeks following syphilitic infection and can become negative in cases of late latent syphilis. <br> <br> " +
+        "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
 
-        "• If mom does NOT have any risk factors for untreated syphilis, then the maternal CMIA is likely a false positive or mom was treated appropriately in the past but does not recall treatment. Although there is low suspicion for congenital syphilis, it is recommended to obtain an RPR on the baby.  <br> <br> " +
+        "• If the birthing parent does NOT have any risk factors for untreated syphilis, the reactive initial treponemal antibody test is likely a false positive or the birthing parent was treated appropriately in the past but does not recall treatment. However, without the birthing parent's confirmatory treponemal test (TP-PA) result, we cannot assume that the initial treponemal test is a false positive. <br>" + 
 
-        "• If the neonatal RPR is non-reactive <strong>and follow up is certain</strong>, the baby can be discharged after 1 dose of IM benzathine penicillin G. The Infectious Disease division can check the birthing parent's TP-PA results outpatient and follow up with the neonate. <br>" + 
+        "•Thus, although there is low suspicion for congenital syphilis in the neonate, an RPR titer should be obtained on the neonate.  <br> <br> " +
+        
+        "• If the neonatal RPR titer  is non-reactive <strong>and follow up is certain</strong>, the baby can be discharged after 1 dose of IM benzathine penicillin G. The Infectious Disease division can check the birthing parent's TP-PA results outpatient and follow up with the neonate. <br>" + 
         "<ul>" +
-            "<li>If the birthing parent's TP-PA results are nonreactive, this represents a nonreactive confirmatory treponemal test and increases the likelihood that the other treponemal test on the birthing parent(CMIA/EIA) was a false positive. No further testing or follow up of the neonate would be needed. </li><br>" + 
-            "<li> If the birthing parent's TP-PA is reactive, this confirms that the birthing parent truly has a treponemal antibody. This likely represents early untreated syphilis in the birthing parent or untreated latent syphilis. The neonate would need to undergo further diagnostic evaluation and treatment. </li>" +
+            "<li>If the birthing parent's TP-PA results as nonreactive, this represents a nonreactive confirmatory treponemal test and increases the likelihood that the initial treponemal test on the birthing parent(CMIA/EIA) was a false positive. No further testing or follow up of the neonate would be needed. </li><br>" + 
+            "<li> If the birthing parent's TP-PA results as reactive, this confirms that the birthing parent truly has a treponemal antibody. This likely represents early untreated syphilis in the birthing parent or untreated latent syphilis. The neonate would need to undergo further diagnostic evaluation and treatment. </li>" +
 "</ul><br><br>" +
         "• If the neonatal RPR is reactive, this significantly increases the likelihood of congenital syphilis infection in the neonate. Full diagnostic testing and treatment in accordance with the AAP Red Book category 'proven or highly probable congenital syphilis' would be needed. " ; 
 
@@ -1482,159 +1721,149 @@ recommendations.push(fullRecommendation);
 
 }
 
-//Scenario #33
+//Scenario #38
+
 if (
     history && history.value === "no" &&
-    highRisk && highRisk.value === "no" &&
-    cmiaResult && cmiaResult.value === "reactive" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
     screen && screen.value === "yes" &&
-    rprTiter && rprTiter.value === "non-reactive" &&
-    rprincrease && rprincrease.value === "No" &&
-    tp_pa && (tp_pa.value === "reactive" ||  tp_pa.value === "unknown") &&
-    physicalExam && physicalExam.value === "no" &&
-    reliableFollowUp && reliableFollowUp.value === "no"
+    tp_pa && tp_pa.value === "pending" &&
+    physicalExam && (physicalExam.value === "yes") &&
+    reliableFollowUp && (reliableFollowUp.value === "no")
+
+    ) 
+
+
+    { 
+
+var fullRecommendation = 
+"•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive; TP-PA pending. The neonate has physical exam findings suggestive of congenital syphilis. <br><br>" + 
+"•If this is not correct, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br><br>"+ 
+"•If this <strong>is</strong> correct, obtain an RPR on the neonate and please contact the SSM Infectious Disease division for specific recommendations.  <br>"; 
+
+
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+noMatch = false; // A match was found
+
+
+
+rationale = 
+        "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
+
+        "•If the birthing parent does NOT have any risk factors for untreated syphilis, the reactive initial treponemal antibody test is likely a false positive or the birthing parent was treated appropriately in the past but does not recall treatment. However, without the birthing parent's confirmatory treponemal test (TP-PA) result, we cannot assume that the initial treponemal test is a false positive. <br>" + 
+
+        "•In addition, the presence of physical exam findings that are suggestive of congenital syphilis in the neonate further complicates this clinical picture. <br>" + 
+
+        "•Infectious Disease consultation is necessary to determine whether syphilitic physical exam findings are truly present and, if so, what the appropriate next steps are." ; 
+
+
+        noMatch = false; // A match was found
+
+}
+
+
+
+//Scenario #39
+
+if (
+    history && history.value === "no" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && screen.value === "yes" &&
+    tp_pa && tp_pa.value === "pending" &&
+    physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no") &&
+    reliableFollowUp && (reliableFollowUp.value === "yes")
+
+    ) 
+
+
+    { 
+
+var fullRecommendation = 
+"•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive; TP-PA pending. There are high risk social factors that compromise follow up in the neonate. <br><br>" + 
+"•If this is not correct, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br><br>"+ 
+"•If this <strong>is</strong> correct, obtain an RPR on the neonate and please contact the SSM Infectious Disease division for specific recommendations.  <br>"; 
+
+
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+noMatch = false; // A match was found
+
+
+
+rationale = 
+        "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
+
+        "•If the birthing parent does NOT have any risk factors for untreated syphilis, the reactive initial treponemal antibody test is likely a false positive or the birthing parent was treated appropriately in the past but does not recall treatment. However, without the birthing parent's confirmatory treponemal test (TP-PA) result, we cannot assume that the initial treponemal test is a false positive. <br>" + 
+
+        "•Obtaining an RPR titer on the neonate and following up on the birthing parental TP-PA is necessary to appropriately stratify the neonate's congenital syphilis risk. <br>" +
+
+        "•As there are factors that may compromise adequate follow up for the neonate in this scenario, it is important to contact the SSM Infectious Disease division for specific recommendations. "; 
+
+
+
+        noMatch = false; // A match was found
+
+}
+
+
+//Scenario #40
+
+if (
+    history && history.value === "no" &&
+    highRisk && highRisk.value === "no"  &&
+    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
+    screen && screen.value === "yes" &&
+    tp_pa && tp_pa.value === "reactive" &&
+    physicalExam && (physicalExam.value === "no") &&
+    reliableFollowUp && (reliableFollowUp.value === "no")
+
     ) 
 
     {
-    var fullRecommendation = 
-         "• <u>Obtain neonatal: </u><br>" +
-         "- RPR <br>" +
-         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
-         "- CBC with differential and platelet count <br>" +
-         "- Long bone radiography <br>" +
-         "- Baseline ALT <br><br>" +
-         "- Additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +     
-         "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up in approximately 3 months."; 
-         
-         
-     // Push the full recommendation to the recommendations array
-     recommendations.push(fullRecommendation);
- 
-         noMatch = false; // A match was found
+ var fullRecommendation = 
+
+"• <u>Obtain neonatal: </u><br>" +
+    "- RPR <br>" +
+    "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
+    "- CBC with differential and platelet count <br>" +
+    "- Long bone radiography <br>" +
+    "- Baseline ALT <br><br>" +
+    "• If the neonatal RPR is reactive and/or any of the above diagnostic testing is abnormal, additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. Please see the rationale section for more information <br><br> " +
+    
+    "•<u>Treat</u> the neonate with 10 days of IV aqueous crystalline penicillin G. Contact the SSM Infectious Disease division to schedule follow up in approximately 3 months. <br> "; 
+    
+
+// Push the full recommendation to the recommendations array
+recommendations.push(fullRecommendation);
+
+noMatch = false; // A match was found
+
 
 
     rationale = 
-        "•In this scenario, although the birthing parent denies a history of syphilis, their RPR results are either unknown OR are/have been reactive without treatment. This significantly increases the likelihood of congenital syphilis in the neonate.  <br> <br>" +
 
-        "•In these situations, we generally err on the side of full treatment of the neonate for congenital syphilis and neurosyphilis and workup in accordance with the category 'proven or highly probable congenital syphilis.' <br> <br>" +
-        
-        "•The neonate may require additional diagnostic testing beyond what is listed above. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information."; 
+    "•Recall that the initial treponemal test (also known as: syphilis antibody cascading reflex or treponema pallidum antibody in SSM Epic; CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
 
-        noMatch = false; // A match was found
+    "• Although the birthing parent does not have any risk factors or symptoms of syphilitic infection, the reactive treponemal and confirmatory treponemal tests indicate that the mother truly has a treponemal antibody. The mother likely has early untreated syphilis or untreated latent syphilis. Thus, the infant would need to undergo further diagnostic evaluation and treatment.  <br> <br> " +
+
+    "• If the neonate's RPR is reactive <strong>and/or</strong> any of the above diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'proven or highly probable congenital syphilis'<br><br>" + 
     
+    "• If the neonate's RPR is non-reactive <strong>and</strong> the above diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.'<br><br> " + 
 
-}
-
-//Scenario #34
-
-if (
-    history && history.value === "no" &&
-    highRisk && highRisk.value === "no" &&
-    cmiaResult && cmiaResult.value === "reactive" &&
-    screen && screen.value === "yes" &&
-    rprTiter && rprTiter.value === "non-reactive" &&
-    rprincrease && rprincrease.value === "No" &&
-    tp_pa && tp_pa.value === "non-reactive" &&
-    physicalExam && physicalExam.value === "no" &&
-    reliableFollowUp && (reliableFollowUp.value === "no" || reliableFollowUp.value === "yes")
-    ) 
-
-
-{
-
-
-recommendations.push("• The neonate does not need any syphilitic treatment, diagnostic testing, or follow up in the Infectious Disease clinic. ");
-
-
-noMatch = false; // A match was found
-
-rationale = 
-"• Recall that the CMIA and TP-PA are treponemal tests that typically stay positive for life in adults/adolescents infected with syphilis. RPR is a non-treponemal test that is prone to false negatives in the first few weeks following syphilitic infection and can become negative in cases of late latent syphilis. <br> <br> " +
-
-"• In this case, the mother reports no history of syphilis and no risk factors/symptoms of syphilitic infection. Both her RPR and confirmatory treponemal test are non-reactive. It is likely that her reactive CMIA represents a false positive. The infant does not need any diagnostic testing, treatment, or follow up." ; 
-
-
-noMatch = false; // A match was found
-
-}
-
-
-
-//Scenario #35
-if (
-    history && history.value === "no" &&
-    highRisk && highRisk.value === "no" &&
-    cmiaResult && cmiaResult.value === "reactive" &&
-    screen && screen.value === "yes" &&
-    rprTiter && rprTiter.value === "non-reactive" &&
-    rprincrease && rprincrease.value === "No" &&
-    tp_pa && tp_pa.value === "pending" &&
-    physicalExam && physicalExam.value === "no" &&
-    reliableFollowUp && reliableFollowUp.value === "yes"
-    ) 
-
-    {
-    var fullRecommendation = 
-    "•Obtain an RPR on the neonate <br><br>" +
-    "•Please contact the SSM Infectious Disease clinic regarding the uncertainty of follow up in this situation as it may affect the best diagnostic and treatment approach. "; 
- 
-     // Push the full recommendation to the recommendations array
-     recommendations.push(fullRecommendation);
- 
-         noMatch = false; // A match was found
-
-
-        rationale = 
-        "• Recall that the CMIA and TP-PA are treponemal tests that typically stay positive for life in adults/adolescents infected with syphilis. RPR is a non-treponemal test that is prone to false negatives in the first few weeks following syphilitic infection and can become negative in cases of late latent syphilis. <br> <br> " +
-
-        "• If mom does NOT have any risk factors for untreated syphilis, then the maternal CMIA is likely a false positive or mom was treated appropriately in the past but does not recall treatment. Although there is low suspicion for congenital syphilis, it is recommended to obtain an RPR on the baby.  <br> <br> " +
-
-        "• Neonatal follow up in the Infectious Disease clinic is crucial, even if the neonatal RPR is non-reactive, in order to follow up on the birthing parent's TP-PA result. If the birthing parent's TP-PA resulted as reactive, this significantly increases the likelihood of late latent syphilis in the birthing parent and would warrant full diagnostic evaluation and treatment for the neonate. Thus, in this case of uncertain follow up for the neonate, please contact the SSM Infectious Disease division for the best approach." ; 
-
-
-
-        noMatch = false; // A match was found
-
-}
-
-//Scenario #36
-if (
-    history && history.value === "no" &&
-    highRisk && highRisk.value === "no" &&
-    cmiaResult && cmiaResult.value === "reactive" &&
-    screen && screen.value === "yes" &&
-    rprTiter && rprTiter.value === "non-reactive" &&
-    rprincrease && rprincrease.value === "No" &&
-    tp_pa && tp_pa.value === "pending" &&
-    physicalExam && physicalExam.value === "yes" &&
-    reliableFollowUp && (reliableFollowUp.value === "no" || reliableFollowUp.value === "yes") 
-    ) 
-
-{
-
-
-    var fullRecommendation = 
-    "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
-    "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
-    "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain an RPR titer on the neonate and contact the SSM Infectious Disease division regarding the best approach in this situation." ; 
+    "• Neonates who fall into the category 'proven or highly probable congenital syphilis' may require additional diagnostic testing. See table 3.72 in the AAP Red Book and question #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. <br> <br> " +
     
+    "• 10 days of IV aqueuous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into both categories. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
 
-     // Push the full recommendation to the recommendations array
-     recommendations.push(fullRecommendation);
- 
-         noMatch = false; // A match was found
-
-
-rationale = 
-        "• Physical exam findings associated with congenital syphilis are uncommon in neonates. <br> " +
-        "• The best approach in this situation should be discussed in coordination with the SSM Infectious Disease division." ; 
-
-
-
-        noMatch = false; // A match was found
+    noMatch = false; // A match was found
 
 }
 
+//Scenario #41
 
 
 
@@ -1667,11 +1896,12 @@ if (noMatch) {
 
 
 
+
+
 </script>
 
 </body>
 </html>
-
 
 
 
