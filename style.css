@@ -1,5 +1,5 @@
 /* Base styling for all question labels (applies to both visible and hidden questions) */
-#question1, #question4, #question5, #question6, #question9, #question10 {
+#question1, #question2, #question3, #question4, #question5, #question6, #question7, #question8, #question9, #question10, #question11 {
     font-size: 1.3rem; /* Consistent font size for questions */
     margin-bottom: 10px; /* Space between each question */
     font-style: normal; /* Regular font style */
@@ -7,7 +7,7 @@
 }
 
 /* Styling for notes (italicized text) */
-#note3, #note4, #note6, #note7, #note9 {
+#note3, #note4, #note41, #note6, #note8, #note10 {
     font-size: 1.05rem; /* Slightly smaller font for notes */
     font-style: italic; /* Italicized font style for notes */
 }
@@ -27,22 +27,6 @@ input[type="radio"] + label {
     line-height: 1.1; /* Adjust line height for readability */
 }
 
-/* Ensure the text for labels in hidden questions gets styled properly once visible */
-#guidelinesForm input[type="radio"]:not(:checked) + label,
-#guidelinesForm input[type="radio"]:checked + label {
-    font-size: 1.05rem; /* Adjust font size */
-    display: inline-block; /* Make sure the label is aligned next to the radio button */
-    margin-bottom: 10px;
-    line-height: 1.1; /* Adjust line height for readability */
-}
-
-
-
-/* Style for hidden questions' radio options that are displayed later */
-#guidelinesForm .question label {
-    font-size: 1.3rem; /* Apply font size styling */
-}
-
 
 /* Consistent box-sizing across the board */
 *,
@@ -55,6 +39,9 @@ input[type="radio"] + label {
 [style="display: none;"] {
     display: none !important; /* Hide elements with inline display none (used by JS) */
 }
+
+
+
 
 
 
