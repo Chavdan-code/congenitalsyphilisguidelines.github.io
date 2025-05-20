@@ -1995,7 +1995,7 @@ recommendations.push(fullRecommendation);
 
 if (
     history && history.value === "unknown" &&
-    highRisk && highRisk.value === "unknown"  &&
+    highRisk && (highRisk.value === "unknown" || highRisk.value === "yes" || highRisk.value === "no") &&
     physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no") &&
     reliableFollowUp && reliableFollowUp.value === "no"
 
@@ -2039,7 +2039,7 @@ recommendations.push(fullRecommendation);
 
 if (
     history && history.value === "unknown" &&
-    highRisk && highRisk.value === "unknown"  &&
+    highRisk && (highRisk.value === "unknown" || highRisk.value === "yes" || highRisk.value === "no") &&
     physicalExam && (physicalExam.value === "yes" || physicalExam.value === "no") &&
     reliableFollowUp && reliableFollowUp.value === "yes"
 
@@ -2117,7 +2117,6 @@ if (noMatch) {
 
 </body>
 </html>
-
 
 
 
