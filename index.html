@@ -450,7 +450,7 @@ function calculateRecommendations() {
          "- CBC with differential and platelet count <br>" +
          "- Long bone radiography <br>" +
          "- Baseline ALT <br><br>" +
-         "• If the neonatal RPR is fourfold greater than the birthing parent's RPR (i.e. increase by two dilutions- parental 1:2 and neonatal 1:8) and/or any of the above diagnostic testing is abnormal and/or birthing parental RPR is not available, additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +         
+         "• If the neonatal RPR is fourfold greater than the birthing parent's RPR (i.e. increase by two dilutions- parental 1:2 and neonatal 1:8) and/or any of the above diagnostic testing is abnormal, additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +         
          "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment."; 
          
          
@@ -461,15 +461,15 @@ function calculateRecommendations() {
 
         
         rationale = 
-        "• The birthing parent's high-risk behaviors or symptoms to suggest a newly acquired syphilis infection significantly increase the likelihood that they have been reinfected, regardless of their RPR results. A birthing parent for whom information on whether they are high risk or not is unavailable is treated as if they were high risk.  <br> <br> " +
+        "• The birthing parent's high-risk behaviors or symptoms to suggest a newly acquired syphilis infection significantly increase the likelihood that they have been reinfected. A birthing parent for whom information on whether they are high risk or not is unavailable is treated as if they were high risk.  <br> <br> " +
 
         "• If the neonate's RPR titer is fourfold greater than then birthing parent's RPR titer <strong>and/or</strong> the neonate's diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'congenital syphilis proven or highly probable.' <br> <br> " +
 
-        " • If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR, <strong>and</strong> the neonate's the diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
+        " • If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR <strong>and</strong> the neonate's the diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
 
-        " • Neonates who fall into the category 'proven or highly probable congenital syphilis' may require additional diagnostic testing. See table 3.72 in the AAP Red Book and question #13 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. <br> <br> " +
+        " • Neonates who fall into the category 'proven or highly probable congenital syphilis' may require additional diagnostic testing. See table 3.72 in the AAP Red Book and questions #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. <br> <br> " +
 
-        "• 10 days of IV aqueuous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into either category. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+        "• 10 days of IV aqueuous penicillin G for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into either category. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
 
 
         noMatch = false; // A match was found
@@ -494,14 +494,14 @@ function calculateRecommendations() {
 
         var fullRecommendation = 
         "•Check the neonate's RPR titer <br>" +
-        "• If the neonate's RPR is non-reactive or low level positive (< or = 1:4), follow up in ID clinic approximately 3 months of age for repeat RPR.  No penicillin therapy is indicated. <br><br>" +
-        "• If the neonate's RPR is 4-fold greater than the birthing parent's RPR (i.e. increase by two dilutions- parental 1:2 and neonatal 1:8), <u>obtain neonatal: </u><br>" +
+        "• If the neonate's RPR titer is non-reactive or low level positive (< or = 1:4), follow up in the Infectious Disease clinic in approximately 3 months of age for a repeat RPR.  No penicillin therapy is indicated. <br><br>" +
+        "• If the neonate's RPR titer is 4-fold greater than the birthing parent's RPR titer (i.e. increase by two dilutions- parental 1:2 and neonatal 1:8), <u>obtain neonatal: </u><br>" +
         "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
         "- CBC with differential and platelet count <br>" +
         "- Long bone radiography <br>" +
         "- Baseline ALT <br>" +
         "- Additional diagnostic testing may be required while the neonate is inpatient. The next steps in management should be made in consultation with the pediatric ID physician on call. <br>" +
-        "- <u>Treat</u> the neonate with 10 days of IV aqueous crystalline penicillin G. Contact the Infectious Disease division to </u> schedule follow up </u> in approximately 3 months <br>" ; 
+        "- <u>Treat</u> the neonate with 10 days of IV aqueous crystalline penicillin G. Contact the Infectious Disease division to </u> schedule a follow up </u> appointment in approximately 3 months <br>" ; 
 
 
 
@@ -513,12 +513,12 @@ function calculateRecommendations() {
         rationale = `
     • Note: approximately 25% of adults with sexually acquired syphilis are serofast, which means that their RPR titers remain low level positive for years to life after successful treatment (see question #2 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more details). <br> <br>
 
-    • Although the birthing parent's RPR titer at 1:1/1:2 after appropriate treatment likely represents a serofast state, there is still a possibility that the birthing parent has inadequately treated syphilis or has reacquired syphilis. Therefore, we should still check the neonate's RPR. <br> 
+    • Although the birthing parent's low level positive RPR titer after appropriate treatment likely represents a serofast state, there is still a possibility that the birthing parent has inadequately treated syphilis or has reacquired syphilis. Therefore, we should still check the neonate's RPR titer. <br> 
 
     <ul>
-        <li> If the neonate's RPR is non-reactive or low level positive, it is unlikely that the birthing parent was inadequately treated or reacquired syphilis. To rule out that possibility, we recommend that the neonate follows up in the ID clinic in 3 months for a repeat RPR. An increased RPR at that point supports congenital syphilis in the neonate and would require full evaluation and treatment. </li><br>
+        <li> If the neonate's RPR titer is non-reactive or low level positive, it is unlikely that the birthing parent was inadequately treated or reacquired syphilis. To rule out that possibility, we recommend that the neonate follows up in the Infectious Disease clinic in 3 months for a repeat RPR. An increased RPR at that point supports congenital syphilis in the neonate and would require full evaluation and treatment. </li><br>
 
-        <li> If the neonate's RPR is 4 fold greater than the birthing parent's RPR, the birthing parent likely had inadequately treated syphilis or reacquired syphilis prior to delivery, both of which significantly increase the likelihood of congenital syphilis in the neonate. In this scenario, the neoante would require 10 days of penicillin treatment for coverage of congenital syphilis and neurosyphilis. The neonate would fall into the category 'proven or highly probable congenital syphilis' and thus may require additional diagnostic testing per the AAP Red Book and questions #13-15 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians'  </li>
+        <li> If the neonate's RPR titer is 4 fold greater than the birthing parent's RPR titer, the birthing parent likely had inadequately treated syphilis or reacquired syphilis prior to delivery, both of which significantly increase the likelihood of congenital syphilis in the neonate. In this scenario, the neonate would require 10 days of penicillin treatment for coverage of congenital syphilis and neurosyphilis. The neonate would fall into the category 'proven or highly probable congenital syphilis' and may require additional diagnostic testing per the AAP Red Book and questions #13-15 in the 'Congenital Syphilis Cheat Sheet for SSM Clinicians'  </li>
     </ul><br>
 `;
         
@@ -596,7 +596,7 @@ function calculateRecommendations() {
     ) {
         var fullRecommendation = 
         "•Check the neonate's RPR titer <br><br>" +
-        "•If the neonate's RPR titer is <strong>not</strong> fourfold greater than the birthing parent's RPR, <u>no further diagnostic workup is needed.</u><br> " + 
+        "•If the neonate's RPR titer is <strong>not</strong> fourfold greater than the birthing parent's RPR titer, <u>no further diagnostic testing is needed.</u><br> " + 
         "-<u>Treat</u> the neonate with one dose of IM benzathine penicillin G. <br>" +
         "-<u>Contact</u> the SSM Infectious Disease division to schedule a follow up appointment for the neonate in approximately 3 months <br><br><br>" +
         "•If the neonate's RPR titer <strong>is</strong> fourfold greater than the birthing parent's RPR (i.e. increase by two dilutions- parental non-reactive and neonatal 1:4 or higher), <u>obtain neonatal:</u> <br>"+
@@ -619,9 +619,9 @@ function calculateRecommendations() {
         
             <li>If the neonate's RPR titer is fourfold greater than the birthing parent's, this indicates that the birthing parent was likely reinfected with syphilis after treatment, which significantly increases the likelihood of congenital syphilis in the neonate. The neonate would fall into the AAP Red Book category "proven or highly probable congenital syphilis." Additional diagnostic testing would be indicated, as illustrated in the recommendation section. The neonate would need a 10 day course of penicillin for neurosyphilis coverage. Contacting the SSM Infectious Disease division would be important to determine if further diagnostic testing is needed. <br><br>
         
-            <li> If the neonate's RPR is not fourfold greater than the mother's, this supports treatment efficacy in the mother. The neonate would fall into the AAP Red Book category "congenital syphilis less likely." One dose of benzathine penicillin G for the neonate is recommended as a precaution. <br><br>
+            <li> If the neonate's RPR is not fourfold greater than the birthing parent's, this supports treatment efficacy in the mother. The neonate would fall into the AAP Red Book category "congenital syphilis less likely." One dose of benzathine penicillin G for the neonate is recommended as a precaution. <br><br>
 
-            <li>Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending at that point, this supports treatment failure. <br>
+            <li>Infectious Disease clinic follow up in 3 months is important both scenarios. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure. <br>
 
         </ul><br>
 
@@ -757,7 +757,7 @@ if (history && history.value === "yes"  &&
 var fullRecommendation = 
     "•Contact the SSM Infectious Disease division regarding the specific abnormal physical exam findings to determine whether they are consistent with congenital syphilis <br><br>" + 
     "•If the neonate <strong>doesn't</strong> have physical exam findings consistent with congenital syphilis, please refresh this questionnaire and fill it out again with the correct physical exam answer choice to obtain correct recommendations and rationale <br><br>" +
-    "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please obtain neonatal: <br>" +
+    "•If the neonate <strong>does</strong> have physical exam findings consistent with congenital syphilis, please <u>obtain neonatal:</u><br>" +
     "- RPR <br>" +
     "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
     "- CBC with differential and platelet count <br>" +
@@ -774,7 +774,7 @@ recommendations.push(fullRecommendation);
 
 
     rationale = 
-    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' <br> <br> " +
     "•Physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
 
     noMatch = false; // A match was found
@@ -812,7 +812,7 @@ recommendations.push(fullRecommendation);
 
 
     rationale = 
-    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.' <br> <br> " +
     "•Physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
 
     noMatch = false; // A match was found
@@ -851,7 +851,7 @@ recommendations.push(fullRecommendation);
 
 
     rationale = 
-    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.' <br> <br> " +
     "•Physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
 
     noMatch = false; // A match was found
@@ -876,7 +876,7 @@ if (
 
     {
 
-    recommendations.push("• Physical exam findings associated with congenital syphilis are uncommon. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
+    recommendations.push("• Physical exam findings associated with congenital syphilis are uncommon in neonates. Please see Question #10 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians' for more information.");
     recommendations.push("• If physical exam findings of congenital syphilis are truly present, additional information may be needed to determine correct management. Please contact the SSM Infectious Disease division. ");
     
 
@@ -986,7 +986,7 @@ if (history && history.value === "yes"  &&
     "- Long bone radiography <br>" +
     "- Baseline ALT <br>" +
     "- Additional testing may be needed in this scenario. Please see the rationale section for more information. <br><br>" +
-    "•<u>Treat</u> with at least 10 days of IV aqueous penicillin G. <br><br>" +
+    "•<u>Treat</u> the neonate with at least 10 days of IV aqueous penicillin G. <br><br>" +
     "•Please contact the SSM Infectious Disease division regarding the uncertainty of follow up. "; 
     
     
@@ -1027,7 +1027,7 @@ if (
     "- Long bone radiography <br>" +
     "- Baseline ALT <br>" +
     "- Additional testing may be needed in this scenario. Please see the rationale section for more information. <br><br>" +
-    "•<u>Treat</u> with at least 10 days of IV aqueous penicillin G. <br><br>" +
+    "•<u>Treat</u> the neonate with at least 10 days of IV aqueous penicillin G. <br><br>" +
     "•Please contact the SSM Infectious Disease division regarding the uncertainty of follow up. "; 
     
     
@@ -1039,7 +1039,7 @@ recommendations.push(fullRecommendation);
 
 
     rationale = 
-    "•This neonate is at high risk of congenital syphilis. Follow up outpatient in the Infectious Disease clinic is crucial to reassess the child and recheck their RPR titer. <br><br>" +
+    "•This neonate is at high risk of congenital syphilis. Follow up outpatient in the Infectious Disease clinic is crucial to reassess the neonate and recheck their RPR titer. <br><br>" +
     "•The presence of high risk social factors that could affect the neonate's follow up outpatient may make a more conservative diagnosis and treatment approach appropriate. Please contact the SSM Infectious Disease division for more information."; 
 
 
@@ -1105,7 +1105,7 @@ if (
          "- CBC with differential and platelet count <br>" +
          "- Long bone radiography <br>" +
          "- Baseline ALT <br><br>" +
-         "• If the neonatal RPR is fourfold greater than the birthing parent's RPR (i.e. increase by two dilutions- parental 1:2 and neonatal 1:8) and/or any of the above diagnostic testing is abnormal and/or birthing parental RPR is not available, additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +         
+         "• If the neonatal RPR titer is fourfold greater than the birthing parent's RPR titer (i.e. increase by two dilutions- parental 1:2 and neonatal 1:8) and/or any of the above diagnostic testing is abnormal, additional testing may be required. The next steps in management should be made in consultation with the pediatric ID physician on call. See the rationale section for more information <br><br>" +         
          "•<u>Treat</u> the neonate with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment."; 
          
          
@@ -1119,13 +1119,13 @@ if (
     rationale = 
         "•In this scenario, the birthing parent has a history of syphilis for which treatment was inappropriate or the appropriateness of treatment is unknown. This significantly increases the likelihood of syphilitic infection in the neonate <br> <br>" +
 
-        "• If the neonate's RPR titer is fourfold greater than then birthing parent's RPR titer <strong>and/or</strong> the neonate's diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'congenital syphilis proven or highly probable.' <br> <br> " +
+        "• If the neonate's RPR titer is fourfold greater than the birthing parent's RPR titer <strong>and/or</strong> the neonate's diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'congenital syphilis proven or highly probable.' <br> <br> " +
 
-        " • If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR, <strong>and</strong> the neonate's the diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
+        " • If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR titer <strong>and</strong> the neonate's the diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
 
         " • Neonates who fall into the category 'proven or highly probable congenital syphilis' may require additional diagnostic testing. See table 3.72 in the AAP Red Book and question #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. <br> <br> " +
 
-        "• 10 days of IV aqueuous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into either category. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+        "• 10 days of IV aqueuous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into either category. At the follow up appointment, the RPR titer in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR titer were to be uptrending, this supports treatment failure in the neonate. ";
 
     
         noMatch = false; // A match was found
