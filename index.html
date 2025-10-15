@@ -417,7 +417,7 @@ function calculateRecommendations() {
 
 
         rationale = `
-    • <u>Congenital syphilis risk category:</u> varies <br>
+    • <u>Congenital syphilis risk category:</u> varies <br><br>
 
     • The birthing parent's history and syphilis testing results indicate that they have a known history of syphilis which was adequately treated prior to the current pregnancy. Given their known history of syphilis, we would expect them to have persistently reactive treponemal antibody levels (often lifelong), regardless of which methodology (e.g. CMIA, EIA, TP-PA) is used to detect these antibodies. Thus, the birthing parental TP-PA result should not change management in this circumstance. In the unlikely event that the birthing parent's CMIA is positive and TP-PA is negative, we would still consider the birthing parent 'treponemal antibody positive.' <br> <br>
 
@@ -814,7 +814,7 @@ recommendations.push(fullRecommendation);
 
 }
 
-//Scenario #12***
+//Scenario #12
 if (
     history && history.value === "yes" &&
     (treatment && (treatment.value === "before" || treatment.value === "during_before")) &&
@@ -845,7 +845,7 @@ recommendations.push(fullRecommendation);
 
 
     rationale = 
-    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
+    "•Per the AAP Red Book algorithm, if the neonate's exam shows evidence of congenital syphilis and birthing parental treatment for syphilis was inadequate or unknown during pregnancy, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
     "•Physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
 
     noMatch = false; // A match was found
@@ -1129,15 +1129,17 @@ if (
 
         
     rationale = 
+       "•<u>Congenital syphilis risk category:</u> 'possible congenital syphilis' or 'proven or highly probable congenital syphilis' <br><br> " +
+
         "•In this scenario, the birthing parent has a history of syphilis for which treatment was inappropriate or the appropriateness of treatment is unknown. This significantly increases the likelihood of syphilitic infection in the neonate <br> <br>" +
 
         "• If the neonate's RPR titer is fourfold greater than then birthing parent's RPR titer <strong>and/or</strong> the neonate's diagnostic testing is abnormal, the neonate falls into the AAP Red Book category of 'congenital syphilis proven or highly probable.' <br> <br> " +
 
-        " • If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR, <strong>and</strong> the neonate's the diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
+        " • If the neonate's RPR titer is less than fourfold greater than the birthing parent's RPR, <strong>and</strong> the neonate's diagnostic testing is normal, the neonate falls into the AAP Red Book category of 'possible congenital syphilis.' <br> <br> " +
 
         " • Neonates who fall into the category 'proven or highly probable congenital syphilis' may require additional diagnostic testing. See table 3.72 in the AAP Red Book and question #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. <br> <br> " +
 
-        "• 10 days of IV aqueuous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into either category. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+        "• 10 days of IV aqueous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into either category. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
 
     
         noMatch = false; // A match was found
@@ -1334,7 +1336,7 @@ if (
 
     {
         var fullRecommendation = 
-         "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive. <br><br>"+ 
+         "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive or unknown. <br><br>"+ 
          "- If this is <strong>not</strong> the birthing parent's lab results, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br>"+ 
          "-If this <strong>is</strong> the birthing parent's lab results, please <u>obtain neonatal: </u><br>" +
          "- RPR <br>" +
@@ -1391,9 +1393,9 @@ if (
 
 var fullRecommendation = 
 
-    "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive. <br><br>" + 
+    "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive or unknown. <br><br>" + 
     "•If this is <strong>not</strong> the birthing parent's lab results, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br>"+ 
-    "•If this <strong>is</strong> the birthing parent's lab results, confirm with the SSM Infectious Disease division that the specific abnormal physical exam findings in the neonate are consistent with congenital syphilis. If they are, please <u>obtain neonatal: </u><br>" +
+    "•If this <strong>is</strong> the birthing parent's lab results, please <u>obtain neonatal: </u><br>" +
     "- RPR <br>" +
     "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
     "- CBC with differential and platelet count <br>" +
@@ -1419,7 +1421,7 @@ recommendations.push(fullRecommendation);
 
     "•Per the AAP Red Book algorithm, if the birthing parent of a neonate has possible high risk sexual activity/syphilitic symptoms and the neonate has physical exam findings suggestive of congenital syphilis, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
 
-    "•Recall that physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
+    "•Recall that physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to determine if these findings are present and to obtain more detailed recommendations and rationale. "; 
     
     noMatch = false; // A match was found
 
@@ -1479,7 +1481,7 @@ if (
     highRisk && highRisk.value === "no"  &&
     cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
     screen && screen.value === "no" &&
-    physicalExam && physicalExam.value === "no"  &&
+    physicalExam && (physicalExam.value === "no" || physicalExam.value === "yes") &&
     reliableFollowUp && reliableFollowUp.value === "no" 
 
     ) 
@@ -1504,57 +1506,6 @@ if (
 
         noMatch = false; // A match was found
     
-
-}
-
-
-//Scenario #33
-
-if (
-    history && history.value === "no" &&
-    highRisk && highRisk.value === "no"  &&
-    cmiaResult && (cmiaResult.value === "not-available" || cmiaResult.value === "reactive") &&
-    screen && screen.value === "no" &&
-    physicalExam && physicalExam.value === "yes"  &&
-    reliableFollowUp && reliableFollowUp.value === "no" 
-
-    ) 
-
-{
-    var fullRecommendation = 
-    "•In this scenario, the birthing parent's lab results are: syphilis antibody cascading reflex (treponema pallidum antibody) reactive or not available; RPR non-reactive. <br><br>" + 
-    "•If this is <strong>not</strong> the birthing parent's lab results, please verify your selections above. If a birthing parent who denies a history of syphilis has had a reactive RPR, please select 'yes' for question #1  <br><br>"+ 
-    "•If this <strong>is</strong> the birthing parent's lab results, confirm with the SSM Infectious Disease division that the specific abnormal physical exam findings in the neonate are consistent with congenital syphilis. If they are, please <u>obtain neonatal: </u><br>" +
-    "- RPR <br>" +
-    "- Lumbar puncture with CSF analysis (CSF VDRL, cell count, and protein) <br>" +
-    "- CBC with differential and platelet count <br>" +
-    "- Long bone radiography <br>" +
-    "- Baseline ALT <br>" +
-    "- Additional testing may be needed in this scenario. Please see the rationale section for more information. <br>" +
-    "•<u>Treat</u> with 10 days of IV aqueous penicillin G. Contact the SSM Infectious Disease division to schedule follow up 3 months after treatment. <br> "; 
-    
-    
-
-    
-// Push the full recommendation to the recommendations array
-recommendations.push(fullRecommendation);
-
-    noMatch = false; // A match was found
-
-
-    rationale = 
-    "•Recall that the initial treponemal antibody test (also known as: syphilis antibody cascading reflex and treponema pallidum antibody in SSM Epic; or CMIA in the AAP Red Book) typically stays positive for life in adults/adolescents who have been infected with syphilis in the past <br><br>" +
-
-    "•In this scenario, a birthing parent with an unknown or reactive initial treponemal test reports no history of syphilis. This is either inconsistent or, in the case of unknown initial treponemal test, assumed to be inconsistent with the parental history <br><br>" +
-
-    "•The CMIA result could be a false positive but the lack of adequate syphilitic screening in the birthing parent during pregnancy and physical exam findings suggestive of congenital syphilis in the neonate make this less likely. <br><br>" +
-
-    "•Thus, the neonate falls into the category 'congenital syphilis proven or highly probable.' This warrants the diagnostic tests above and may require further testing, as explained in Questions #13-15 of the 'Congenital Syphilis Cheat Sheet.'<br> <br> " +
-
-    "•Recall that physical exam findings associated with congenital syphilis are <strong>uncommon</strong> in neonates. Please contact the SSM Infectious Disease division to confirm these findings are present and to obtain more detailed recommendations and rationale. "; 
-
-    noMatch = false; // A match was found
-
 
 }
 
@@ -1870,7 +1821,7 @@ noMatch = false; // A match was found
 
     "• Neonates who fall into the category 'proven or highly probable congenital syphilis' may require additional diagnostic testing. See table 3.72 in the AAP Red Book and question #13-15 on the 'Congenital Syphilis Cheat Sheet for SSM Clinicians.' Please contact the SSM Infectious Disease division for more information. <br> <br> " +
     
-    "• 10 days of IV aqueuous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into both categories. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
+    "• 10 days of IV aqueous penicillin G treatment for neurosyphilis coverage and Infectious Disease clinic follow up in 3 months is important for neonates who fall into both categories. At the follow up appointment, the RPR in the neonate will be rechecked to confirm treatment efficacy. If the neonate's RPR were to be uptrending, this supports treatment failure in the neonate. ";
 
     noMatch = false; // A match was found
 
@@ -2109,6 +2060,7 @@ if (noMatch) {
 
 </body>
 </html>
+
 
 
 
